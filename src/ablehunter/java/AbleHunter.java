@@ -8,6 +8,7 @@ package ablehunter.java;
 import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
+import byui.cit260.ableHunter.model.Resources;
 
 /**
  *
@@ -39,6 +40,18 @@ public class AbleHunter {
        
        startCharacter.setName("Fred Flintstone" + " The Hunter");
        System.out.println(startCharacter);
+       
+       Resources availableResources = new Resources();
+       availableResources.setAnimalSkins("Leather");
+       availableResources.setOil("Oil");
+       availableResources.setOreGold("Gold");
+       availableResources.setOreIron("Iron");
+       availableResources.setWood("Wood");
+       availableResources.setOreDiamond("Diamond");
+       
+       String resourcesInfo = availableResources.toString();
+       System.out.println(availableResources);
+       
        
        
        

@@ -5,6 +5,7 @@
  */
 package ablehunter.java;
 
+import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 
 /**
@@ -25,6 +26,13 @@ public class AbleHunter {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+       Game startGame = new Game();
+       
+       startGame.setLevels(6);
+       startGame.setTotalTime(12);
+       
+       String gameInfo = startGame.toString();
+       System.out.println(gameInfo);
         
     }
     

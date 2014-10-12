@@ -7,6 +7,7 @@ package ablehunter.java;
 
 import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.Game;
+import byui.cit260.ableHunter.model.Inventory;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Resources;
 import byui.cit260.ableHunter.model.Scene;
@@ -75,6 +76,17 @@ public class AbleHunter {
        
        String sceneInfo = availableScene.toString();
        System.out.println(availableScene);
+       
+       
+       Inventory availableInventory = new Inventory();
+       availableInventory.setItem("Items Available");
+       availableInventory.setAmountNeeded("Amount Needed To Upgrade");
+       availableInventory.setHowMany(7);
+       availableInventory.setItemsCollected("Items Collected This Far");
+       availableInventory.setWeaponsCollected("Weapons Collected THis Far");
+       
+       String inventoryInfo = availableInventory.toString();
+       System.out.println(availableInventory);
        
        
        

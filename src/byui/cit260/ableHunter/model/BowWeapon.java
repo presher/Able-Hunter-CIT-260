@@ -55,7 +55,7 @@ public class BowWeapon implements Serializable{
 
     @Override
     public String toString() {
-        return "BowWeapon{" + "size=" + size + ", type=" + type + ", strength=" + strength + ", Material=" + Material + '}';
+        return "BowWeapon{" + "size=" + size + "ft" + ", type=" + type + ", strength=" + strength + ", Material=" + Material + '}';
     }
 
     @Override

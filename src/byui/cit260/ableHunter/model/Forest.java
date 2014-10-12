@@ -16,7 +16,7 @@ public class Forest implements Serializable{
     private String forestName; //Name of the forest
     private String weather; //hot, cold, rain, snow
     private String timeOfDay; //day or night
-    private String dificulty; //easy, medium, hard
+    private String difficulty; //easy, medium, hard
 
     public Forest() {
     }
@@ -45,17 +45,17 @@ public class Forest implements Serializable{
         this.timeOfDay = timeOfDay;
     }
 
-    public String getDificulty() {
-        return dificulty;
+    public String getDifficulty() {
+        return difficulty;
     }
 
-    public void setDificulty(String dificulty) {
-        this.dificulty = dificulty;
+    public void setDifficulty(String dificulty) {
+        this.difficulty = dificulty;
     }
 
     @Override
     public String toString() {
-        return "Forest{" + "forestName=" + forestName + ", weather=" + weather + ", timeOfDay=" + timeOfDay + ", dificulty=" + dificulty + '}';
+        return "Forest{" + "forestName=" + forestName + ", weather=" + weather + ", timeOfDay=" + timeOfDay + ", dificulty=" + difficulty + '}';
     }
 
     @Override
@@ -64,7 +64,7 @@ public class Forest implements Serializable{
         hash = 41 * hash + Objects.hashCode(this.forestName);
         hash = 41 * hash + Objects.hashCode(this.weather);
         hash = 41 * hash + Objects.hashCode(this.timeOfDay);
-        hash = 41 * hash + Objects.hashCode(this.dificulty);
+        hash = 41 * hash + Objects.hashCode(this.difficulty);
         return hash;
     }
 
@@ -86,7 +86,7 @@ public class Forest implements Serializable{
         if (!Objects.equals(this.timeOfDay, other.timeOfDay)) {
             return false;
         }
-        if (!Objects.equals(this.dificulty, other.dificulty)) {
+        if (!Objects.equals(this.difficulty, other.difficulty)) {
             return false;
         }
         return true;

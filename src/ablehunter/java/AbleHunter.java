@@ -7,8 +7,20 @@ package ablehunter.java;
 
 import byui.cit260.ableHunter.model.Armor;
 import byui.cit260.ableHunter.model.Avatar;
+import byui.cit260.ableHunter.model.BowWeapon;
+import byui.cit260.ableHunter.model.ClothesArmor;
+import byui.cit260.ableHunter.model.Desert;
+import byui.cit260.ableHunter.model.DiamondArmor;
+import byui.cit260.ableHunter.model.Forest;
 import byui.cit260.ableHunter.model.Game;
+import byui.cit260.ableHunter.model.GoldArmor;
+import byui.cit260.ableHunter.model.HandWeapon;
 import byui.cit260.ableHunter.model.Inventory;
+import byui.cit260.ableHunter.model.IronArmor;
+import byui.cit260.ableHunter.model.Island;
+import byui.cit260.ableHunter.model.LeatherArmor;
+import byui.cit260.ableHunter.model.Lodge;
+import byui.cit260.ableHunter.model.Mountain;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Resources;
 import byui.cit260.ableHunter.model.Scene;
@@ -103,6 +115,112 @@ public class AbleHunter {
        
        String armorInfo = availableArmor.toString();
        System.out.println(availableArmor);
+       
+       Island islandScene = new Island();
+       islandScene.setIslandName("Lone Islan");
+       islandScene.setTimeOfDay("The time of day is Night");
+       islandScene.setWeather("The weather is hot and raining");
+       islandScene.setDifficulty("The difficulty of the island is medium");
+       
+       String islandInfo = islandScene.toString();
+       System.out.println(islandScene);
+       
+       
+       Lodge lodgeScene = new Lodge();
+       lodgeScene.setLodgeName(playerOne.getName() + " Hunters Lodge");
+       lodgeScene.setWeather("Cold"); //hot cold rain snow
+       lodgeScene.setTimeOfDay("Night");
+       lodgeScene.setDifficulty("easy");
+       
+       String lodgeInfo = lodgeScene.toString();
+       System.out.println(lodgeScene);
+       
+       Mountain mountainScene = new Mountain();
+       mountainScene.setMountainName("The Lone Mountain");
+       mountainScene.setWeather("Cold And Snow");
+       mountainScene.setTimeOfDay("day");
+       mountainScene.setDifficulty("Hard");
+       
+       String mountainInfo = mountainScene.toString();
+       System.out.println(mountainScene);
+       
+       Desert desertScene = new Desert();
+       desertScene.setDesertName("The Sweaty Desert");
+       desertScene.setWeather("Hot");
+       desertScene.setTimeOfDay("Day");
+       desertScene.setDifficulty("hard");
+       
+       String desertInfo = desertScene.toString();
+       System.out.println(desertScene);
+       
+       Forest forestScene = new Forest();
+       forestScene.setForestName("Missery Forest");
+       forestScene.setWeather("Cold and Rain");
+       forestScene.setTimeOfDay("Night");
+       forestScene.setDifficulty("Medium");
+       
+       String forestInfo = forestScene.toString();
+       System.out.println(forestScene);
+       
+       DiamondArmor diamondArmor = new DiamondArmor();
+       diamondArmor.setStrength("Strongest");
+       diamondArmor.setMaterial("Diamomd Material");
+       
+       String diamondAromorInfo = diamondArmor.toString();
+       System.out.println(diamondArmor);
+       
+       ClothesArmor clothesArmor = new ClothesArmor();
+       clothesArmor.setMaterial("Cotton");
+       clothesArmor.setStrength("Weak");
+       
+       String clothesArmorInfo = clothesArmor.toString();
+       System.out.println(clothesArmor);
+       
+       LeatherArmor leatherArmor = new LeatherArmor();
+       leatherArmor.setMaterial("Animal Skin");
+       leatherArmor.setStrength("Weak");
+       
+       String leatherArmorInfo = leatherArmor.toString();
+       System.out.println(leatherArmor);
+       
+       IronArmor ironArmor = new IronArmor();
+       ironArmor.setMaterial("Iron");
+       ironArmor.setStrength("Strong");
+       
+       String ironArmorInfo = ironArmor.toString();
+       System.out.println(ironArmor);
+       
+       GoldArmor goldArmor = new GoldArmor();
+       goldArmor.setMaterial("Gold");
+       goldArmor.setStrength("Stronger");
+       
+       String goldArmorInfo = goldArmor.toString();
+       System.out.println(goldArmor);
+       
+       HandWeapon handWeapon = new HandWeapon();
+       handWeapon.setMaterial("Skin");
+       handWeapon.setStrength("Weak");
+       
+       String handWeaponInfo = handWeapon.toString();
+       System.out.println(handWeapon);
+       
+       BowWeapon bowWeapon = new BowWeapon();
+       bowWeapon.setMaterial("Wood");
+       bowWeapon.setSize(4);
+       bowWeapon.setType("Bow and Arrow");
+       bowWeapon.setStrength("Weak");
+       
+       String bowWeaponInfo = bowWeapon.toString();
+       System.out.println(bowWeapon);
+       
+       
+       
+       
+       
+  
+       
+       
+       
        
        
        

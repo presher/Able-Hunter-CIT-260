@@ -34,7 +34,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Jason
+ * @author Jason @ Felix
  */
 public class AbleHunter {
 

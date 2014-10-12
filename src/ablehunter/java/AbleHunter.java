@@ -5,6 +5,7 @@
  */
 package ablehunter.java;
 
+import byui.cit260.ableHunter.model.Armor;
 import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Inventory;
@@ -88,12 +89,23 @@ public class AbleHunter {
        String inventoryInfo = availableInventory.toString();
        System.out.println(availableInventory);
        
+       Armor availableArmor = new Armor();
+       availableArmor.setClothesDefault("You Have No Armor");
+       availableArmor.setLeatherArmor("You Have Obtained Leather Armor");
+       availableArmor.setIronArmor("You Have Obtained Iron Armor");
+       availableArmor.setGoldArmor("You Have Obtained Gold Armor");
+       availableArmor.setDiamondArmor("You Have Obtained Diamond Armor");
+       availableArmor.setHeight(36);
+       availableArmor.setLength(36);
+       availableArmor.setWidth(24);
+       availableArmor.setMaterial("Your Armor is made up of: ");
+       availableArmor.setStrength("The Strength of Your Armor is: ");
        
-       
-       
+       String armorInfo = availableArmor.toString();
+       System.out.println(availableArmor);
        
        
        
     }
-    
+   
 }

@@ -37,7 +37,7 @@ public class AbleHunter {
         
        Avatar startCharacter = new Avatar();
        
-       startCharacter.setName("Ariel The Hunter");
+       startCharacter.setName("Fred Flintstone" + " The Hunter");
        System.out.println(startCharacter);
        
        

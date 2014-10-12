@@ -5,6 +5,7 @@
  */
 package ablehunter.java;
 
+
 import byui.cit260.ableHunter.model.Armor;
 import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.BowWeapon;
@@ -29,6 +30,7 @@ import byui.cit260.ableHunter.model.Scene;
 import byui.cit260.ableHunter.model.SpearWeapon;
 import byui.cit260.ableHunter.model.Weapons;
 import byui.cit260.ableHunter.model.WoodenWeapon;
+import java.util.Scanner;
 
 /**
  *
@@ -40,9 +42,16 @@ public class AbleHunter {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Scanner enterName = new Scanner(System.in);
+                String fullName;   
+       System.out.print("Please Enter Your Name");
+              fullName = enterName.next();      
+        System.out.println("Hello" + fullName);
+        
         Player playerOne = new Player();
         
-        playerOne.setName("Fred Flinstone");
+        playerOne.setName(fullName);
         playerOne.setBestTime(7.00);
         
         String playerInfo = playerOne.toString();
@@ -250,6 +259,10 @@ public class AbleHunter {
        String diamondWeaponInfo = diamondWeapon.toString();
        System.out.println(diamondWeapon);
        
+    
+       
+                
+                       
        
        
        

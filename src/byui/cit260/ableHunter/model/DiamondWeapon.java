@@ -15,8 +15,8 @@ import java.util.Objects;
 public class DiamondWeapon implements Serializable{
     private String material; //What is the weapon made of
     private int length; //How long is the weapon
-    private String sttrength; //weak, strong, stronger, strongest
-
+    private String strength; //weak, strong, stronger, strongest
+          
     public DiamondWeapon() {
     }
     
@@ -36,17 +36,17 @@ public class DiamondWeapon implements Serializable{
         this.length = length;
     }
 
-    public String getSttrength() {
-        return sttrength;
+    public String getStrength() {
+        return strength;
     }
 
-    public void setSttrength(String sttrength) {
-        this.sttrength = sttrength;
+    public void setStrength(String sttrength) {
+        this.strength = sttrength;
     }
 
     @Override
     public String toString() {
-        return "DiamondWeapon{" + "material=" + material + ", length=" + length + ", sttrength=" + sttrength + '}';
+        return "DiamondWeapon{" + "material=" + material + ", length=" + length + "ft" + ", strength=" + strength + '}';
     }
 
     @Override
@@ -54,7 +54,7 @@ public class DiamondWeapon implements Serializable{
         int hash = 7;
         hash = 67 * hash + Objects.hashCode(this.material);
         hash = 67 * hash + this.length;
-        hash = 67 * hash + Objects.hashCode(this.sttrength);
+        hash = 67 * hash + Objects.hashCode(this.strength);
         return hash;
     }
 
@@ -73,7 +73,7 @@ public class DiamondWeapon implements Serializable{
         if (this.length != other.length) {
             return false;
         }
-        if (!Objects.equals(this.sttrength, other.sttrength)) {
+        if (!Objects.equals(this.strength, other.strength)) {
             return false;
         }
         return true;

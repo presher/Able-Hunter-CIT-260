@@ -11,6 +11,7 @@ import byui.cit260.ableHunter.model.BowWeapon;
 import byui.cit260.ableHunter.model.ClothesArmor;
 import byui.cit260.ableHunter.model.Desert;
 import byui.cit260.ableHunter.model.DiamondArmor;
+import byui.cit260.ableHunter.model.DiamondWeapon;
 import byui.cit260.ableHunter.model.Forest;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.GoldArmor;
@@ -240,6 +241,14 @@ public class AbleHunter {
        
        String ironWeaponInfo = ironWeapon.toString();
        System.out.println(ironWeapon);
+       
+       DiamondWeapon diamondWeapon = new DiamondWeapon();
+       diamondWeapon.setMaterial("Diamond Sword");
+       diamondWeapon.setLength(3);
+       diamondWeapon.setStrength("Strongest");
+       
+       String diamondWeaponInfo = diamondWeapon.toString();
+       System.out.println(diamondWeapon);
        
        
        

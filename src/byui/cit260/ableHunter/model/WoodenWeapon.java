@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class WoodenWeapon implements Serializable{
     private String material; //What material is the wooden Sword
-    private String length; //how long is the wooden sword
+    private int length; //how long is the wooden sword
     private String strength; //weak, strong, stronger, strongest
 
     public WoodenWeapon() {
@@ -28,11 +28,11 @@ public class WoodenWeapon implements Serializable{
         this.material = material;
     }
 
-    public String getLength() {
+    public int getLength() {
         return length;
     }
 
-    public void setLength(String length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
@@ -46,7 +46,7 @@ public class WoodenWeapon implements Serializable{
 
     @Override
     public String toString() {
-        return "WoodenWeapon{" + "material=" + material + ", length=" + length + ", strength=" + strength + '}';
+        return "WoodenWeapon{" + "material=" + material + ", length=" + length + "ft" + ", strength=" + strength + '}';
     }
 
     @Override

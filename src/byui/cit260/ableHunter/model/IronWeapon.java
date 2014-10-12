@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class IronWeapon implements Serializable{
     private String material; //What maerial is the weapon
-    private String length; //How long is the weapon ie. sword is 3ft long
+    private int length; //How long is the weapon ie. sword is 3ft long
     private String strength; //weak, strong, stronger, strongest
 
     public IronWeapon() {
@@ -28,11 +28,11 @@ public class IronWeapon implements Serializable{
         this.material = material;
     }
 
-    public String getLength() {
+    public int getLength() {
         return length;
     }
 
-    public void setLength(String length) {
+    public void setLength(int length) {
         this.length = length;
     }
 

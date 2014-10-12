@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class SpearWeapon implements Serializable{
     private String material; //What material is the spear
-    private String length; //How long id the spear
+    private int length; //How long id the spear
     private String strength; //weak, strong, stronger, strongest
     private String type; //What type of spear is it
 
@@ -29,11 +29,11 @@ public class SpearWeapon implements Serializable{
         this.material = material;
     }
 
-    public String getLength() {
+    public int getLength() {
         return length;
     }
 
-    public void setLength(String length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
@@ -55,7 +55,7 @@ public class SpearWeapon implements Serializable{
 
     @Override
     public String toString() {
-        return "SpearWeapon{" + "material=" + material + ", length=" + length + ", strength=" + strength + ", type=" + type + '}';
+        return "SpearWeapon{" + "material=" + material + ", length=" + length + "ft" + ", strength=" + strength + ", type=" + type + '}';
     }
 
     @Override

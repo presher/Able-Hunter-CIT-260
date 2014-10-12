@@ -17,6 +17,7 @@ import byui.cit260.ableHunter.model.GoldArmor;
 import byui.cit260.ableHunter.model.HandWeapon;
 import byui.cit260.ableHunter.model.Inventory;
 import byui.cit260.ableHunter.model.IronArmor;
+import byui.cit260.ableHunter.model.IronWeapon;
 import byui.cit260.ableHunter.model.Island;
 import byui.cit260.ableHunter.model.LeatherArmor;
 import byui.cit260.ableHunter.model.Lodge;
@@ -24,7 +25,9 @@ import byui.cit260.ableHunter.model.Mountain;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Resources;
 import byui.cit260.ableHunter.model.Scene;
+import byui.cit260.ableHunter.model.SpearWeapon;
 import byui.cit260.ableHunter.model.Weapons;
+import byui.cit260.ableHunter.model.WoodenWeapon;
 
 /**
  *
@@ -117,7 +120,7 @@ public class AbleHunter {
        System.out.println(availableArmor);
        
        Island islandScene = new Island();
-       islandScene.setIslandName("Lone Islan");
+       islandScene.setIslandName("Lone Island");
        islandScene.setTimeOfDay("The time of day is Night");
        islandScene.setWeather("The weather is hot and raining");
        islandScene.setDifficulty("The difficulty of the island is medium");
@@ -213,6 +216,37 @@ public class AbleHunter {
        String bowWeaponInfo = bowWeapon.toString();
        System.out.println(bowWeapon);
        
+       SpearWeapon spearWeapon = new SpearWeapon();
+       spearWeapon.setLength(6);
+       spearWeapon.setMaterial("Wood");
+       spearWeapon.setType("Long Spear");
+       spearWeapon.setStrength("Strong");
+       
+       String spearWeaponInfo = spearWeapon.toString();
+       System.out.println(spearWeapon);
+       
+       WoodenWeapon woodenWeapon = new WoodenWeapon();
+       woodenWeapon.setLength(3);
+       woodenWeapon.setMaterial("Wood Sword");
+       woodenWeapon.setStrength("strong");
+       
+       String woodenWeaponInfo = woodenWeapon.toString();
+       System.out.println(woodenWeapon);
+       
+       IronWeapon ironWeapon = new IronWeapon();
+       ironWeapon.setLength(3);
+       ironWeapon.setMaterial("Iron Sword");
+       ironWeapon.setStrength("Stronger");
+       
+       String ironWeaponInfo = ironWeapon.toString();
+       System.out.println(ironWeapon);
+       
+       
+       
+       
+       
+       
+               
        
        
        

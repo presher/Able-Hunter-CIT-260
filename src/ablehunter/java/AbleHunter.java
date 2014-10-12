@@ -40,7 +40,7 @@ public class AbleHunter {
         
        Avatar startCharacter = new Avatar();
        
-       startCharacter.setName("Fred Flintstone" + " The Hunter");
+       startCharacter.setName(playerOne.getName() + " The Hunter");
        System.out.println(startCharacter);
        
        Resources availableResources = new Resources();

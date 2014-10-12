@@ -9,6 +9,7 @@ import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Resources;
+import byui.cit260.ableHunter.model.Scene;
 import byui.cit260.ableHunter.model.Weapons;
 
 /**
@@ -63,6 +64,19 @@ public class AbleHunter {
        
        String weaponsInfo = availableWeapons.toString();
        System.out.println(availableWeapons);
+       
+       Scene availableScene = new Scene();
+       availableScene.setLodgeDefault("Starting Scene");
+       availableScene.setIsland("Next Scene");
+       availableScene.setForest("Third Scene");
+       availableScene.setDesert("Fourth Secen");
+       availableScene.setMointain("Fifth Sene");
+       availableScene.setLevels(6);
+       
+       String sceneInfo = availableScene.toString();
+       System.out.println(availableScene);
+       
+       
        
        
        

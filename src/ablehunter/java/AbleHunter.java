@@ -9,6 +9,7 @@ import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Resources;
+import byui.cit260.ableHunter.model.Weapons;
 
 /**
  *
@@ -51,6 +52,17 @@ public class AbleHunter {
        
        String resourcesInfo = availableResources.toString();
        System.out.println(availableResources);
+       
+       Weapons availableWeapons = new Weapons();
+       availableWeapons.setHandsDefault("Level 0 Weapon");
+       availableWeapons.setSwordWood("Level 3 Weapon");
+       availableWeapons.setSwordIron("Level 4 Weapon");
+       availableWeapons.setSwordDiamond("Level 6 Weapon");
+       availableWeapons.setSpear("Level 2 Weapon");
+       availableWeapons.setBowArrow("Level 1 Weapon");
+       
+       String weaponsInfo = availableWeapons.toString();
+       System.out.println(availableWeapons);
        
        
        

@@ -12,13 +12,10 @@ import java.util.Objects;
  *
  * @author Jason
  */
-public class Player implements Serializable{
-    
+public class Avatar implements Serializable{
     private String name;
-    private double bestTime;
-   
 
-    public Player() {
+    public Avatar() {
     }
     
     
@@ -31,24 +28,15 @@ public class Player implements Serializable{
         this.name = name;
     }
 
-    public double getBestTime() {
-        return bestTime;
-    }
-
-    public void setBestTime(double bestTime) {
-        this.bestTime = bestTime;
-    }
-
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "Avatar{" + name + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.name);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.name);
         return hash;
     }
 
@@ -60,18 +48,18 @@ public class Player implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Player other = (Player) obj;
+        final Avatar other = (Avatar) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
-            return false;
-        }
         return true;
+    }
+
+    
     }
     
     
     
     
     
-}
+

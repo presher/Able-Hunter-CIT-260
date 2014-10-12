@@ -5,6 +5,7 @@
  */
 package ablehunter.java;
 
+import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 
@@ -34,6 +35,14 @@ public class AbleHunter {
        String gameInfo = startGame.toString();
        System.out.println(gameInfo);
         
+       Avatar startCharacter = new Avatar();
+       
+       startCharacter.setName("Ariel The Hunter");
+       System.out.println(startCharacter);
+       
+       
+       
+       
     }
     
 }

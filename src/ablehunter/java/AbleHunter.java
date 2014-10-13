@@ -47,7 +47,7 @@ public class AbleHunter {
                 String fullName;   
        System.out.print("Please Enter Your Name");
               fullName = enterName.next();      
-        System.out.println("Hello" + fullName);
+        System.out.println("Hello " + fullName);
         
         Player playerOne = new Player();
         

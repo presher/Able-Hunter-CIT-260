@@ -43,12 +43,27 @@ public class AbleHunter {
      */
     public static void main(String[] args) {
         
-        Scanner enterName = new Scanner(System.in);
+        
+        
+         Scanner enterHeight = new Scanner(System.in);
+                double height; 
+         Scanner enterLength = new Scanner(System.in);       
+                double length;  
+                
+       System.out.print("Please Enter The Height ");
+        height = enterHeight.nextDouble();      
+        System.out.print("Please Enter The Length ");
+        length = enterLength.nextDouble();
+        System.out.println("Height is " + height + "Length is " + length);
+       
+       
+    
+     Scanner enterName = new Scanner(System.in);
                 String fullName;   
        System.out.print("Please Enter Your Name");
               fullName = enterName.next();      
         System.out.println("Hello " + fullName);
-        
+           
         Player playerOne = new Player();
         
         playerOne.setName(fullName);
@@ -258,6 +273,8 @@ public class AbleHunter {
        
        String diamondWeaponInfo = diamondWeapon.toString();
        System.out.println(diamondWeapon);
+       
+       EnterHeight enterHeight = new EnterHeight();
        
     
        

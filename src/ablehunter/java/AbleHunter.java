@@ -6,6 +6,8 @@
 package ablehunter.java;
 
 
+
+//import byui.cit260.ableHunter.control.ArmorControl;
 import byui.cit260.ableHunter.model.Armor;
 import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.BowWeapon;
@@ -49,20 +51,38 @@ public class AbleHunter {
                 double height; 
          Scanner enterLength = new Scanner(System.in);       
                 double length;  
-                
+         int width = 6;
        System.out.print("Please Enter The Height ");
-        height = enterHeight.nextDouble();      
+        height = enterHeight.nextDouble();     
+        
         System.out.print("Please Enter The Length ");
         length = enterLength.nextDouble();
-        System.out.println("Height is " + height + "Length is " + length);
+        
+        double cubicFt = length * width * height;
+        
+        System.out.println("The cubic feet of Armor is " + cubicFt);
        
        
     
      Scanner enterName = new Scanner(System.in);
                 String fullName;   
-       System.out.print("Please Enter Your Name");
+       System.out.print("Please Enter Your Name ");
               fullName = enterName.next();      
         System.out.println("Hello " + fullName);
+        
+        Scanner readyToPlay = new Scanner(System.in);
+             
+            System.out.print("Are you ready to play ");
+            String letsPlay = readyToPlay.next();
+            
+            if (letsPlay.equals("yes")){
+                System.out.println("Great Please Press Start ");
+                
+            }
+            else{
+                System.out.println("Please Press Start When You Are Ready ");
+                return;
+            }
            
         Player playerOne = new Player();
         
@@ -274,9 +294,9 @@ public class AbleHunter {
        String diamondWeaponInfo = diamondWeapon.toString();
        System.out.println(diamondWeapon);
        
-       EnterHeight enterHeight = new EnterHeight();
+    }  
        
-    
+}
        
                 
                        
@@ -297,6 +317,5 @@ public class AbleHunter {
        
        
        
-    }
+    
    
-}

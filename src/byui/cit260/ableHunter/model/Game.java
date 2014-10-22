@@ -72,18 +72,3 @@ public class Game  implements Serializable{
     
     
 }
-
-public class Game {
-    public final static String PLAYER_A_DEFAULT_MARKER = "X";
-    
-    public static final String ONE_PLAYER = "ONE_PLAYER";
-    
-    public static final String NO_ACTIVE_GAME = "NO_GAME_STARTED";
-    public static final String NEW_GAME = "NEW_GAME";
-    public static final String PLAYING = "PLAYING"; 
-    public static final String WINNER = "WINNER"; 
-    public static final String TIE = "TIE"; 
-    public static final String QUIT = "QUIT"; 
-    public static final String ERROR = "ERROR";
-    public static final String EXIT = "EXIT";
-}

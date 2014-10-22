@@ -9,7 +9,6 @@ package byui.cit260.ableHunter.control;
  *
  * @author adm-achina
  */
-public class SceneControl {
-    public SceneControl (avatar, map);
+public class WeaponsControl {
     
 }

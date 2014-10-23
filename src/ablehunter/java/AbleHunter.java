@@ -8,6 +8,7 @@ package ablehunter.java;
 
 
 //import byui.cit260.ableHunter.control.ArmorControl;
+import byui.cit260.ableHunter.control.HelpMenu;
 import byui.cit260.ableHunter.model.Armor;
 import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.BowWeapon;
@@ -42,10 +43,40 @@ public class AbleHunter {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+        throws java.io.IOException
+    
+    {
+        char play;
+        char name;
+       char help;
+       char helpGame;
+            
+        for(;;){
+            do{
         
+        System.out.println("************************************************\n"
+                          +"* Welcome To Able Hunter                       *\n"
+                          +"* Your Object will be create armor and weapons *\n"
+                          +"* To find ore to create the armor and weapons  *\n"
+                          +"* To defend against attacks                    *\n"
+                          +"* All to be done over several scenes and levels*\n"
+                          +"* c to continue:                               *\n" 
+                          +"************************************************\n");
+                play = (char)System.in.read();
+            }while ( play != 'c');
+                    if(play == 'c') break;
+        }
         
+                  
+        
+        Scanner enterName = new Scanner(System.in);
+                String fullName;   
+       System.out.print("Please Enter Your Name ");
+              fullName = enterName.next();      
+        System.out.println("Hello " + fullName);
         
          Scanner enterHeight = new Scanner(System.in);
                 double height; 
@@ -64,11 +95,7 @@ public class AbleHunter {
        
        
     
-     Scanner enterName = new Scanner(System.in);
-                String fullName;   
-       System.out.print("Please Enter Your Name ");
-              fullName = enterName.next();      
-        System.out.println("Hello " + fullName);
+     
         
         Scanner readyToPlay = new Scanner(System.in);
              
@@ -83,7 +110,8 @@ public class AbleHunter {
                 System.out.println("Please Press Start When You Are Ready ");
                 return;
             }
-           
+         HelpMenu helpMenu = new HelpMenu();  
+         
         Player playerOne = new Player();
         
         playerOne.setName(fullName);
@@ -294,9 +322,10 @@ public class AbleHunter {
        String diamondWeaponInfo = diamondWeapon.toString();
        System.out.println(diamondWeapon);
        
-    }  
+    }         
+}   
        
-}
+
        
                 
                        

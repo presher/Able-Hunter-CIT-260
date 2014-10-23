@@ -10,5 +10,7 @@ package byui.cit260.ableHunter.control;
  * @author adm-achina
  */
 public class SceneControl {
-    public startNewScene (avatar, map)
+    //public startNewScene (){
+        
+    //}
 }

@@ -8,7 +8,9 @@ package byui.cit260.ableHunter.control;
 /**
  *
  * @author Jason
- */
+ * //
+
+ 
 public class ArmorControl { //Algorithm for checking accuracy
     public double calcCubicFeetOfArmor( double depth, double length, double width) {
         if (depth <= 0){ //Then
@@ -43,4 +45,5 @@ double cubicFeet = (depth * length * width);
     return cubicFeet;
 
     }
+
 }

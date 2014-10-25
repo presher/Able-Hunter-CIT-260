@@ -9,6 +9,6 @@ package byui.cit260.ableHunter.control;
  *
  * @author adm-achina
  */
-public class WeaponsControl {
+public class InventoryControl {
     
 }

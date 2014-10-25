@@ -31,7 +31,7 @@ public class ArmorControlTest {
      * Test of calcCubicFeetOfArmor method, of class ArmorControl.
      */
     @Test
-    public void testCalcCubicFeetOfArmor() {
+    public void testCalcCubicFeetOfArmor() {//Authored by Felix and Jason
         System.out.println("calcCubicFeetOfArmor Test");
         System.out.println("\tTest Case 1");
         ArmorControl instance = new ArmorControl();

@@ -14,8 +14,3 @@ public class SceneControl {
     //public startNewScene (String avatar, String Map ){
     //}
     }
-//=======
-    
-    
-//>>>>>>> origin/master
-

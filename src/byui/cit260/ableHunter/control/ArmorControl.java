@@ -8,7 +8,7 @@ package byui.cit260.ableHunter.control;
 /**
  *
  * @author Jason
- * //
+ */
 
  
 public class ArmorControl { //Algorithm for checking accuracy

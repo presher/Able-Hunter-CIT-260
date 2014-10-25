@@ -8,6 +8,7 @@ package ablehunter.java;
 
 
 //import byui.cit260.ableHunter.control.ArmorControl;
+import byui.cit260.ableHunter.control.CharacterControl;
 import byui.cit260.ableHunter.control.HelpMenu;
 import byui.cit260.ableHunter.model.Armor;
 import byui.cit260.ableHunter.model.Avatar;
@@ -111,6 +112,7 @@ public class AbleHunter {
                 return;
             }
          HelpMenu helpMenu = new HelpMenu();  
+         CharacterControl characterControlInput = new CharacterControl();
          
         Player playerOne = new Player();
         

@@ -5,10 +5,21 @@
  */
 package byui.cit260.ableHunter.control;
 
+import java.util.Scanner;
+
 /**
  *
  * @author adm-achina
  */
 public class PlayerControl {
+    public static void main(String[] args) {
+        PlayerControl player = new PlayerControl();
     
+    System.out.println("Please enter your name");
+         Scanner enterName = new Scanner(System.in);
+                String fullName;   
+       System.out.print("Please Enter Your Name ");
+              fullName = enterName.next();      
+        System.out.println("Hello " + fullName);
+            }
 }

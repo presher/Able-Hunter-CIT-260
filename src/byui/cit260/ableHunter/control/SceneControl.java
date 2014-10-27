@@ -12,7 +12,7 @@ import byui.cit260.ableHunter.model.Mountain;
 
 public class SceneControl {
     public String sceneControl;
-    public static void main(String[] args)throws java.io.IOException{  
+    public static void main(String[] args)throws java.io.IOException{  //Coded By Jason
         Desert desert = new Desert();
         Mountain mountain = new Mountain();
         Lodge lodge = new Lodge();

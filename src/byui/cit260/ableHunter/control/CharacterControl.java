@@ -21,8 +21,8 @@ public class CharacterControl {
      */
     public static void main(String[] args) //Coded by Jason
          throws java.io.IOException{
-     char avatar, ignore;
-    CharacterControl characterControlInput = new CharacterControl();
+            char avatar, ignore;
+                CharacterControl characterControlInput = new CharacterControl();
         for(;;){
             do{
                 System.out.println("\n Please enter w to move one space");

@@ -12,7 +12,8 @@ import java.io.IOException;
  * @author adm-achina
  */
 public class CharacterControl {
-
+        public String characterControl;
+    
     /**
      *
      * @param args

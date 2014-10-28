@@ -19,6 +19,11 @@ public class InventoryControl {
     public double getTotalItem(int howMany, int quantity) {
         
         /* Instructor: 
+         * There is no unit test file for InventoryControl. You need to have 
+         * a unit test for each control function you create. 
+         */
+        
+        /* Instructor: 
          * You needed to included checks for invalid values for howManu 
          * and quantity. 
          */

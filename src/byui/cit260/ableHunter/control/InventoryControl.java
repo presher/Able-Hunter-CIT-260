@@ -17,7 +17,20 @@ public class InventoryControl {
     private double totalItem;
     
     public double getTotalItem(int howMany, int quantity) {
+        
+        /* Instructor: 
+         * You needed to included checks for invalid values for howManu 
+         * and quantity. 
+         */
         if (howMany == 1) {
+            /* Instructor: 
+             * You typed the same equation for three conditions. It would be 
+             * simplier to put the equation after the selection statement and 
+             *  only change the value of item for each condition.
+             *
+             * Also, the first condition and the third condition have the same
+             * action. Combine these two conditions into one condition.
+             */
             double totalItem = item * quantity;
         }
         else if (howMany == 2) {

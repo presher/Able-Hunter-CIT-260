@@ -34,6 +34,8 @@ import byui.cit260.ableHunter.model.Scene;
 import byui.cit260.ableHunter.model.SpearWeapon;
 import byui.cit260.ableHunter.model.Weapons;
 import byui.cit260.ableHunter.model.WoodenWeapon;
+import byui.cit260.ableHunter.view.AbleHunterStartView;
+
 import java.util.Scanner;
 
 /**
@@ -47,9 +49,12 @@ public class AbleHunter {
      * @throws java.io.IOException
      */
     public static void main(String[] args) 
-        throws java.io.IOException
-    
-    {
+        throws java.io.IOException{
+        
+            AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
+            ableHunterStartView.ableHunterStart();
+        
+        
         char play;
         char name;
        char help;

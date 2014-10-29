@@ -13,6 +13,11 @@ import java.util.Scanner;
  */
 public class PlayerControl {
     public static void main(String[] args) {
+        
+        /* Instructor: 
+         * Please watch your indentation. When you do not indent consisitently 
+         * it makes it very hard to read your code.
+         */
         PlayerControl player = new PlayerControl();
     
     System.out.println("Please enter your name");

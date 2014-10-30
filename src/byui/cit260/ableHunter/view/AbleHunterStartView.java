@@ -26,6 +26,10 @@ public class AbleHunterStartView {
              Player player = ProgramControl.createPlayer(playersName);
        //Display Welcome Message
              this.welcomeMessage(player);
+             
+             //Display the Main menu.
+          MainMenuView mainMenu = new MainMenuView (); //coded by Felix
+            mainMenu.displayMenu ();
    }
 
     private void displayStart() {//Coded By Jason

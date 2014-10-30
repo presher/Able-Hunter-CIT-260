@@ -8,7 +8,7 @@ package ablehunter.java;
 
 
 //import byui.cit260.ableHunter.control.ArmorControl;
-import byui.cit260.ableHunter.control.CharacterControl;
+/*import byui.cit260.ableHunter.control.CharacterControl;
 import byui.cit260.ableHunter.control.HelpMenu;
 import byui.cit260.ableHunter.model.Armor;
 import byui.cit260.ableHunter.model.Avatar;
@@ -33,10 +33,12 @@ import byui.cit260.ableHunter.model.Resources;
 import byui.cit260.ableHunter.model.Scene;
 import byui.cit260.ableHunter.model.SpearWeapon;
 import byui.cit260.ableHunter.model.Weapons;
-import byui.cit260.ableHunter.model.WoodenWeapon;
+import byui.cit260.ableHunter.model.WoodenWeapon;*/
+import byui.cit260.ableHunter.model.Game;
+import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.view.AbleHunterStartView;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
@@ -53,9 +55,30 @@ public class AbleHunter {
         
             AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
             ableHunterStartView.ableHunterStart();
+
+            private static Game currentGame = null;//coded by Jason
+                private static Player player = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        AbleHunter.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        AbleHunter.player = player;
+    }
+                
+    }
+
         
-        
-        char play;
+      /*  char play;
         char name;
        char help;
        char helpGame;
@@ -330,7 +353,7 @@ public class AbleHunter {
        System.out.println(diamondWeapon);
        
     }         
-}   
+}*/   
        
 
        

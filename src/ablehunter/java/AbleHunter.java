@@ -45,6 +45,8 @@ import byui.cit260.ableHunter.view.AbleHunterStartView;
  * @author Jason @ Felix
  */
 public class AbleHunter {
+    private static Game currentGame = null;
+    private static Player player = null; // This variable was not there so the error. by Felix
 
     /**
      * @param args the command line arguments
@@ -56,14 +58,14 @@ public class AbleHunter {
             AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
             ableHunterStartView.ableHunterStart();
 
-            private static Game currentGame = null;//coded by Jason
-                private static Player player = null;
+           // private static Game currentGame = null;//coded by Jason (This line of code need to be off. By Felix)
+              //  private static Player player = null;
 
-    public static Game getCurrentGame() {
-        return currentGame;
+   // public static Game getCurrentGame() {
+       // return currentGame;
     }
-
-    public static void setCurrentGame(Game currentGame) {
+    
+    public static void setCurrentGame(Game currentGame) { //fix by Felix
         AbleHunter.currentGame = currentGame;
     }
 

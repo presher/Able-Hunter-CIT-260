@@ -20,11 +20,26 @@ public class PlayerControl {
          */
         PlayerControl player = new PlayerControl();
     
-    System.out.println("Please enter your name");
+            System.out.println("Please enter your name");
+    
          Scanner enterName = new Scanner(System.in);
-                String fullName;   
-       System.out.print("Please Enter Your Name ");
-              fullName = enterName.next();      
+                         String fullName;   
+                System.out.print("Please Enter Your Name ");
+                    fullName = enterName.next();  
+              
         System.out.println("Hello " + fullName);
             }
 }
+   // public void createPlayerList() {
+   //     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   // }
+
+    //public void startGame(int i) {
+    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   // }
+
+ //  public void displayHelpMenu() {
+    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   // }
+
+    

@@ -20,6 +20,7 @@ public class ProgramControl {
        // System.out.println("Create Player Function Called Later");
         Player player = new Player();
         player.setName(name);
+        
         AbleHunter.setPlayer(player);
       return player ;
     }

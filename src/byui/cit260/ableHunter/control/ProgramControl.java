@@ -21,7 +21,7 @@ public class ProgramControl {
         Player player = new Player();
         player.setName(name);
         AbleHunter.setPlayer(player);
-      return player ;
+        return player ;
     }
     
 }

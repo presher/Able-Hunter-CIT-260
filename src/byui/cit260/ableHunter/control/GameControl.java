@@ -5,10 +5,16 @@
  */
 package byui.cit260.ableHunter.control;
 
+import byui.cit260.ableHunter.model.Player;
+
 /**
  *
  * @author adm-achina
  */
 public class GameControl {
+
+    public static void starNewGame(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

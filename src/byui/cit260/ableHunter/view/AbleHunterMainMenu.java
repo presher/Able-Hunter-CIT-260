@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.ableHunter.control;
+package byui.cit260.ableHunter.view;
 
+import ablehunter.java.AbleHunter;
+import byui.cit260.ableHunter.control.GameControl;
+import byui.cit260.ableHunter.control.HelpMenu;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -12,17 +15,17 @@ import java.util.Scanner;
  *
  * @author Jason
  */
-public class HelpMenu{
-     private final String Menu = "\n"
+public class AbleHunterMainMenu {
+    
+    private final String Menu = "\n"
            + "\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-            + "\n able Hunter Help Menu"
-           + "\nP How To Play The Game"
-           + "\nW How To Create Weapon"
-           + "\nA How To Create Armor"
+            + "\n able Hunter Main Menu"
+           + "\nG Start Game"
+           + "\nH Help Menu"
+           + "\nS Save Your Game"
            + "\nE End Game and Exit"
            + "\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
-     
-   public void displayHelpMenu() throws IOException {
+    void displayMenu() throws IOException {
          //To change body of generated methods, choose Tools | Templates.
         char selection = ' ';
         do {
@@ -32,48 +35,9 @@ public class HelpMenu{
             
             this.doAction(selection);
         }while (selection != 'E');
-        System.out.println("***This calls the HelpMenu()***");
+        System.out.println("***This calls the AbleHunterMainMenu()***");
     }
-    /*public String helpMenu;
-
-    public HelpMenu() {
-    }
-
-    public String getHelpMenu() {
-        return helpMenu;
-    }
-
-    public void setHelpMenu(String helpMenu) {
-        this.helpMenu = helpMenu;
-    }
-
-    @Override
-    public String toString() {
-        return "HelpMenu{" + "helpMenu=" + helpMenu + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Objects.hashCode(this.helpMenu);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final HelpMenu other = (HelpMenu) obj;
-        if (!Objects.equals(this.helpMenu, other.helpMenu)) {
-            return false;
-        }
-        return true;
-    }*/
-             private String getInput() {//Coded By Jason
+    private String getInput() {//Coded By Jason
          //To change body of generated methods, choose Tools | Templates.
         
         boolean valid = false;
@@ -81,10 +45,10 @@ public class HelpMenu{
         Scanner keyboard = new Scanner(System.in);//get input from keyoard
             while (!valid){
                 System.out.print("\n Please Enter A Choice to Continue"
-                        + "\n able Hunter Help Menu"
-                        + "\nP How To Play The Game"
-                        + "\nW How To Create Weapon"
-                        + "\nA How To Create Armor"
+                        + "\nN To Start New Game"
+                        + "\nG Continue Exisitng Game"
+                        + "\nH For Help"
+                        + "\nS To Save Your Game"
                         + "\nE To Exit Game");
                     input = keyboard.nextLine();
                     input = input.trim();
@@ -99,8 +63,6 @@ public class HelpMenu{
             return input;
     }
 
-    
-    
     private void doAction(char selection) throws IOException {
         //To change body of generated methods, choose Tools | Templates.
         HelpMenu helpMenu = new HelpMenu();
@@ -109,17 +71,17 @@ public class HelpMenu{
                 do{
         input = (char) System.in.read();
         switch (input){
-                           case 'P':
-                               this.howToPlay();
+                           case 'N':
+                               this.startNewGame();
                                break;
-                                case 'W'://Get Existing Game
-                                   this.makeWeapon();
+                                case 'G'://Get Existing Game
+                                   this.startExistingGame();
                                     break;
-                                    case 'A':
-                                        this.makeArmor();
+                                    case 'H':
+                                        this.getHelpMenu();
                                         break;
-                                            case 'M':                                                        
-                                               this.mapView();
+                                            case 'S':                                                        
+                                               this.saveGame();
                                                 break;
                                                     case 'E':
                                                         return;
@@ -130,21 +92,33 @@ public class HelpMenu{
                 }while(input != 'E');
                 }
     }
-
-    private void howToPlay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void makeWeapon() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void makeArmor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void mapView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-}
     
+
+    private void startNewGame() {
+         //To change body of generated methods, choose Tools | Templates.
+        System.out.println("This option will begin a new game");
+        GameControl.starNewGame(AbleHunter.getPlayer());
+        
+            GameStartMenu gameMenu = new GameStartMenu();
+            gameMenu.displayMenu();
+    }
+
+    private void startExistingGame() {
+         //To change body of generated methods, choose Tools | Templates.
+        System.out.println("This option will resume a previously saved game");
+    }
+
+    private void getHelpMenu() throws IOException {
+        //To change body of generated methods, choose Tools | Templates.
+        System.out.println("This option will bring up the Help Menu");
+        HelpMenu helpMenu = new HelpMenu();
+        helpMenu.displayHelpMenu();
+
+    }
+
+    private void saveGame() {
+         //To change body of generated methods, choose Tools | Templates.
+        System.out.println("This option will save the game");
+    }
+
+}

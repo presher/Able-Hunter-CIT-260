@@ -37,6 +37,7 @@ import byui.cit260.ableHunter.model.WoodenWeapon;*/
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.view.AbleHunterStartView;
+import java.io.IOException;
 
 //import java.util.Scanner;
 
@@ -45,21 +46,12 @@ import byui.cit260.ableHunter.view.AbleHunterStartView;
  * @author Jason @ Felix
  */
 public class AbleHunter {
-
-    /**
-     * @param args the command line arguments
-     * @throws java.io.IOException
-     */
-    public static void main(String[] args) 
-        throws java.io.IOException{
-        
-            AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
-            ableHunterStartView.ableHunterStart();
-
-            private static Game currentGame = null;//coded by Jason
-                private static Player player = null;
-
-    public static Game getCurrentGame() {
+    
+         private static Game currentGame = null;//coded by Jason
+          private static Player player = null;
+          
+          
+          public static Game getCurrentGame() {
         return currentGame;
     }
 
@@ -74,9 +66,29 @@ public class AbleHunter {
     public static void setPlayer(Player player) {
         AbleHunter.player = player;
     }
-                
-    }
+          
+          
 
+    public static void main(String[] args) throws IOException 
+        //throws java.io.IOException
+    {
+        
+            AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
+            ableHunterStartView.ableHunterStart();
+            
+            
+           
+               
+
+    
+            
+            
+            
+            
+            
+            
+  }
+}
         
       /*  char play;
         char name;

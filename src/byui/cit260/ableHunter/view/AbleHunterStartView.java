@@ -6,26 +6,32 @@
 package byui.cit260.ableHunter.view;
 
 
+import byui.cit260.ableHunter.control.HelpMenu;
 import byui.cit260.ableHunter.control.ProgramControl;
 import byui.cit260.ableHunter.model.Player;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  *
  * @author Jason
  */
-public class AbleHunterStartView {
+public class AbleHunterStartView {//Coded by jason
     //private Object ProgramControl;
 //Coded By Jason
-   public void ableHunterStart(){
+   public void ableHunterStart() throws IOException{//jason
        //Display Welcome Screen.
-            this.displayStart();
+            this.displayStart();//jason
        //Get The Players Name
-            String playersName = this.getPlayersName();
+            String playersName = this.getPlayersName();//jason
        //Create and Save the player
-             Player player = ProgramControl.createPlayer(playersName);
+             Player player = ProgramControl.createPlayer(playersName);//jason
        //Display Welcome Message
-             this.welcomeMessage(player);
+             this.welcomeMessage(player);//jason
+       //Display The Main Menu
+             AbleHunterMainMenu mainMenu = new AbleHunterMainMenu();
+        mainMenu.displayMenu();
+           
    }
 
     private void displayStart() {//Coded By Jason

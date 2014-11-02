@@ -8,6 +8,7 @@ package byui.cit260.ableHunter.view;
 import ablehunter.java.AbleHunter;
 import byui.cit260.ableHunter.control.GameControl;
 import byui.cit260.ableHunter.control.HelpMenu;
+import byui.cit260.ableHunter.control.StartNewGame;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ import java.util.Scanner;
  *
  * @author Jason
  */
-public class AbleHunterMainMenu {
+public class AbleHunterMainMenu {//Created by and coded by Jason
     
     private final String Menu = "\n"
            + "\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
@@ -49,7 +50,8 @@ public class AbleHunterMainMenu {
                         + "\nG Continue Exisitng Game"
                         + "\nH For Help"
                         + "\nS To Save Your Game"
-                        + "\nE To Exit Game");
+                        + "\nE To Exit Game"
+                        + "\n");
                     input = keyboard.nextLine();
                     input = input.trim();
                     
@@ -66,7 +68,7 @@ public class AbleHunterMainMenu {
     private void doAction(char selection) throws IOException {
         //To change body of generated methods, choose Tools | Templates.
         HelpMenu helpMenu = new HelpMenu();
-        char input;
+        char input = 0;
             for(;;){
                 do{
         input = (char) System.in.read();
@@ -85,23 +87,15 @@ public class AbleHunterMainMenu {
                                                 break;
                                                     case 'E':
                                                         return;
-                                                    default:
-                                                        System.out.println("Oops not a valid input try again");
-                                                            break;
+                                                    //default:
+                                                     //   System.out.println("Oops not a valid input try again");
+                                                          //  return;
         }                                                    
                 }while(input != 'E');
                 }
     }
     
-
-    private void startNewGame() {
-         //To change body of generated methods, choose Tools | Templates.
-        System.out.println("This option will begin a new game");
-        GameControl.starNewGame(AbleHunter.getPlayer());
-        
-            GameStartMenu gameMenu = new GameStartMenu();
-            gameMenu.displayMenu();
-    }
+ 
 
     private void startExistingGame() {
          //To change body of generated methods, choose Tools | Templates.
@@ -119,6 +113,13 @@ public class AbleHunterMainMenu {
     private void saveGame() {
          //To change body of generated methods, choose Tools | Templates.
         System.out.println("This option will save the game");
+    }
+
+    private void startNewGame() throws IOException {
+        //To change body of generated methods, choose Tools | Templates.
+        StartNewGame startNewGame = new StartNewGame();
+        startNewGame.NewGame();
+        System.out.println("This will start the game");
     }
 
 }

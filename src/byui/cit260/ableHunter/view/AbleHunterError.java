@@ -18,5 +18,9 @@ public class AbleHunterError { //coded by Felix
             System.out.println("\t++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         return null;
     }
+
+    void display(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

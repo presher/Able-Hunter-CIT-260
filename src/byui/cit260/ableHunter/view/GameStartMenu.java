@@ -5,16 +5,18 @@
  */
 package byui.cit260.ableHunter.view;
 
+import java.io.IOException;
+
 /**
  *
  * @author Jason
  */
 public class GameStartMenu {
 
-    void displayMenu() {
+    void displayMenu() throws IOException {
        /*  //To change body of generated methods, choose Tools | Templates.
         private void doAction(char selection) throws IOException {
-        //To change body of generated methods, choose Tools | Templates.
+        //To change body of generated methods, choose Tools | Templates.*/
         GameStartMenu gameStart = new GameStartMenu();
         char input;
             for(;;){
@@ -42,7 +44,22 @@ public class GameStartMenu {
                 }while(input != 'E');
                 }
     }
-    }*/
+
+    private void startNewGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void startExistingGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void getHelpMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void saveGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    }
     
-}
-}
+

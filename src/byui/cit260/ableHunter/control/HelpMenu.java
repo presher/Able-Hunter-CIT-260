@@ -24,7 +24,7 @@ public class HelpMenu{
      
    public void displayHelpMenu() throws IOException {
          //To change body of generated methods, choose Tools | Templates.
-        char selection = ' ';
+        char selection;
         do {
             System.out.println("Able Hunter Main Menu");//Show Main Menu
             String input = this.getInput();

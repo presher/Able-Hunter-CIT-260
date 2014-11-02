@@ -30,13 +30,13 @@ public class AbleHunterStartView {//Coded by jason
              this.welcomeMessage(player);//jason
        //Display The Main Menu
              AbleHunterMainMenu mainMenu = new AbleHunterMainMenu();
-        mainMenu.displayMenu();
+         mainMenu.displayMenu();
            
              this.welcomeMessage(player);
              
              //Display the Main menu.
-          MainMenuView mainMenu = new MainMenuView (); //coded by Felix
-            mainMenu.displayMenu ();
+          //MainMenuView mainMenu = new MainMenuView (); //coded by Felix
+           // mainMenu.displayMenu ();
    }
 
     private void displayStart() {//Coded By Jason
@@ -78,7 +78,8 @@ END
         String playersName = null;
         Scanner keyboard = new Scanner(System.in);//get input from keyoard
             while (!valid){
-                System.out.print("Please Enter Your Name At Least 1 Letter");
+                System.out.print("\nPlease Enter Your Name At Least 1 Letter"
+                        + "\n");
                     playersName = keyboard.nextLine();
                     playersName = playersName.trim();
                     

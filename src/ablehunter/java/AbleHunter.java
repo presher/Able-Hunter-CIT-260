@@ -121,9 +121,9 @@ public class AbleHunter {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static Scanner getInputFile() {
+    /*public static Scanner getInputFile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 }
         
       /*  char play;

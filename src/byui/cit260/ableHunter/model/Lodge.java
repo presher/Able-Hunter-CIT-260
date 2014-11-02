@@ -17,7 +17,9 @@ public class Lodge implements Serializable{
     private String weather; //hot, cold, rain, snow
     private String timeOfDay; //day, night
     private String difficulty; // easy, medium, hard
-
+public void displayLodgeScene(){
+    System.out.println("You have entered the Lodge Scene");
+}
     public Lodge() {
     }
 

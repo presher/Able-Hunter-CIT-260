@@ -17,7 +17,9 @@ public class Island implements Serializable{
     private String weather; //hot, cold, rain, snow
     private String timeOfDay; //day or night
     private String difficulty; //easy, medium, hard
-
+public void displayIslandScene(){
+    System.out.println("You have entered the Island Scene");
+}
     public Island() {
     }
 

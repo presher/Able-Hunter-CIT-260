@@ -6,6 +6,7 @@
 package byui.cit260.ableHunter.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Objects;
 
 /**
@@ -17,7 +18,10 @@ public class Mountain implements Serializable{
     private String weather; //hot, cold, rain, snow
     private String timeOfDay; //day, night
     private String difficulty; //easy, medium, hard
-
+   
+public void displayMountainScene(){
+    System.out.println("You have entered the Mountain Scene");
+}
     public Mountain() {
     }
 
@@ -37,11 +41,14 @@ public class Mountain implements Serializable{
         this.weather = weather;
     }
 
-    public String getTimeOfDay() {
+    public String getTimeOfDay(){
+       
         return timeOfDay;
     }
 
     public void setTimeOfDay(String timeOfDay) {
+        int getTimeOfDay = Calendar.ALL_STYLES;
+        
         this.timeOfDay = timeOfDay;
     }
 

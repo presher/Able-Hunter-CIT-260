@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class MainMenuView {
         
-        void displayMenu(){
+       /* void displayMenu(){
             System.out.println("*** MainMenuView.displayMenu() function called ***");
         }
     
@@ -78,6 +78,6 @@ public class MainMenuView {
             System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
         }
         System.out.println("\t===============================================================\n");
-    }   
+    } */  
     
 }

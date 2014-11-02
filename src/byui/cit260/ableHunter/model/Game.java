@@ -5,6 +5,7 @@
  */
 package byui.cit260.ableHunter.model;
 
+import byui.cit260.ableHunter.view.Board;
 import java.io.Serializable;
 
 /**
@@ -65,6 +66,14 @@ public class Game  implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public Object getCurrentPlayer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Board getBoard() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

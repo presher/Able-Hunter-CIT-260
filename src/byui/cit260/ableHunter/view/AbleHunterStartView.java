@@ -32,6 +32,11 @@ public class AbleHunterStartView {//Coded by jason
              AbleHunterMainMenu mainMenu = new AbleHunterMainMenu();
         mainMenu.displayMenu();
            
+             this.welcomeMessage(player);
+             
+             //Display the Main menu.
+          MainMenuView mainMenu = new MainMenuView (); //coded by Felix
+            mainMenu.displayMenu ();
    }
 
     private void displayStart() {//Coded By Jason

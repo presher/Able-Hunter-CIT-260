@@ -37,7 +37,7 @@ import byui.cit260.ableHunter.model.WoodenWeapon;*/
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.view.AbleHunterStartView;
-import java.io.IOException;
+import java.util.Scanner;
 
 //import java.util.Scanner;
 
@@ -46,35 +46,58 @@ import java.io.IOException;
  * @author Jason @ Felix
  */
 public class AbleHunter {
+//<<<<<<< HEAD
     
-         private static Game currentGame = null;//coded by Jason
-          private static Player player = null;
+         private static Game Game = null;//coded by Jason
+          private static Player currentPlayer = null;
           
           
           public static Game getCurrentGame() {
-        return currentGame;
-    }
+        return Game;
+          }
+//=======//=======
+    //private static Game game = null;
+    //private static Player player = null; // This variable was not there so the error. by Felix
 
-    public static void setCurrentGame(Game currentGame) {
-        AbleHunter.currentGame = currentGame;
-    }
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) 
+        throws java.io.IOException{
+        
+            AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
+            ableHunterStartView.ableHunterStart();
 
-    public static Player getPlayer() {
-        return player;
+           // private static Game Game = null;//coded by Jason (This line of code need to be off. By Felix)
+              //  private static Player currentPlayer = null;
+
+    /*public void Game getCurrentGame() {//this grayed out selection causing errors
+        return Game;
+    }
+//>>>>>>> origin/master
+    
+    
+  public void setCurrentGame(Game currentGame) { //fix by Felix
+        AbleHunter.Game = currentGame;
+    }*/
+
+    /*public static Player getPlayer() {
+        return currentPlayer;
     }
 
     public static void setPlayer(Player player) {
-        AbleHunter.player = player;
-    }
+        AbleHunter.currentPlayer = player;
+    }*/
           
           
 
-    public static void main(String[] args) throws IOException 
+    /*public static void main(String[] args) throws IOException 
         //throws java.io.IOException
     {
         
             AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
-            ableHunterStartView.ableHunterStart();
+            ableHunterStartView.ableHunterStart();*/
             
             
            
@@ -87,7 +110,20 @@ public class AbleHunter {
             
             
             
-  }
+  
+}
+
+    public static void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static Player getPlayer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static Scanner getInputFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
         
       /*  char play;

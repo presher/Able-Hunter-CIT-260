@@ -29,8 +29,14 @@ public class AbleHunterStartView {//Coded by jason
        //Display Welcome Message
              this.welcomeMessage(player);//jason
        //Display The Main Menu
-             AbleHunterMainMenu mainMenu = new AbleHunterMainMenu();
-         mainMenu.displayMenu();
+             AbleHunterMainMenu mainMenu = new AbleHunterMainMenu() {
+
+                @Override
+                public void doInput(String value) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+         mainMenu.display();
            
              this.welcomeMessage(player);
              

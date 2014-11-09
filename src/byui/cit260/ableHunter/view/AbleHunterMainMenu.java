@@ -16,17 +16,23 @@ import java.util.Scanner;
  *
  * @author Jason
  */
-public class AbleHunterMainMenu {//Created by and coded by Jason
+public abstract class AbleHunterMainMenu extends View{//Created by and coded by Jason
     
-    private final String Menu = "\n"
-           + "\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-            + "\n able Hunter Main Menu"
-           + "\nG Start Game"
-           + "\nH Help Menu"
-           + "\nS Save Your Game"
-           + "\nE End Game and Exit"
-           + "\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
-    void displayMenu() throws IOException {
+    public AbleHunterMainMenu(){//Team Felix and Jason
+       super("\n"
+                + "\n-------------------------------------------"
+                + "\n| Main Menu"
+                + "\n-------------------------------------------"
+                + "\nN-Start New Game"
+                + "\nG-Get and Start Saved Game"
+                + "\nH-Get Help How to Play"
+                + "\nS-Save Game"
+                + "\nQ-Quit Game"
+                + "\n_____________________________________________");
+    
+    }
+}
+    /*void displayMenu() throws IOException {
          //To change body of generated methods, choose Tools | Templates.
         char selection = ' ';
         do {
@@ -58,7 +64,7 @@ public class AbleHunterMainMenu {//Created by and coded by Jason
                         /*if(.length() < 1){
                             System.out.println("Please Enter A Valid Name At Least One Letter \n");
                             continue;//will repeat until a valid name is input
-                        }*/
+                        }
                 break;//Programs ends when a valid selection is input
                 
             }
@@ -120,6 +126,6 @@ public class AbleHunterMainMenu {//Created by and coded by Jason
         StartNewGame startNewGame = new StartNewGame();
         startNewGame.NewGame();
         System.out.println("This will start the game");
-    }
+    }*/
 
-}
+//}

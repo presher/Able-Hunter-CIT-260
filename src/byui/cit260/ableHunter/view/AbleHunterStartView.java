@@ -31,8 +31,12 @@ public class AbleHunterStartView {//Coded by jason
        //Display The Main Menu
              AbleHunterMainMenu mainMenu = new AbleHunterMainMenu() {
 
-                @Override
                 public void doInput(String value) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public void doAction() {
                     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 }
             };

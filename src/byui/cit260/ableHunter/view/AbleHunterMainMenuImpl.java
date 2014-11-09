@@ -8,8 +8,12 @@ package byui.cit260.ableHunter.view;
 
 public class AbleHunterMainMenuImpl extends AbleHunterMainMenu {//Felix and Jason Team
 
-    @Override
     public void doInput(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

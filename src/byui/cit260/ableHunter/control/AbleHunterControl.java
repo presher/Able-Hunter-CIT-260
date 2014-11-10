@@ -18,6 +18,15 @@ import java.util.Scanner;
 public class AbleHunterControl {
     private static final Scanner inFile = new Scanner(System.in);
     private static final HelpMenuView helpMenu = new HelpMenuView();
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     //private static final GamePreferencesView GamePreferences = new GamePreferencesView();
     
@@ -49,9 +58,9 @@ public class AbleHunterControl {
     }
         
         
-    public static HelpMenuView getHelpMenu() {
-        return AbleHunterControl.helpMenu;
-    }
+   // public static HelpMenuView getHelpMenu() {
+       // return AbleHunterControl.helpMenu;
+    //}
 
 
     //public static GamePreferencesView getGamePreferencesView() {

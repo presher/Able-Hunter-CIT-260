@@ -23,7 +23,7 @@ public class GameStartMenu {
                 do{
         input = (char) System.in.read();
         switch (input){
-                           case '1':
+                           case 'N':
                                this.startNewGame();
                                break;
                                 case '2'://Get Existing Game

@@ -12,8 +12,8 @@ import ablehunter.java.displayInfo;
  * @author Jason
  */
 public class HelpMenuView extends View implements displayInfo{
-private String helpMenuView;
-    public HelpMenuView(String promptMessage) {//Coded and Created by Jason
+public String helpMenuView;
+    public HelpMenuView() {//Coded and Created by Jason
         super("\n"
                 + "\n-------------------------------------------"
                 + "\n| Help Menu"
@@ -25,6 +25,19 @@ private String helpMenuView;
                 + "\nD-How To Defend"
                 + "\nQ-Quit Game"
                 + "\n_____________________________________________");
+    }
+
+    public String getHelpMenuView() {
+        return helpMenuView;
+    }
+
+    public void setHelpMenuView(String helpMenuView) {
+        this.helpMenuView = helpMenuView;
+    }
+
+    public void
+         HelpMenuView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    

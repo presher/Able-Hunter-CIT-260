@@ -12,8 +12,56 @@ import java.util.Objects;
  *
  * @author Jason
  */
-public class Player implements Serializable{
-    
+public class Player{
+    public static final String REGULAR_PLAYER = "REGULAR";
+    public static final String COMPUTER_PLAYER = "COMPUTER"; 
+
+    public String getPlayerType() {
+        return playerType;
+    }
+
+    public void setPlayerType(String playerType) {
+        this.playerType = playerType;
+    }
+
+    public long getWins() {
+        return wins;
+    }
+
+    public void setWins(long wins) {
+        this.wins = wins;
+    }
+
+    public long getLosses() {
+        return losses;
+    }
+
+    public void setLosses(long losses) {
+        this.losses = losses;
+    }
+
+    public long getTies() {
+        return ties;
+    }
+
+    public void setTies(long ties) {
+        this.ties = ties;
+    }
+
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+//    
+    private String playerType;
+    private long wins = 0;
+    private long losses = 0;
+    private long ties = 0;
+    private String marker;
     public String name;
     private double bestTime;
    

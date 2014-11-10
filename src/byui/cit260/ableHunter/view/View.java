@@ -5,6 +5,8 @@
  */
 package byui.cit260.ableHunter.view;
 
+import byui.cit260.ableHunter.model.Game;
+import java.awt.Menu;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -15,12 +17,13 @@ import java.util.logging.Logger;
  * @author Jason
  */
 public abstract class View implements ViewInterface{//Team Felix and Jason
+   
     private String promptMessage;
-
+    //HelpMenuView helpMenu = new HelpMenuView();
      public View(String promptMessage){
-        this.promptMessage = promptMessage;
-}
-     
+        this.promptMessage = promptMessage;}
+         
+
      @Override
     public void display(){
         String value;
@@ -28,13 +31,22 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         do{
             System.out.println(this.promptMessage);
             value = this.getInput();
+           
+            
             try {
                 this.doAction(value);
             } catch (IOException ex) {
                 Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
             }
+                
+            
         }while(!value.equals("Q"));
+
+   
+
+    
     }
+    
     
     @Override
     public String getInput(){
@@ -47,9 +59,6 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
             selection = keyboard.nextLine();
             selection = selection.trim();
             
-//while(selection != "E");
-        
-    
             if(selection.length() < 1){
                 System.out.println("***Invalid Selection***");
               continue;
@@ -60,37 +69,132 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         return selection;
         
 }
+
+   
      private void doAction(String value)throws IOException {
+         boolean quit = false;
+         do{
        Scanner keyboard = new Scanner(System.in);
        String input;
        input = keyboard.nextLine();
-       input = input.trim();
+       input = input.trim();//.toUpperCase;
+     
+
        switch (input) {
                 case "N":
+                    System.out.println("This is the Start Game Menu Item");
                     this.getAbleHunterStart();
                     break;
+                case "G":
+                    this.getSavedGame();
                 case "H":
-                    this.helpMenu();
+                    this.helpMenu();                   
                     break;
                 case "S":
                     this.saveGame();
-                case "E":
-                    break;
+                case "Q":
+                    quit = true;
+                    return;
+                default:
+                    System.out.println("Invalid Choice Please Try Again");
     }
-     }
-       
+         
+     }while (!quit);
+         }   
     private void getAbleHunterStart() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("This is the start");
+        
     }
 
-    private void helpMenu() { 
-        
-        System.out.println("Help Menu");
-    }
+    private void helpMenu(){ 
+    System.out.println("\n"
+                + "\n-------------------------------------------"
+                + "\n| Help Menu"
+                + "\n-------------------------------------------"
+                + "\nP-How To Play"
+                + "\nA-How To Create Armor"
+                + "\nW-How To Create Weapons"
+                + "\nM-How To View The Map"
+                + "\nD-How To Defend"
+                + "\nE-Exit To Main Menu"
+                + "\n_____________________________________________");
+        System.out.println("This is for game help");
+        boolean quit = false;
+        do{
+         Scanner keyboard = new Scanner(System.in);
+       String input;
+       input = keyboard.nextLine();
+       input = input.trim();//.toUpperCase;
+       
+        switch (input){
+                           case "P":
+                               this.HelpToPLAY();
+                               break;
+                                case "W"://Get Existing Game
+                                   this.MakeWeapons();
+                                    break;
+                                    case "A":
+                                        this.MakeArmor();
+                                        break;
+                                            case "M":                                                        
+                                               this.UseMap();
+                                                break;
+                                            case "D":
+                                                this.Defend();
+                                                break;
+                                                    case "E":
+                                                        quit = true;
+                                                        return;
+                                                    default:
+                                                        System.out.println("Invalid Selection Please Try Again");
+                                               
+           
+        }
+    } while(!quit);  
+        System.out.println("We Hope That Was Helpfull. Come Back If You Need More Help.");
+        }         
+                
+
     
+
+
     private void saveGame() {
          //To change body of generated methods, choose Tools | Templates.
         System.out.println("This Will save Your Game");
     }
-   }
+
+   /* private void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
+
+    private void HelpToPLAY() {
+         //To change body of generated methods, choose Tools | Templates.
+        System.out.println("How To Play");
+    }
+
+    private void MakeWeapons() {
+         //To change body of generated methods, choose Tools | Templates.
+        System.out.println("How To Make Weapons");
+    }
+
+    private void MakeArmor() {
+         //To change body of generated methods, choose Tools | Templates.
+        System.out.println("How To Make Armor");
+    }
+
+    private void UseMap() {
+         //To change body of generated methods, choose Tools | Templates.
+        System.out.println("How To Use The Map");
+    }
+
+    private void Defend() {
+   //To change body of generated methods, choose Tools | Templates.
+        System.out.println("How To Defend");
+    }
+
+    private void getSavedGame() {
+         //To change body of generated methods, choose Tools | Templates.
+        System.out.println("This Will Resume A Saved Game");
+    }
+
+}

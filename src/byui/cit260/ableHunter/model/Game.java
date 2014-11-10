@@ -5,7 +5,6 @@
  */
 package byui.cit260.ableHunter.model;
 
-import byui.cit260.ableHunter.view.Board;
 import java.io.Serializable;
 
 /**
@@ -13,10 +12,114 @@ import java.io.Serializable;
  * @author Jason
  */
 public class Game  implements Serializable{
+    
+    public static final String PLAYER_A_DEFAULT_MARKER = "X";
+    public static final String PLAYER_B_DEFAULT_MARKER = "O";
+    
+    public static final String ONE_PLAYER = "ONE_PLAYER";
+    public static final String TWO_PLAYER = "TWO_PLAYER";
+    
+    public static final String CONTINUE = "CONTINUE";
+    public static final String NEW_GAME = "NEW_GAME";
+    public static final String PLAYING = "PLAYING"; 
+    public static final String WINNER = "WINNER"; 
+    public static final String TIE = "TIE"; 
+    public static final String QUIT = "QUIT"; 
+    public static final String ERROR = "ERROR";
+    public static final String EXIT = "EXIT";
+
+    private String gameType;
+    private Player playerA;
+    private Player playerB;
+    private Player currentPlayer;
+    private Player otherPlayer;
+    private Player winner;
+    private Player loser;
+    private String status;
+    private Board board;
     private int levels;
     private double totalTime;
 
     public Game() {
+    }
+    
+    
+
+    public String getGameType() {
+        return gameType;
+    }
+
+    public void setGameType(String gameType) {
+        this.gameType = gameType;
+    }
+
+    public Player getPlayerA() {
+        return playerA;
+    }
+
+    public void setPlayerA(Player playerA) {
+        this.playerA = playerA;
+    }
+
+    public Player getPlayerB() {
+        return playerB;
+    }
+
+    public void setPlayerB(Player playerB) {
+        this.playerB = playerB;
+    }
+
+    public Player getOtherPlayer() {
+        return otherPlayer;
+    }
+
+    public void setOtherPlayer(Player otherPlayer) {
+        this.otherPlayer = otherPlayer;
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
+    }
+
+    public Player getLoser() {
+        return loser;
+    }
+
+    public void setLoser(Player loser) {
+        this.loser = loser;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+
+    
+    
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
+   
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
     
     
@@ -35,6 +138,15 @@ public class Game  implements Serializable{
 
     public void setTotalTime(double totalTime) {
         this.totalTime = totalTime;
+    }
+    
+    public void start() {
+
+       // this.setPlayingOrder(playerA, playerB);
+
+        // clear the board
+        this.board.clearTheBoard();
+        this.setStatus(Game.NEW_GAME);
     }
 
     @Override
@@ -68,13 +180,11 @@ public class Game  implements Serializable{
         return true;
     }
 
-    public Object getCurrentPlayer() {
+    /*public Object getCurrentPlayer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 
-    public Board getBoard() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
     
     

@@ -6,7 +6,6 @@
 package byui.cit260.ableHunter.view;
 
 import byui.cit260.ableHunter.control.ArmorControl;
-import byui.cit260.ableHunter.model.Armor;
 import byui.cit260.ableHunter.model.DiamondArmor;
 import byui.cit260.ableHunter.model.GoldArmor;
 import byui.cit260.ableHunter.model.IronArmor;

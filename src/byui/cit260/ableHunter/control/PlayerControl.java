@@ -5,13 +5,14 @@
  */
 package byui.cit260.ableHunter.control;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author adm-achina
  */
-public class PlayerControl {
+public class PlayerControl implements Serializable{
     public static void main(String[] args) {
         
         /* Instructor: 

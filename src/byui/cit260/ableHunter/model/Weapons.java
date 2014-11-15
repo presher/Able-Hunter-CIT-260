@@ -12,114 +12,40 @@ import java.util.Objects;
  *
  * @author Jason
  */
-public class Weapons implements Serializable{
-    private String handsDefault;
+public enum Weapons implements Serializable{// added 11 / 15 / 14
+    
+    Hands("This the default weapon and the lowest hit damage"),
+    Bow_Arrow("This is aquired after finding it and adding it to invenotry and has low hit damage"),
+    Spear("This is available after finding it and adding it to the inventory and has low hit damage"),
+    Wood_Sword("This must be made before it can be used. The lowest hit damage of all the swords"),
+    Iron_Sword("Must be made of aquired added to the inventory before it can be used. Stronger hit damage than the Wood Sword."),
+    Diamond_Sword("Must be made of aquired diamonds added the inventory before it can be used and it has the most hit damage of all the weapons");
+    
+    private final String description;
+    private HandWeapon hand;
+    private BowWeapon bow_Arrow;
+    private SpearWeapon spear;
+    private WoodenWeapon wood_Sword;
+    private IronWeapon iron_Sword;
+    private DiamondWeapon diamond_Sword;
+            
+   /* private String handsDefault;
     private String bowArrow;
     private String spear;
     private String swordWood;
     private String swordIron;
-    private String swordDiamond;
+    private String swordDiamond;*/
 
-    public Weapons() {
-    }
-
-    
-    public String getHandsDefault() {
-        return handsDefault;
-    }
-
-    public void setHandsDefault(String handsDefault) {
-        this.handsDefault = handsDefault;
-    }
-
-    public String getBowArrow() {
-        return bowArrow;
-    }
-
-    public void setBowArrow(String bowArrow) {
-        this.bowArrow = bowArrow;
-    }
-
-    public String getSpear() {
-        return spear;
-    }
-
-    public void setSpear(String spear) {
-        this.spear = spear;
-    }
-
-    public String getSwordWood() {
-        return swordWood;
-    }
-
-    public void setSwordWood(String swordWood) {
-        this.swordWood = swordWood;
-    }
-
-    public String getSwordIron() {
-        return swordIron;
-    }
-
-    public void setSwordIron(String swordIron) {
-        this.swordIron = swordIron;
-    }
-
-    public String getSwordDiamond() {
-        return swordDiamond;
-    }
-
-    public void setSwordDiamond(String swordDiamond) {
-        this.swordDiamond = swordDiamond;
-    }
-
-    @Override
-    public String toString() {
-        return "Weapons{" + "handsDefault=" + handsDefault + ", bowArrow=" + bowArrow + ", spear=" + spear + ", swordWood=" + swordWood + ", swordIron=" + swordIron + ", swordDiamond=" + swordDiamond + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.handsDefault);
-        hash = 29 * hash + Objects.hashCode(this.bowArrow);
-        hash = 29 * hash + Objects.hashCode(this.spear);
-        hash = 29 * hash + Objects.hashCode(this.swordWood);
-        hash = 29 * hash + Objects.hashCode(this.swordIron);
-        hash = 29 * hash + Objects.hashCode(this.swordDiamond);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Weapons other = (Weapons) obj;
-        if (!Objects.equals(this.handsDefault, other.handsDefault)) {
-            return false;
-        }
-        if (!Objects.equals(this.bowArrow, other.bowArrow)) {
-            return false;
-        }
-        if (!Objects.equals(this.spear, other.spear)) {
-            return false;
-        }
-        if (!Objects.equals(this.swordWood, other.swordWood)) {
-            return false;
-        }
-        if (!Objects.equals(this.swordIron, other.swordIron)) {
-            return false;
-        }
-        if (!Objects.equals(this.swordDiamond, other.swordDiamond)) {
-            return false;
-        }
-        return true;
+     Weapons(String description) {
+        this.description = description;
     }
     
     
+
+    public String getDescription() {
+        return description;
+    }
     
     
+
 }

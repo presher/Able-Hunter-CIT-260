@@ -39,9 +39,41 @@ public class Game  implements Serializable{
     private Board board;
     private int levels;
     private double totalTime;
+    private String[] avatar;// added 11 / 15 / 14
+    private String[] weapons;// added 11 / 15 / 14
+    private TheMap theMap;// added 11 / 15 / 14
+    private Resources resources;// added 11 / 15 / 14
+
+    public String[] getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String[] avatar) {
+        this.avatar = avatar;
+    }
+
+    public String[] getWeapons() {
+        return weapons;
+    }
+
+    public void setWeapons(String[] weapons) {
+        this.weapons = weapons;
+    }
+
+    public TheMap getTheMap() {
+        return theMap;
+    }
+
+    public void setTheMap(TheMap theMap) {
+        this.theMap = theMap;
+    }
 
     public Game() {
     }
+    
+    
+
+    
     
     
 

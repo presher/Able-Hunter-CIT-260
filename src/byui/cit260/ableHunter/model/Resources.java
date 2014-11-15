@@ -12,15 +12,26 @@ import java.util.Objects;
  *
  * @author Jason
  */
-public class Resources implements Serializable{
-    private String wood;
+public enum Resources implements Serializable{// added 11 / 15 / 14
+    
+    Wood("Ore used to make wood weapons"),
+    Iron("Ore used to make ironweapons and armor"),
+    Gold("Ore used to make gold weapons"),
+    Diamond("Ore used to make diamond ww]eapons and armor"),
+    Skins("Animal Skins uesed to make leather armor");
+    
+    private String description;
+   /* private String wood;
     private String oreIron;
     private String oreGold;
     private String oreDiamond;
     private String oil;
-    private String animalSkins;
+    private String animalSkins;*/
 
-    public Resources() {
+     Resources(String description) {
+         this.description = description;
+         
+    }/* public Resources() {
     }
     
     
@@ -118,6 +129,10 @@ public class Resources implements Serializable{
             return false;
         }
         return true;
+    }*/
+
+    public String getDescription() {
+        return description;
     }
     
     

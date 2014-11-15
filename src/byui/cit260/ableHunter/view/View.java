@@ -95,6 +95,25 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                 case "Q":
                     quit = true;
                     return;
+                     case "P":
+                               this.HelpToPLAY();
+                               break;
+                                case "W"://Get Existing Game
+                                   this.MakeWeapons();
+                                    break;
+                                    case "A":
+                                        this.MakeArmor();
+                                        break;
+                                            case "M":                                                        
+                                               this.UseMap();
+                                                break;
+                                            case "D":
+                                                this.Defend();
+                                                break;
+                                                    case "E":
+                                                        quit = true;
+                                                        return;
+                                                   
                 default:
                     System.out.println("Invalid Choice Please Try Again");
     }
@@ -107,7 +126,15 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
     }
 
     private void helpMenu(){ 
-    System.out.println("\n"
+        HelpMenuView helpView = new HelpMenuView() {
+
+            @Override
+            public void displayHelp() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+       helpView.display();
+    /*System.out.println("\n"
                 + "\n-------------------------------------------"
                 + "\n| Help Menu"
                 + "\n-------------------------------------------"
@@ -151,7 +178,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
            
         }
     } while(!quit);  
-        System.out.println("We Hope That Was Helpfull. Come Back If You Need More Help.");
+        System.out.println("We Hope That Was Helpfull. Come Back If You Need More Help.");*/
         }         
                 
 
@@ -169,27 +196,31 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
 
     private void HelpToPLAY() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Play");
+        System.out.println("\nHow To Play AbleHunter.The game board for Able Hunter. It consist of a grid of " 
+                + "\nlocations. Players place there marker on the different locations" 
+                + "\non the board in an effort to win the game. The default board is"
+                + "\n10 rows by 20 columns. Q to return to Help Menu");
+     
     }
 
     private void MakeWeapons() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Make Weapons");
+        System.out.println("How To Make Weapons. Q to return to Help Menu");
     }
 
     private void MakeArmor() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Make Armor");
+        System.out.println("How To Make Armor. Q to return to Help Menu");
     }
 
     private void UseMap() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Use The Map");
+        System.out.println("How To Use The Map. Q to return to Help Menu");
     }
 
     private void Defend() {
    //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Defend");
+        System.out.println("How To Defend. Q to return to Help Menu");
     }
 
     private void getSavedGame() {

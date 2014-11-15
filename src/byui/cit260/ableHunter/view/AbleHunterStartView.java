@@ -44,10 +44,27 @@ public class AbleHunterStartView {//Coded by jason
                 public void doAction() {
                     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 }
+
+                @Override
+                public String getInputHelp() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public void doActionHelp() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public void displayHelp() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
             };
+             
          mainMenu.display();
+         
            
-             this.welcomeMessage(player);
+            // this.welcomeMessage(player);
              
              //Display the Main menu.
           //MainMenuView mainMenu = new MainMenuView (); //coded by Felix
@@ -105,14 +122,14 @@ END
                 break;//Programs ends when a valid name is input
                 
             }
-            System.out.println("Welcome " + playersName);
+            //System.out.println("Welcome " + playersName);
         return playersName;
             
     }
 
     private void welcomeMessage(Player player) {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("\n\n###############################################");
+        System.out.println("\n\n###################################################");
 
         
         System.out.println("\tWelcome To Able Hunter " + player.getName());

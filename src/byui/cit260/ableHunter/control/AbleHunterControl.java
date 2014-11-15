@@ -17,7 +17,13 @@ import java.util.Scanner;
  */
 public class AbleHunterControl {
     private static final Scanner inFile = new Scanner(System.in);
-    private static final HelpMenuView helpMenu = new HelpMenuView();
+    private static final HelpMenuView helpMenu = new HelpMenuView() {
+
+        @Override
+        public void displayHelp() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    };
     private String name;
 
     public String getName() {
@@ -97,6 +103,21 @@ public class AbleHunterControl {
 
             @Override
             public void doAction() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void displayHelp() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public String getInputHelp() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void doActionHelp() {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         };

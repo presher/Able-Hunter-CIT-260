@@ -11,7 +11,7 @@ import ablehunter.java.displayInfo;
  *
  * @author Jason
  */
-public class HelpMenuView extends View implements displayInfo{
+public abstract class HelpMenuView extends View implements displayInfo{
 public String helpMenuView;
     public HelpMenuView() {//Coded and Created by Jason
         super("\n"
@@ -56,6 +56,16 @@ public String helpMenuView;
 
     @Override
     public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

@@ -11,6 +11,9 @@ package byui.cit260.ableHunter.view;
  */
 public interface ViewInterface {
      public void display();  
+        public void displayHelp();
             public String getInput();
+                public String getInputHelp();
                     public void doAction();
+                        public void doActionHelp();
 }

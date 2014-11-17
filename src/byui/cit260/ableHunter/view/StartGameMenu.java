@@ -11,13 +11,13 @@ import java.io.IOException;
  *
  * @author Jason
  */
-public class GameStartMenu {
+public class StartGameMenu {
 
     void displayMenu() throws IOException {
        /*  //To change body of generated methods, choose Tools | Templates.
         private void doAction(char selection) throws IOException {
         //To change body of generated methods, choose Tools | Templates.*/
-        GameStartMenu gameStart = new GameStartMenu();
+        StartGameMenu gameStart = new StartGameMenu();
         char input;
             for(;;){
                 do{

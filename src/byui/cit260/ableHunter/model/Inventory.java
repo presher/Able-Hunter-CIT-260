@@ -12,15 +12,51 @@ import java.util.Objects;
  *
  * @author Jason
  */
-public class Inventory implements Serializable{
+public class Inventory {
     private String item;
     private int howMany;
-    private String amountNeeded;
-    private String itemsCollected;
+    private int amountNeeded;
+    private int itemsCollected;
     private String weaponsCollected;
+    private String description;
 
     public Inventory() {
     }
+
+   
+
+    public int getAmountNeeded() {
+        return amountNeeded;
+    }
+
+    public void setAmountNeeded(int amountNeeded) {
+        this.amountNeeded = amountNeeded;
+    }
+    
+    
+
+   
+    public int getItemsCollected() {
+        return itemsCollected;
+    }
+
+    public void setItemsCollected(int itemsCollected) {
+        this.itemsCollected = itemsCollected;
+    }
+    
+    
+    
+    
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
     
         public String getItem() {
         return item;
@@ -36,22 +72,6 @@ public class Inventory implements Serializable{
 
     public void setHowMany(int howMany) {
         this.howMany = howMany;
-    }
-
-    public String getAmountNeeded() {
-        return amountNeeded;
-    }
-
-    public void setAmountNeeded(String amountNeeded) {
-        this.amountNeeded = amountNeeded;
-    }
-
-    public String getItemsCollected() {
-        return itemsCollected;
-    }
-
-    public void setItemsCollected(String itemsCollected) {
-        this.itemsCollected = itemsCollected;
     }
 
     public String getWeaponsCollected() {

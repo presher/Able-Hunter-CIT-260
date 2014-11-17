@@ -50,6 +50,14 @@ public class AbleHunter {
     
          private static Game Game = null;//coded by Jason
           private static Player currentPlayer = null;
+
+    public static void setCurrentGame(Game Game) {
+        AbleHunter.Game = Game;
+    }
+
+    public static void setPlayer(Player currentPlayer) {
+        AbleHunter.currentPlayer = currentPlayer;
+    }
           
           
           public static Game getCurrentGame() {
@@ -113,9 +121,7 @@ public class AbleHunter {
   
 }
 
-    public static void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public static Player getPlayer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -124,6 +130,8 @@ public class AbleHunter {
     /*public static Scanner getInputFile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
+
+   
 }
         
       /*  char play;

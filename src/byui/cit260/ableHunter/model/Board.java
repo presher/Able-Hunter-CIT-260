@@ -94,7 +94,7 @@ public class Board extends AbstractTableModel{
         this.boardLocations[row][column] = player;
     }
 
-    public class Location {
+    /*public class Location {
 
         private int row;
         private int column;
@@ -147,7 +147,11 @@ public class Board extends AbstractTableModel{
             
             
             return coordinates;
+        }*/
+
+        void setVisited(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
 
-}
+

@@ -5,6 +5,8 @@
  */
 package byui.cit260.ableHunter.view;
 
+import ablehunter.java.AbleHunter;
+import byui.cit260.ableHunter.control.GameControl;
 import byui.cit260.ableHunter.model.Game;
 import java.awt.Menu;
 import java.io.IOException;
@@ -122,7 +124,11 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
          }   
     private void getAbleHunterStart() {
          //To change body of generated methods, choose Tools | Templates.
+        GameControl.starNewGame(AbleHunter.getPlayer());
         
+        
+        AbleHunterMainMenu ableHunterMainMenu = new AbleHunterMainMenu();
+        ableHunterMainMenu.display();
     }
 
     private void helpMenu(){ 

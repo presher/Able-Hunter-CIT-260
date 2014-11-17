@@ -9,7 +9,7 @@ package byui.cit260.ableHunter.view;
  *
  * @author Jason
  */
-public abstract class AbleHunterMainMenu extends View{//Created by and coded by Jason
+public class AbleHunterMainMenu extends View{//Created by and coded by Jason
     
     public AbleHunterMainMenu(){//Team Felix and Jason
        super("\n"
@@ -30,6 +30,26 @@ public abstract class AbleHunterMainMenu extends View{//Created by and coded by 
     public void doAction() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
     

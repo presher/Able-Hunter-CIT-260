@@ -12,6 +12,7 @@ import java.util.Objects;
  *
  * @author Jason
  */
+<<<<<<< HEAD
 public class Inventory implements Serializable{
     private String item;
     private int howMany;
@@ -52,6 +53,72 @@ public class Inventory implements Serializable{
 
     public void setItemsCollected(String itemsCollected) {
         this.itemsCollected = itemsCollected;
+=======
+
+    public String getDescription() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+public class Inventory {
+    private String item;
+    private int howMany;
+    private int amountNeeded;
+    private int itemsCollected;
+    private String weaponsCollected;
+    private String description;
+
+    public Inventory() {
+    }
+
+   
+
+    public int getAmountNeeded() {
+        return amountNeeded;
+    }
+
+    public void setAmountNeeded(int amountNeeded) {
+        this.amountNeeded = amountNeeded;
+    }
+    
+    
+
+   
+    public int getItemsCollected() {
+        return itemsCollected;
+    }
+
+    public void setItemsCollected(int itemsCollected) {
+        this.itemsCollected = itemsCollected;
+    }
+    
+    
+    
+    
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+    
+        public String getItem() {
+        return item;
+    }
+
+    public void setItem(String item) {
+        this.item = item;
+    }
+
+    public int getHowMany() {
+        return howMany;
+    }
+
+    public void setHowMany(int howMany) {
+        this.howMany = howMany;
+>>>>>>> origin/master
     }
 
     public String getWeaponsCollected() {

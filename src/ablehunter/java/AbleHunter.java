@@ -50,6 +50,7 @@ public class AbleHunter {
     
          private static Game Game = null;//coded by Jason
           private static Player currentPlayer = null;
+<<<<<<< HEAD
           
           
           public static Game getCurrentGame() {
@@ -124,6 +125,90 @@ public class AbleHunter {
     /*public static Scanner getInputFile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
+=======
+
+    public static void setCurrentGame(Game Game) {
+        AbleHunter.Game = Game;
+    }
+
+    public static void setPlayer(Player currentPlayer) {
+        AbleHunter.currentPlayer = currentPlayer;
+    }
+          
+          
+          public static Game getCurrentGame() {
+        return Game;
+          }
+//=======//=======
+    //private static Game game = null;
+    //private static Player player = null; // This variable was not there so the error. by Felix
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) 
+        throws java.io.IOException{
+        
+            AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
+            ableHunterStartView.ableHunterStart();
+
+           // private static Game Game = null;//coded by Jason (This line of code need to be off. By Felix)
+              //  private static Player currentPlayer = null;
+
+    /*public void Game getCurrentGame() {//this grayed out selection causing errors
+        return Game;
+    }
+//>>>>>>> origin/master
+    
+    
+  public void setCurrentGame(Game currentGame) { //fix by Felix
+        AbleHunter.Game = currentGame;
+    }*/
+
+    /*public static Player getPlayer() {
+        return currentPlayer;
+    }
+
+    public static void setPlayer(Player player) {
+        AbleHunter.currentPlayer = player;
+    }*/
+          
+          
+
+    /*public static void main(String[] args) throws IOException 
+        //throws java.io.IOException
+    {
+        
+            AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
+            ableHunterStartView.ableHunterStart();*/
+            
+            
+           
+               
+
+    
+            
+            
+            
+            
+            
+            
+  
+}
+
+    
+
+    public static Player getPlayer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /*public static Scanner getInputFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
+
+   
+>>>>>>> origin/master
 }
         
       /*  char play;

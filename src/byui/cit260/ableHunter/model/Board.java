@@ -94,6 +94,7 @@ public class Board extends AbstractTableModel{
         this.boardLocations[row][column] = player;
     }
 
+<<<<<<< HEAD
     public class Location {
 
         private int row;
@@ -151,3 +152,66 @@ public class Board extends AbstractTableModel{
     }
 
 }
+=======
+    /*public class Location {
+
+        private int row;
+        private int column;
+        private String value;
+        private Player player;
+
+        Location() {
+        }
+
+        int getRow() {
+            return row;
+        }
+
+        void setRow(int row) {
+            this.row = row;
+        }
+
+        int getColumn() {
+            return column;
+        }
+
+        void setColumn(int column) {
+            this.column = column;
+        }
+
+        String getValue() {
+            return value;
+        }
+
+        void setValue(String value) {
+            this.value = value;
+        }
+
+        Player getPlayer() {
+            return player;
+        }
+
+        public void setPlayer(Player player) {
+            this.player = player;
+        }
+
+        String[] getCoordinates() {
+            String[] coordinates = new String[2];
+            Integer intRow = this.getRow() + 1;
+            Integer intColumn = this.getColumn() + 1;
+            coordinates[0] = intRow.toString();
+            coordinates[1] = intColumn.toString();
+            coordinates[2] = intRow.toString();
+            coordinates[3] = intColumn.toString();
+            
+            
+            return coordinates;
+        }*/
+
+        void setVisited(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+
+
+>>>>>>> origin/master

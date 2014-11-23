@@ -37,7 +37,7 @@ public class SceneControl {
        
             
     
-    @SuppressWarnings("empty-statement")
+   // @SuppressWarnings("empty-statement")
    public static void sortArray(String items[]){
        int i, j;
        int left = 0;

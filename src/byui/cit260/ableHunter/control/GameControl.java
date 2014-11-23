@@ -6,9 +6,6 @@
 package byui.cit260.ableHunter.control;
 
 //<<<<<<< HEAD
-import byui.cit260.ableHunter.model.Inventory;
-import byui.cit260.ableHunter.model.Player;//<<<<<<< HEAD
-import byui.cit260.ableHunter.model.Player;
 
 
 //=======
@@ -19,7 +16,6 @@ import byui.cit260.ableHunter.model.Inventory;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Monster;
 import byui.cit260.ableHunter.model.TheMap;
-import com.sun.org.apache.bcel.internal.Constants;
 import static com.sun.org.apache.bcel.internal.Constants.CONSTANT_String;
 //import com.sun.org.apache.bcel.internal.Constants;
 

@@ -234,6 +234,13 @@ public class Game implements Serializable{
       public static final String WINNER = "WINNER"; 
     public static final String TIE = "TIE"; 
     public static final String QUIT = "QUIT"; 
+    
+    public Game(String gameType){
+        
+    }
+            
+            
+    
      
     public String getStatus() {
         return status;

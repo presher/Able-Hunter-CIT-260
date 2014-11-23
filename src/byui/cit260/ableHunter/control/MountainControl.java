@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.ableHunter.view;
+package byui.cit260.ableHunter.control;
 
-import ablehunter.java.displayInfo;
 import byui.cit260.ableHunter.model.Board;
+import byui.cit260.ableHunter.model.Mountain;
 import byui.cit260.ableHunter.model.Player;
 
 /**
  *
  * @author Jason
  */
-public class BoardView implements displayInfo{
-    Board board;
-     public static void main(String args[]) {
-     
-     }
-    @Override
-    public Object display(Object object) {
-        this.board = (Board) object;
+public class MountainControl {
+    
+   
+    
+  /*  Mountain board;
+    
+     public Object display(Object object) {
+        this.board = (Mountain) object;
         this.printHeadRow();
         this.printDividerRow();
        // this.printDividerRowMiddle();
@@ -32,7 +32,7 @@ public class BoardView implements displayInfo{
         }
         System.out.println();
          
-        return null;
+        return board;
     }
 
     private void printHeadRow() {
@@ -93,6 +93,14 @@ public class BoardView implements displayInfo{
             }
             System.out.print("  " + letter + "  |");
         }
-    }
+    }*/
+    
+    
+    
+    
+    
+    
+    
+     
+    
 }
-

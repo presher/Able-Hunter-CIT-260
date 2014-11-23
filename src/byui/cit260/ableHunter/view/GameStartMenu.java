@@ -28,6 +28,9 @@ public class GameStartMenu {
                            case 'N':
                                this.startNewGame();
                                break;
+                           case 'C':
+                               this.showScenes();
+                               break;
                                 case '2'://Get Existing Game
                                    this.startExistingGame();
                                     break;
@@ -75,6 +78,10 @@ public class GameStartMenu {
                 for(Inventory inventoryItem: inventory){
                     System.out.println(inventoryItem.getDescription + "\t" + inventoryItem.getAmountNeeded + "\t" + inventoryItem.getItemsCollected);
                 }
+    }
+
+    private void showScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     }
     

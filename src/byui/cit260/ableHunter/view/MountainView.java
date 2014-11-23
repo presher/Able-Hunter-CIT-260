@@ -6,21 +6,19 @@
 package byui.cit260.ableHunter.view;
 
 import ablehunter.java.displayInfo;
-import byui.cit260.ableHunter.model.Board;
+import byui.cit260.ableHunter.model.Mountain;
 import byui.cit260.ableHunter.model.Player;
 
 /**
  *
  * @author Jason
  */
-public class BoardView implements displayInfo{
-    Board board;
-     public static void main(String args[]) {
-     
-     }
-    @Override
-    public Object display(Object object) {
-        this.board = (Board) object;
+public class MountainView implements displayInfo{
+     Mountain board;
+    
+     @Override
+     public Object display(Object object) {
+        this.board = (Mountain) object;
         this.printHeadRow();
         this.printDividerRow();
        // this.printDividerRowMiddle();
@@ -32,7 +30,7 @@ public class BoardView implements displayInfo{
         }
         System.out.println();
          
-        return null;
+        return board;
     }
 
     private void printHeadRow() {
@@ -40,6 +38,7 @@ public class BoardView implements displayInfo{
         // print first cell
 
         System.out.print("\n\t      1   ");
+
         int columnsInRow = this.board.getColumnCount();
         // print remaining cells in row
         for (int i = 1; i < columnsInRow - 1; i++) {// Changed columnsInRow -1 t0 +1
@@ -95,4 +94,3 @@ public class BoardView implements displayInfo{
         }
     }
 }
-

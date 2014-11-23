@@ -18,6 +18,7 @@ public abstract class AbleHunterMainMenu extends View{//Created by and coded by 
                 + "\n| Main Menu"
                 + "\n-------------------------------------------"
                 + "\nN-Start New Game"
+                + "\nC-Display the Scenes"
                 + "\nG-Get and Start Saved Game"
                 + "\nH-Get Help How to Play"
                 + "\nS-Save Game"

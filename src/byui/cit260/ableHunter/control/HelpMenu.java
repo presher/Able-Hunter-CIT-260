@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class HelpMenu {
     
 
-    private void howToPlay() {
+    /*private void howToPlay() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -28,6 +28,6 @@ public class HelpMenu {
 
     private void mapView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 }
     

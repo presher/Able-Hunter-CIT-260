@@ -13,62 +13,59 @@ public abstract class AbleHunterMainMenuImpl extends AbleHunterMainMenu {//Felix
     }
 
     public void doAction(char choice) {
-        
+        do{
         switch (choice) {
             case 'N':
-            this.startNewGame();
+                this.startNewGame();
                 break;
-                case 'G':
+            case 'C':
+                this.displaySceneView();
+                break;
+            case 'G':
                     this.getSavedGame();
                     break;
-                case 'H':
+            case 'H':
                     this.displayHelpMenu();                   
                     break;
-                case 'S':
+            case 'S':
                     this.saveGame();
                     break;
-                case 'Q':
+            case 'Q':
                      case 'P':
                                this.HelpToPLAY();
                                break;
-                                case 'W'://Get Existing Game
+                     case 'W'://Get Existing Game
                                    this.MakeWeapons();
                                     break;
-                                    case 'A':
+                     case 'A':
                                         this.MakeArmor();
                                         break;
-                                            case 'M':                                                        
+                     case 'M':                                                        
                                                this.UseMap();
                                                 break;
-                                            case 'D':
+                     case 'D':
                                                 this.Defend();
                                                 break;
-                                                    case 'E':
+                     case 'E':
                                                         //quit = true;
                                                         return;
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-        }
+                                case'U':
+                                                            this.MountainScene();
+                                                            break;
+                                case 'L':
+                                                            this.LodgeScene();
+                                                            break;
+                                case 'I':
+                                                            this.IslandScene();
+                                                            break;
+                                case 'F':
+                                                                this.ForestScene();
+                                                                break;
+                                case 'R':
+                                                            this.DesertScene();
+                                                            break;
+        }              
+        }while (choice != 'Q') ;
         /**  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. **/
     }
 
@@ -83,6 +80,10 @@ public abstract class AbleHunterMainMenuImpl extends AbleHunterMainMenu {//Felix
     }
 
     private void startNewGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+     private void displaySceneView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -115,6 +116,28 @@ public abstract class AbleHunterMainMenuImpl extends AbleHunterMainMenu {//Felix
     }
 
     private void Defend() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+    private void MountainScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void LodgeScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void IslandScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void ForestScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void DesertScene() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

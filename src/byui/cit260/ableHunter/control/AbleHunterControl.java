@@ -10,6 +10,7 @@ import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.view.AbleHunterError;
 import byui.cit260.ableHunter.view.AbleHunterMainMenu;
 import byui.cit260.ableHunter.view.HelpMenuView;
+import byui.cit260.ableHunter.view.SceneView;
 import java.util.Scanner;
 
 /**
@@ -30,6 +31,21 @@ public class AbleHunterControl {
         }
         @Override
         public void displayHelp() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    };
+    private static final SceneView sceneView = new SceneView(){
+        private Game currentGame;
+
+        public Game getCurrentGame() {
+            return currentGame;
+        }
+
+        public void setCurrentGame(Game currentGame) {
+            this.currentGame = currentGame;
+        }
+        @Override
+        public void displayHelp(){
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     };

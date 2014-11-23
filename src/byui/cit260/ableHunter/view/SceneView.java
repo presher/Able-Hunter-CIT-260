@@ -17,18 +17,18 @@ import java.io.IOException;
  *
  * @author Jason
  */
-public class SceneView extends View implements displayInfo{
-    String scene;
+public abstract class SceneView extends View implements displayInfo{
+    public String sceneView;
     public SceneView(){
     super("\n"
                 + "\n-------------------------------------------"
                 + "\n| Scene Menu"
                 + "\n-------------------------------------------"
-                + "\nP-Mountain"
-                + "\nA-Lodge"
-                + "\nW-Desert"
-                + "\nM-Island"
-                + "\nD-Forest"
+                + "\nU-Mountain"
+                + "\nL-Lodge"
+                + "\nR-Desert"
+                + "\nI-Island"
+                + "\nF-Forest"
                 + "\nQ-Quit Game"
                 + "\n_____________________________________________");
     }
@@ -47,22 +47,22 @@ public class SceneView extends View implements displayInfo{
 
     
 
-    public String getScene() {
-        return scene;
+    public String getScenViewe() {
+        return sceneView;
     }
 
-    public void setScene(String scene) {
-        this.scene = scene;
+    public void setSceneView(String scene) {
+        this.sceneView = scene;
     }
     //public static void main(String[] args){}
-    public void sceneView() throws IOException{
+   /* public void sceneView() throws IOException{
      String Scene[] = {"mountain" + "lodge" + "desert" + "forest" + "island"};
             /*{"M, mountain"}, 
             {"L, lodge"}, 
             {"D, desert"},
             {"I, island"}, 
             {"F, forest"}
-    };*/
+    };
        
         char input, ignore;
      //private void doAction(char selection) throws IOException {   
@@ -162,7 +162,7 @@ public class SceneView extends View implements displayInfo{
             System.out.println("You have entered the forest scene");
         }
        
-    }
+    }*/
 
     @Override
     public void displayHelp() {
@@ -186,6 +186,14 @@ public class SceneView extends View implements displayInfo{
 
     @Override
     public Object display(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public void doInput(String value) {
+         //To change body of generated methods, choose Tools | Templates.
+        
+    }
+    public void
+         SceneView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

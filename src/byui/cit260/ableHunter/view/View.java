@@ -5,7 +5,12 @@
  */
 package byui.cit260.ableHunter.view;
 
+import byui.cit260.ableHunter.model.Desert;
+import byui.cit260.ableHunter.model.Forest;
 import byui.cit260.ableHunter.model.Game;
+import byui.cit260.ableHunter.model.Island;
+import byui.cit260.ableHunter.model.Lodge;
+import byui.cit260.ableHunter.model.Mountain;
 import java.awt.Menu;
 import java.io.IOException;
 import java.util.Scanner;
@@ -85,6 +90,9 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                     System.out.println("This is the Start Game Menu Item");
                     this.getAbleHunterStart();
                     break;
+                case "C":
+                    this.seneView();
+                    break;
                 case "G":
                     this.getSavedGame();
                 case "H":
@@ -113,6 +121,21 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                                                     case "E":
                                                         quit = true;
                                                         return;
+                                case"U":
+                                                            this.MountainScene();
+                                                            break;
+                                case "L":
+                                                            this.LodgeScene();
+                                                            break;
+                                case "I":
+                                                            this.IslandScene();
+                                                            break;
+                                case "F":
+                                                                this.ForestScene();
+                                                                break;
+                                case "R":
+                                                            this.DesertScene();
+                                                            break;
                                                    
                 default:
                     System.out.println("Invalid Choice Please Try Again");
@@ -122,6 +145,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
          }   
     private void getAbleHunterStart() {
          //To change body of generated methods, choose Tools | Templates.
+        AbleHunterStartView ableHunterStart = new AbleHunterStartView();
         
     }
 
@@ -226,6 +250,48 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
     private void getSavedGame() {
          //To change body of generated methods, choose Tools | Templates.
         System.out.println("This Will Resume A Saved Game");
+    }
+
+    private void seneView() {
+         //To change body of generated methods, choose Tools | Templates.
+        SceneView sceneView = new SceneView() {
+        
+         @Override
+            public void displayHelp() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+        sceneView.display();
+    }
+
+    private void MountainScene() {
+         //To change body of generated methods, choose Tools | Templates.
+        Mountain mountain = new Mountain();
+        mountain.displayMountainScene();
+    }
+
+    private void LodgeScene() {
+         //To change body of generated methods, choose Tools | Templates.
+        Lodge lodge = new Lodge();
+        lodge.displayLodgeScene();
+    }
+
+    private void IslandScene() {
+         //To change body of generated methods, choose Tools | Templates.
+        Island island = new Island();
+        island.displayIslandScene();
+    }
+
+    private void ForestScene() {
+         //To change body of generated methods, choose Tools | Templates.
+        Forest forest = new Forest();
+        forest.displayForestScene();
+    }
+
+    private void DesertScene() {
+         //To change body of generated methods, choose Tools | Templates.
+        Desert desert = new Desert();
+        desert.displayDesertScene();
     }
 
 }

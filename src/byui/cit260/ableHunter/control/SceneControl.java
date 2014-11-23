@@ -37,7 +37,8 @@ public class SceneControl {
        
             
     
-   // @SuppressWarnings("empty-statement")
+   //
+   @SuppressWarnings("empty-statement")
    public static void sortArray(String items[]){
        int i, j;
        int left = 0;
@@ -96,6 +97,10 @@ public class SceneControl {
         for(i = 0; i < scenes.length; i++)
             System.out.println(scenes[i]);
    } 
+
+    void getScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
       
    
 }

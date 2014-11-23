@@ -50,7 +50,7 @@ public class AbleHunter {
     
          private static Game Game = null;//coded by Jason
           private static Player currentPlayer = null;
-<<<<<<< HEAD
+//<<<<<<< HEAD
           
           
           public static Game getCurrentGame() {
@@ -125,20 +125,20 @@ public class AbleHunter {
     /*public static Scanner getInputFile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
-=======
+//=======
 
     public static void setCurrentGame(Game Game) {
         AbleHunter.Game = Game;
     }
 
-    public static void setPlayer(Player currentPlayer) {
+    /*public static void setPlayer(Player currentPlayer) {
         AbleHunter.currentPlayer = currentPlayer;
-    }
+    }*/
           
           
-          public static Game getCurrentGame() {
+        /*  public static Game getCurrentGame() {
         return Game;
-          }
+          }*/
 //=======//=======
     //private static Game game = null;
     //private static Player player = null; // This variable was not there so the error. by Felix
@@ -147,7 +147,7 @@ public class AbleHunter {
      * @param args the command line arguments
      * @throws java.io.IOException
      */
-    public static void main(String[] args) 
+  /*  public static void main(String[] args) 
         throws java.io.IOException{
         
             AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
@@ -195,20 +195,20 @@ public class AbleHunter {
             
             
   
-}
+
 
     
 
-    public static Player getPlayer() {
+/*    public static Player getPlayer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 
     /*public static Scanner getInputFile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
 
    
->>>>>>> origin/master
+//>>>>>>> origin/master
 }
         
       /*  char play;

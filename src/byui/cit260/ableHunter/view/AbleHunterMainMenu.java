@@ -9,7 +9,7 @@ package byui.cit260.ableHunter.view;
  *
  * @author Jason
  */
-<<<<<<< HEAD
+//<<<<<<< HEAD
 public abstract class AbleHunterMainMenu extends View{//Created by and coded by Jason
     
     public AbleHunterMainMenu(){//Team Felix and Jason
@@ -31,7 +31,7 @@ public abstract class AbleHunterMainMenu extends View{//Created by and coded by 
     public void doAction() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
-=======
+/*=======
 public class AbleHunterMainMenu extends View{//Created by and coded by Jason
     
     public AbleHunterMainMenu(){//Team Felix and Jason
@@ -73,7 +73,7 @@ public class AbleHunterMainMenu extends View{//Created by and coded by Jason
     public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
->>>>>>> origin/master
+//>>>>>>> origin/master
 
 }
     

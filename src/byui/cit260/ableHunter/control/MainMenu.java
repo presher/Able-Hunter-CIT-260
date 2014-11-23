@@ -90,16 +90,16 @@ public class MainMenu {
                     this.playerTakesTurn(currentPlayer, selectedLocation);
                     this.alternatePlayers();                
             }   break;
-            case Game.TWO_PLAYER:
+            /*case Game.TWO_PLAYER:
                 this.playerTakesTurn(currentPlayer, selectedLocation);
                 this.alternatePlayers();
                 break;
+        }*/
         }
-        
-
-
-
     }
+
+
+    
     
     public void alternatePlayers() {
         if (this.game.getCurrentPlayer() == this.game.getPlayerA()) {

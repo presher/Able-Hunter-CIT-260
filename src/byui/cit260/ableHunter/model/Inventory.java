@@ -12,12 +12,19 @@ import java.util.Objects;
  *
  * @author Jason
  */
-<<<<<<< HEAD
+//<<<<<<< HEAD
 public class Inventory implements Serializable{
     private String item;
     private int howMany;
-    private String amountNeeded;
-    private String itemsCollected;
+    private int amountNeeded;
+    private int itemsCollected;
+    public String getAmountNeeded;
+    public String getDescription;
+    public String getItemsCollected;
+
+    public int getItemsCollected() {
+        return itemsCollected;
+    }
     private String weaponsCollected;
 
     public Inventory() {
@@ -39,26 +46,31 @@ public class Inventory implements Serializable{
         this.howMany = howMany;
     }
 
-    public String getAmountNeeded() {
+    public int getAmountNeeded() {
         return amountNeeded;
     }
 
-    public void setAmountNeeded(String amountNeeded) {
+   /* public void setAmountNeeded(String amountNeeded) {
+        this.amountNeeded = amountNeeded;
+    }*/
+
+    public void setAmountNeeded(int amountNeeded) {
         this.amountNeeded = amountNeeded;
     }
 
-    public String getItemsCollected() {
+   /* public String getItemsCollected() {
         return itemsCollected;
-    }
+    }*/
 
-    public void setItemsCollected(String itemsCollected) {
+    public void setItemsCollected(int itemsCollected) {
         this.itemsCollected = itemsCollected;
-=======
+    }
+//=======
 
     public String getDescription() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-public class Inventory {
+/*ublic class Inventory {
     private String item;
     private int howMany;
     private int amountNeeded;
@@ -118,8 +130,8 @@ public class Inventory {
 
     public void setHowMany(int howMany) {
         this.howMany = howMany;
->>>>>>> origin/master
-    }
+//>>>>>>> origin/master
+    }*/
 
     public String getWeaponsCollected() {
         return weaponsCollected;
@@ -171,7 +183,11 @@ public class Inventory {
         }
         return true;
     }
+
+    public void setDescription(String gold) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
-    
-}
+}  
+

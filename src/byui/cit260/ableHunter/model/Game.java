@@ -5,14 +5,15 @@
  */
 package byui.cit260.ableHunter.model;
 
+import byui.cit260.ableHunter.view.ItemsInInventory;
 import java.io.Serializable;
 
 /**
  *
  * @author Jason
  */
-<<<<<<< HEAD
-public class Game  implements Serializable{
+//<<<<<<< HEAD
+/*public class Game  implements Serializable{
     
     public static final String PLAYER_A_DEFAULT_MARKER = "X";
     public static final String PLAYER_B_DEFAULT_MARKER = "O";
@@ -215,7 +216,7 @@ public class Game  implements Serializable{
 
     /*public Object getCurrentPlayer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
+    }
 
     
     
@@ -223,18 +224,99 @@ public class Game  implements Serializable{
     
     
     
-}
-=======
+}*/
+//=======
 public class Game implements Serializable{
+    
+    public static final String NEW_GAME = "NEW_GAME";
+     public static final String PLAYING = "PLAYING";
+     public static final String ONE_PLAYER = "ONE_PLAYER";
+      public static final String WINNER = "WINNER"; 
+    public static final String TIE = "TIE"; 
+    public static final String QUIT = "QUIT"; 
+     
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
      private double totalTime;
     private String[] avatar;// added 11 / 15 / 14
     private String[] weapons;// added 11 / 15 / 14
     private TheMap theMap;// added 11 / 15 / 14
     private Resources resources;// added 11 / 15 / 14
+    private Scene scene;
+    private ItemsInInventory inventoryItems;
+    private String status;
+    private Player currentPlayer;
+
+    public static String getNEW_GAME() {
+        return NEW_GAME;
+    }
+
+    public static String getPLAYING() {
+        return PLAYING;
+    }
+
+    public static String getONE_PLAYER() {
+        return ONE_PLAYER;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+    private String gameType;
+    private Player playerA;
+    private Player playerB;
+     private Player otherPlayer;
+
+    public String getGameType() {
+        return gameType;
+    }
+
+    public void setGameType(String gameType) {
+        this.gameType = gameType;
+    }
+
+    public Player getPlayerA() {
+        return playerA;
+    }
+
+    public void setPlayerA(Player playerA) {
+        this.playerA = playerA;
+    }
+
+    public Player getPlayerB() {
+        return playerB;
+    }
+
+    public void setPlayerB(Player playerB) {
+        this.playerB = playerB;
+    }
+
+    public Player getOtherPlayer() {
+        return otherPlayer;
+    }
+
+    public void setOtherPlayer(Player otherPlayer) {
+        this.otherPlayer = otherPlayer;
+    }
+
+    public ItemsInInventory getInventoryItems() {
+        return inventoryItems;
+    }
+
+    public void setInventoryItems(ItemsInInventory inventoryItems) {
+        this.inventoryItems = inventoryItems;
+    }
 
     public Game() {
     }
-    
+
+   
     
 
     public double getTotalTime() {
@@ -277,6 +359,14 @@ public class Game implements Serializable{
         this.resources = resources;
     }
 
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
     public void setCurrentPlayer(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -284,7 +374,17 @@ public class Game implements Serializable{
     public void getInventory() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public Board getBoard() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void start() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
     
 }
->>>>>>> origin/master
+//>>>>>>> origin/master

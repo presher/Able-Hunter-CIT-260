@@ -5,7 +5,13 @@
  */
 package byui.cit260.ableHunter.model;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
+import ablehunter.java.AbleHunter;
+import byui.cit260.ableHunter.control.GameControl;
+import byui.cit260.ableHunter.control.Map;
+import byui.cit260.ableHunter.model.GameScene.GameSceneType;
+import byui.cit260.ableHunter.view.Location;
+import java.awt.image.BufferedImage;
 import java.io.Serializable;
 
 /**
@@ -28,20 +34,14 @@ public class TheMap implements Serializable {// added 11 / 15 / 14
     public void setScene(String[] scene) {
         this.scene = scene;
     }
-=======
-import ablehunter.java.AbleHunter;
-import byui.cit260.ableHunter.control.GameControl;
-import byui.cit260.ableHunter.control.Map;
-import byui.cit260.ableHunter.model.GameScene.GameSceneType;
-import byui.cit260.ableHunter.view.Location;
-import java.awt.image.BufferedImage;
-import java.io.Serializable;
+//=======
+
 
 /**
  *
  * @author Jason
  */
-public class TheMap implements Serializable {
+//public class TheMap implements Serializable {
     //private static Object GameSceneType;
     //private static Scene Scenes;
 
@@ -68,10 +68,12 @@ public class TheMap implements Serializable {
          //ImageIcon finishSceneImage = MapControl.getImage(finishScene, "Location of image");
             //finishScene.setIcon(finishScceneImgage);
         scenes[GameSceneType.finish.ordinal()] = finishScene;
+        return null;
         
     }
     
     private static GameScene[] assignSceneLocations(){
+        return null;
         
     }
 
@@ -80,8 +82,8 @@ private int noOfRows;
 private int noOfColoums;
 private Location[][] Location;
 
-    public TheMap() {
-    }
+   // public TheMap() {
+   // }
 public TheMap(int noOfRows, int noOfColums){
     if(noOfRows < 1 || noOfColums < 1){
         System.out.println("The number of rows and colums must be > zero");
@@ -90,7 +92,7 @@ public TheMap(int noOfRows, int noOfColums){
     this.noOfRows = noOfRows;
     this.noOfColoums = noOfColums;
     
-    this.Location = new TheLocation[noOfRows][noOfColums];
+    this.Location = new Location[noOfRows][noOfColums];
     for(int row = 0 ; row < noOfRows; row++){
         for(int colum = 0; colum < noOfColums; colum++){
             TheLocation theLocation = new TheLocation();
@@ -98,7 +100,7 @@ public TheMap(int noOfRows, int noOfColums){
             theLocation.setRow(row);
             theLocation.setVisited(false);
             
-            Location[row][colum] = Location;
+            Location[row][colum] = Location[row][colum];
         }
     }
 }
@@ -106,7 +108,7 @@ public TheMap(int noOfRows, int noOfColums){
 private static TheMap createTheMap() throws MapControlException{
     TheMap map = new TheMap(20,20);
     GameScene[] scenes = createGameScenes();
-    GameControl.assignScenesToLocations(map, scenes);
+    GameScene.assignScenesToLocations(map, scenes);
 
     return map;
 }
@@ -156,7 +158,7 @@ private static TheMap createTheMap() throws MapControlException{
     
 
   
->>>>>>> origin/master
+//>>>>>>> origin/master
     
     
 }

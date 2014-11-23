@@ -5,6 +5,8 @@
  */
 package byui.cit260.ableHunter.view;
 
+import byui.cit260.ableHunter.control.GameControl;
+import byui.cit260.ableHunter.model.Inventory;
 import java.io.IOException;
 
 /**
@@ -35,6 +37,9 @@ public class GameStartMenu {
                                             case 'S':                                                        
                                                this.saveGame();
                                                 break;
+                                            case 'I':
+                                                    this.viewInventory();
+                                                    break;
                                                     case 'E':
                                                         return;
                                                     default:
@@ -59,6 +64,17 @@ public class GameStartMenu {
 
     private void saveGame() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void viewInventory() {
+         //To change body of generated methods, choose Tools | Templates.
+        Inventory[] inventory = GameControl.getsortedInventoryList();
+                System.out.println("\n  List of Inventory Iems");
+                System.out.println("Description" + "\t" + "Required" + "\t" + "In Stock");
+                
+                for(Inventory inventoryItem: inventory){
+                    System.out.println(inventoryItem.getDescription + "\t" + inventoryItem.getAmountNeeded + "\t" + inventoryItem.getItemsCollected);
+                }
     }
     }
     

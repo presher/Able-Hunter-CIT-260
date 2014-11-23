@@ -5,37 +5,43 @@
  */
 package byui.cit260.ableHunter.control;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import byui.cit260.ableHunter.model.Inventory;
-import byui.cit260.ableHunter.model.Player;<<<<<<< HEAD
+import byui.cit260.ableHunter.model.Player;//<<<<<<< HEAD
 import byui.cit260.ableHunter.model.Player;
 
-/**
- *
- * @author adm-achina
- */
-public class GameControl {
 
-    public static void starNewGame(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-=======
+//=======
 import ablehunter.java.AbleHunter;
 import byui.cit260.ableHunter.model.Game;
+import byui.cit260.ableHunter.model.GameScene;
 import byui.cit260.ableHunter.model.Inventory;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Monster;
 import byui.cit260.ableHunter.model.TheMap;
 import com.sun.org.apache.bcel.internal.Constants;
-
-    public static Inventory[] getsortedInventoryList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+import static com.sun.org.apache.bcel.internal.Constants.CONSTANT_String;
+//import com.sun.org.apache.bcel.internal.Constants;
 
 /**
  *
  * @author adm-achina
  */
 public class GameControl {
+
+    /*public static void starNewGame(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
+   /* public static Inventory[] getsortedInventoryList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
+
+/**
+ *
+ * @author adm-achina
+     * @param player
+ */
+//public class GameControl {
 
     public static void starNewGame(Player player) {//created 11 / 15 / 14
        //To change body of generated methods, choose Tools | Templates.
@@ -67,7 +73,8 @@ public class GameControl {
          //To change body of generated methods, choose Tools | Templates.
        // System.out.println("Will display items in inventory");
         //return null;
-        Inventory[] originalInventoryList() = AbleHunter.getCurrentGame().getInventory();
+        Inventory[] originalInventoryList = null;
+                AbleHunter.getCurrentGame().getInventory();
         
         Inventory[] inventoryList = originalInventoryList.clone();
         
@@ -84,6 +91,10 @@ public class GameControl {
             }
         
         return inventoryList;
+    }
+
+    public static void assignScenesToLocations(TheMap map, GameScene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
@@ -107,7 +118,7 @@ public enum Item{
 }
     private static Inventory[] createInventoryList() {
         Inventory[] inventory;
-        inventory = new Inventory[Constants.CONSTANT_String];
+        inventory = new Inventory[CONSTANT_String];
             Inventory Gold = new Inventory();
             Gold.setDescription("GOLD");
             Gold.setItemsCollected(0);
@@ -181,7 +192,8 @@ public enum Item{
             
             
             return inventory;
->>>>>>> origin/master
+//>>>>>>> origin/master
     }
-    
 }
+    
+//}

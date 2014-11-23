@@ -5,14 +5,17 @@
  */
 package byui.cit260.ableHunter.view;
 
+import ablehunter.java.displayInfo;
 import byui.cit260.ableHunter.control.GameControl;
+import byui.cit260.ableHunter.control.Map;
 import byui.cit260.ableHunter.model.Inventory;
+import byui.cit260.ableHunter.model.TheMap;
 
 /**
  *
  * @author Jason
  */
-public class PlayGameMenu {
+public class PlayGameMenu implements displayInfo{
     public void doAction(char selection){
         switch(selection){
             case 'V':
@@ -31,7 +34,9 @@ public class PlayGameMenu {
     }
 
     private void displayMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         //To change body of generated methods, choose Tools | Templates.
+        Map theMap = Map.createMap;
+        theMap.display();
     }
 
     private void viewInventory() {
@@ -52,6 +57,11 @@ public class PlayGameMenu {
     }
 
     private void viewMonster() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object display(Object object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

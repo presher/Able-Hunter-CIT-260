@@ -21,30 +21,30 @@ public abstract class AbleHunterMainMenuImpl extends AbleHunterMainMenu {//Felix
                 case 'G':
                     this.getSavedGame();
                     break;
-                case "H":
+                case 'H':
                     this.displayHelpMenu();                   
                     break;
-                case "S":
+                case 'S':
                     this.saveGame();
                     break;
-                case "Q":
-                     case "P":
+                case 'Q':
+                     case 'P':
                                this.HelpToPLAY();
                                break;
-                                case "W"://Get Existing Game
+                                case 'W'://Get Existing Game
                                    this.MakeWeapons();
                                     break;
-                                    case "A":
+                                    case 'A':
                                         this.MakeArmor();
                                         break;
-                                            case "M":                                                        
+                                            case 'M':                                                        
                                                this.UseMap();
                                                 break;
-                                            case "D":
+                                            case 'D':
                                                 this.Defend();
                                                 break;
-                                                    case "E":
-                                                        quit = true;
+                                                    case 'E':
+                                                        //quit = true;
                                                         return;
                         
                         
@@ -91,6 +91,30 @@ public abstract class AbleHunterMainMenuImpl extends AbleHunterMainMenu {//Felix
     }
 
     private void displayHelpMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void saveGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void HelpToPLAY() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void MakeWeapons() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void MakeArmor() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void UseMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void Defend() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

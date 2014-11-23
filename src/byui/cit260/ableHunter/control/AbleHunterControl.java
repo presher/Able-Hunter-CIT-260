@@ -5,6 +5,7 @@
  */
 package byui.cit260.ableHunter.control;
 
+import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.view.AbleHunterError;
 import byui.cit260.ableHunter.view.AbleHunterMainMenu;
@@ -18,12 +19,24 @@ import java.util.Scanner;
 public class AbleHunterControl {
     private static final Scanner inFile = new Scanner(System.in);
     private static final HelpMenuView helpMenu = new HelpMenuView() {
+        private Game currentGame;
 
+        public Game getCurrentGame() {
+            return currentGame;
+        }
+
+        public void setCurrentGame(Game currentGame) {
+            this.currentGame = currentGame;
+        }
         @Override
         public void displayHelp() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     };
+
+    static Object getCurrentGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private String name;
 
     public String getName() {

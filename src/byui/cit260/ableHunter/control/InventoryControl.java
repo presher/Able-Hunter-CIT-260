@@ -5,6 +5,9 @@
  */
 package byui.cit260.ableHunter.control;
 
+import ablehunter.java.AbleHunter;
+import byui.cit260.ableHunter.model.Inventory;
+import byui.cit260.ableHunter.view.ItemsInInventory;
 import java.util.Date;
 
 /**
@@ -54,4 +57,25 @@ public class InventoryControl {
  public double getItemTotal(double item, double itemTotal) {
       return itemTotal;
  }
-}
+ 
+ /*public static ItemsInInventory[] getsortedInventoryList() {
+      ItemsInInventory[] originalInventoryList;
+        originalInventoryList = AbleHunter.getCurrentGame().getInventoryItems();
+        
+        ItemsInInventory[] inventoryList = originalInventoryList.clone();
+        
+        Inventory tempInventory;
+        
+            for(int i = 0; i < inventoryList.length - 1; i++){
+                for(int j = 0; j < inventoryList.length - 1 - i; j++){
+                    if(inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription())< 0){
+                        tempInventory = inventoryList[j];
+                        inventoryList[j] = inventoryList[j + 1];
+                        inventoryList[j + 1] = tempInventory;
+                    }
+                }
+                
+            }
+            return inventoryList;
+ }*/
+ }

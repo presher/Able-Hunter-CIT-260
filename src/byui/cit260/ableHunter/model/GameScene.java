@@ -9,7 +9,7 @@ package byui.cit260.ableHunter.model;
  *
  * @author Jason
  */
-class GameScene {
+public class GameScene {
     public enum GameSceneType{
         start,
         finish,

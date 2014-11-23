@@ -16,9 +16,13 @@ public class Map {
     static void moveAvatarToStatingLocation(TheMap theMap) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    private static Map createMap;
+    public static Map createMap;
 
     static TheMap createMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void display() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

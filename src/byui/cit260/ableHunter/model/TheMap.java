@@ -7,8 +7,7 @@ package byui.cit260.ableHunter.model;
 
 //<<<<<<< HEAD
 import ablehunter.java.AbleHunter;
-import byui.cit260.ableHunter.control.GameControl;
-import byui.cit260.ableHunter.control.Map;
+import byui.cit260.ableHunter.exceptions.MapControlException;
 import byui.cit260.ableHunter.model.GameScene.GameSceneType;
 import byui.cit260.ableHunter.view.Location;
 import java.awt.image.BufferedImage;

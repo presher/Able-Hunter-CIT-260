@@ -40,7 +40,7 @@ public class AbleHunterStartView {//Coded by jason
                 public void doInput(String value) {
                     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 }
-                public boolean doAction(String choice) throws MapControlException {
+                public int doAction(String choice) throws MapControlException {
                     Avatar avatar = null;
                     Point coordinates = null;
                      //To change body of generated methods, choose Tools | Templates.
@@ -53,7 +53,7 @@ public class AbleHunterStartView {//Coded by jason
                             //System.out.println("\nERROR" + avatar + " could not be moved to location" +
                                     //coordinates.x + coordinates.y);
                        // }
-                        //return 
+                        return 0;
                 }
 
                 @Override

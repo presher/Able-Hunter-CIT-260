@@ -5,17 +5,19 @@
  */
 package byui.cit260.ableHunter.view;
 
+import byui.cit260.ableHunter.control.SceneControl;
+import byui.cit260.ableHunter.exceptions.JasonExceptions;
+import byui.cit260.ableHunter.exceptions.MapControlException;
 import byui.cit260.ableHunter.model.Desert;
 import byui.cit260.ableHunter.model.Forest;
-import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Island;
 import byui.cit260.ableHunter.model.Lodge;
 import byui.cit260.ableHunter.model.Mountain;
-import java.awt.Menu;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+//import static sun.audio.AudioPlayer.player;
 
 /**
  *
@@ -23,7 +25,7 @@ import java.util.logging.Logger;
  */
 public abstract class View implements ViewInterface{//Team Felix and Jason
    
-    private String promptMessage;
+    private final String promptMessage;
     //HelpMenuView helpMenu = new HelpMenuView();
      public View(String promptMessage){
         this.promptMessage = promptMessage;}
@@ -34,13 +36,17 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         String value;
         
         do{
-            System.out.println(this.promptMessage);
+            System.out.println(this.promptMessage);//Displays the selection menu
             value = this.getInput();
            
             
             try {
                 this.doAction(value);
             } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (MapControlException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JasonExceptions ex) {
                 Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
             }
                 
@@ -60,12 +66,21 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         String selection = null;
         String input = null;
         while (!valid){
-            System.out.println("\t\nEnter Your Selection Below");
+            System.out.println("\t\npEnter Your Selection Below");
             selection = keyboard.nextLine();
             selection = selection.trim();
             
             if(selection.length() < 1){
-                System.out.println("***Invalid Selection***");
+                //System.out.println("***Invalid Selection***");
+                try{
+                    this.doAction(input);
+                }catch(JasonExceptions me){
+                    System.out.println(me.getMessage());
+                } catch (IOException ex) {
+                    Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (MapControlException ex) {
+                    Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+                }
               continue;
             }
        
@@ -76,7 +91,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
 }
 
    
-     private void doAction(String value)throws IOException {
+     private void doAction(String value)throws IOException, MapControlException, JasonExceptions {
          boolean quit = false;
          do{
        Scanner keyboard = new Scanner(System.in);
@@ -87,7 +102,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
 
        switch (input) {
                 case "N":
-                    System.out.println("This is the Start Game Menu Item");
+                    //System.out.println("This is the Start Game Menu Item");
                     this.getAbleHunterStart();
                     break;
                 case "C":
@@ -139,14 +154,22 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                                                    
                 default:
                     System.out.println("Invalid Choice Please Try Again");
+                    try{
+                        this.doAction(input);
+                    }catch(JasonExceptions me){
+                        System.out.println(me.getMessage());
+                    }
     }
          
-     }while (!quit);
+     }while(!quit);
          }   
-    private void getAbleHunterStart() {
+    private void getAbleHunterStart() throws MapControlException, IOException {
          //To change body of generated methods, choose Tools | Templates.
-        AbleHunterStartView ableHunterStart = new AbleHunterStartView();
-        
+        //AbleHunterStartView ableHunterStart = new AbleHunterStartView();
+       SceneControl scene = new SceneControl(){;
+           
+       };
+        scene.getScene();
     }
 
     private void helpMenu(){ 

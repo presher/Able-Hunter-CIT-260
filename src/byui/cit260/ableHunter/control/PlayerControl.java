@@ -5,6 +5,7 @@
  */
 package byui.cit260.ableHunter.control;
 
+import byui.cit260.ableHunter.exceptions.JasonExceptions;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -13,21 +14,26 @@ import java.util.Scanner;
  * @author adm-achina
  */
 public class PlayerControl implements Serializable{
-    public static void main(String[] args) {
+    //private String fullName;
+    public static void main(String[] args) throws JasonExceptions{
         
         /* Instructor: 
          * Please watch your indentation. When you do not indent consisitently 
          * it makes it very hard to read your code.
          */
+        
         PlayerControl player = new PlayerControl();
     
             System.out.println("Please enter your name");
     
          Scanner enterName = new Scanner(System.in);
-                         String fullName;   
+                        String fullName;   
                 System.out.print("Please Enter Your Name ");
-                    fullName = enterName.next();  
-              
+                    
+                   fullName = enterName.next();  
+                    
+                        
+                    
         System.out.println("Hello " + fullName);
             }
 

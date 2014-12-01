@@ -5,18 +5,21 @@
  */
 package byui.cit260.ableHunter.control;
 
+import byui.cit260.ableHunter.model.Mountain;
+import java.util.Scanner;
+
 /**
  *
  * @author Jason
  */
 public class SceneControl {
-    public static String[][] scenes = {
+    /*public static String[][] scenes = {
           {"Mountain"}, 
           {"Lodge"},
           {"Desert"}, 
           {"Island"}, 
           {"Forest"}
-          };
+          };*/
     
 //Created and coded by Jason
   //private final SceneView scenes[];
@@ -98,9 +101,82 @@ public class SceneControl {
             System.out.println(scenes[i]);
    } 
 
-    void getScene() {
+    public void getScene() {
+         //To change body of generated methods, choose Tools | Templates.
+        
+          String[][] scenes = {
+          {"Mountain"}, 
+          {"Lodge"},
+          {"Desert"}, 
+          {"Island"}, 
+          {"Forest"}
+          };
+           System.out.println("\n"
+                + "\n-------------------------------------------"
+                + "\n| Scene Menu"
+                + "\n-------------------------------------------"
+                + "\nX-Mounain Scene"
+                + "\nI-Island Scene"
+                + "\nL-Lodge Scene"
+                + "\nD-Desert Scene"
+                + "\nF-Forest Scene"
+                + "\nQ-Exit To Main Menu"
+                + "\n_____________________________________________");
+          boolean quit = true;
+          do{
+         Scanner keyboard = new Scanner(System.in);
+       String input;
+       input = keyboard.nextLine();
+       input = input.trim().toUpperCase();
+       
+        switch (input){
+                           case "X":
+                               this.MountainScene();
+                               break;
+                                case "I"://Get Existing Game
+                                   this.IslandScene();
+                                    break;
+                                    case "L":
+                                        this.LodgeScene();
+                                        break;
+                                            case "D":                                                        
+                                               this.DesertScene();
+                                                break;
+                                            case "F":
+                                                this.ForestScene();
+                                                break;
+                                                    case "E":
+                                                        quit = true;
+                                                        return;
+                                                    default:
+                                                        System.out.println("Invalid Selection Please Try Again");
+                                               
+           
+        }
+    } while(!quit);  
+        }         
+
+    private void MountainScene() {
+         //To change body of generated methods, choose Tools | Templates.
+        Mountain mountain = new Mountain();
+    }
+
+    private void IslandScene() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void LodgeScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void DesertScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void ForestScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     }
       
    
-}
+

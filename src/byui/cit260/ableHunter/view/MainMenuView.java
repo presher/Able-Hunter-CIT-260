@@ -33,7 +33,7 @@ public class MainMenuView {
     }
  
     
-    public void getInput() {       
+    void getInput() {       
 
         String command;
         Scanner inFile = new Scanner(System.in);

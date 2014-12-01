@@ -120,7 +120,7 @@ END
     template for getting user input
     */
     
-    private String getPlayersName() {//Coded By Jason
+    static String getPlayersName() {//Coded By Jason
          //To change body of generated methods, choose Tools | Templates.
         boolean valid = false;
         String playersName = null;

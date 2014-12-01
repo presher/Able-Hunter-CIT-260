@@ -10,6 +10,7 @@ import byui.cit260.ableHunter.control.AbleHunterControl;
 import byui.cit260.ableHunter.model.Board;
 import byui.cit260.ableHunter.model.Game;
 import java.awt.Point;
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -20,7 +21,7 @@ import java.util.regex.Pattern;
 public final class MovePlayer implements errorInfo{//Created and Coded by Jason
    private Game game;
    //private Board board;
-          
+  
    @Override
    public Object getInput(Object object) {
         this.game = (Game) object;
@@ -106,8 +107,39 @@ public final class MovePlayer implements errorInfo{//Created and Coded by Jason
     public Object display(Object object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+   
+     public static void main(String args[]) throws NumberFormatException{
+   //public GetInt(){
+         boolean quit  = false;
+       System.out.println("Please Enter A Number");
+      
+        do{   
+       try{
+           
+       Scanner keyboard = new Scanner(System.in);
+       
+       String input;
+      
+       input = keyboard.nextLine();
+       
+           
+         String a = input;
+           int i = Integer.parseInt(a);
+           System.out.println("int value = " + i);
+           quit = true;
+       }catch(NumberFormatException nfe)
+    {
+       System.out.println("That will not do try again");
+       
+    }
+       
+    } while(!quit);
+    
+       }
+   }
 
-}
+
+
     /*public class Location {
         
         private int row;

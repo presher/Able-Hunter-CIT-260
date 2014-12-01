@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.ableHunter.model;
+package byui.cit260.ableHunter.enums;
+
+import byui.cit260.ableHunter.model.TheLocation;
+import byui.cit260.ableHunter.model.TheMap;
 
 /**
  *
  * @author Jason
  */
-public class GameScene {
-    public enum GameSceneType{
+public enum GameScenes {
+    
         start,
         finish,
         Desert,
@@ -19,20 +22,7 @@ public class GameScene {
         Lodge,
         Forest;
 
-    }
-
-    
-     public static void assignScenesToLocations(TheMap map, GameScene[] scenes) {
-         //To change body of generated methods, choose Tools | Templates.
-         TheLocation[][] locations = map.getlocations();
-         locations[0][0].setTheScene(scenes[GameSceneType.Desert.ordinal()]);
-         locations[0][6].setTheScene(scenes[GameSceneType.start.ordinal()]);
-         locations[0][2].setTheScene(scenes[GameSceneType.Lodge.ordinal()]);
-         locations[0][1].setTheScene(scenes[GameSceneType.Mountain.ordinal()]);
-         locations[0][3].setTheScene(scenes[GameSceneType.Island.ordinal()]);
-         locations[0][4].setTheScene(scenes[GameSceneType.Forest.ordinal()]);
-         locations[0][5].setTheScene(scenes[GameSceneType.finish.ordinal()]);
-    }
+     
     
     
     void setDescription(String string) {

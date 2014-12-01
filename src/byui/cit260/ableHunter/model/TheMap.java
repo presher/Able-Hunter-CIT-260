@@ -8,7 +8,7 @@ package byui.cit260.ableHunter.model;
 //<<<<<<< HEAD
 import ablehunter.java.AbleHunter;
 import byui.cit260.ableHunter.exceptions.MapControlException;
-import byui.cit260.ableHunter.model.GameScene.GameSceneType;
+import byui.cit260.ableHunter.model.GameScenes.GameSceneType;
 import byui.cit260.ableHunter.view.Location;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
@@ -44,13 +44,13 @@ public class TheMap implements Serializable {// added 11 / 15 / 14
     //private static Object GameSceneType;
     //private static Scene Scenes;
 
-    private static GameScene[] createGameScenes() throws MapControlException{
+    private static GameScenes[] createGameScenes() throws MapControlException{
          //To change body of generated methods, choose Tools | Templates.
         BufferedImage image = null;
         Game game = AbleHunter.getCurrentGame();
-        GameScene[] scenes = new GameScene[GameSceneType.values().length];
+        GameScenes[] scenes = new GameScenes[GameSceneType.values().length];
         
-        GameScene startingScene = new GameScene();
+        GameScenes startingScene = new GameScenes();
             startingScene.setDescription("");
             startingScene.setMapSymbol("AHST");
             startingScene.setBlocked(false);
@@ -59,7 +59,7 @@ public class TheMap implements Serializable {// added 11 / 15 / 14
             //startingScene.setIcon(sartingScceneImgage);
             scenes[GameSceneType.start.ordinal()] = startingScene;
             
-        GameScene finishScene = new GameScene();
+        GameScenes finishScene = new GameScenes();
         finishScene.setDescription("");
         finishScene.setMapSymbol("AHFN");
         finishScene.setBlocked(false);
@@ -71,7 +71,7 @@ public class TheMap implements Serializable {// added 11 / 15 / 14
         
     }
     
-    private static GameScene[] assignSceneLocations(){
+    private static GameScenes[] assignSceneLocations(){
         return null;
         
     }
@@ -106,8 +106,8 @@ public TheMap(int noOfRows, int noOfColums){
 
 private static TheMap createTheMap() throws MapControlException{
     TheMap map = new TheMap(20,20);
-    GameScene[] scenes = createGameScenes();
-    GameScene.assignScenesToLocations(map, scenes);
+    GameScenes[] scenes = createGameScenes();
+    GameScenes.assignScenesToLocations(map, scenes);
 
     return map;
 }

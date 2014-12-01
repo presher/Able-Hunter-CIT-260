@@ -3,23 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.ableHunter.model;
-
-import java.io.Serializable;
+package byui.cit260.ableHunter.enums;
 
 /**
  *
  * @author Jason
  */
-public class Armor implements Serializable{// added 11 / 15 / 14
-    
-    /*Clothes_Armor("The default apperal for the game"),
+public enum Armor {
+    Clothes_Armor("The default apperal for the game"),
     Iron_Armor("Armmor aquired after making it from iron ore"),
     Gold_Armor("Armor aquired ater making it from gold ore"),
-    Diamond_Armor("Armor aquired after maikng it from diamonds and it tis the stongest of all of the Armor");*/
-            
-    
-    private final String description;
+    Diamond_Armor("Armor aquired after maikng it from diamonds and it tis the stongest of all of the Armor");
+        
+         private final String description;
 
     Armor(String description) {
         this.description = description;
@@ -31,5 +27,4 @@ public class Armor implements Serializable{// added 11 / 15 / 14
         return description;
     }
 
-    
 }

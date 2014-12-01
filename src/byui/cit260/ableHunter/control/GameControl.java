@@ -11,7 +11,7 @@ package byui.cit260.ableHunter.control;
 //=======
 import ablehunter.java.AbleHunter;
 import byui.cit260.ableHunter.model.Game;
-import byui.cit260.ableHunter.model.GameScene;
+import byui.cit260.ableHunter.model.GameScenes;
 import byui.cit260.ableHunter.model.Inventory;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Monster;
@@ -89,7 +89,7 @@ public class GameControl {
         return inventoryList;
     }
 
-    public static void assignScenesToLocations(TheMap map, GameScene[] scenes) {
+    public static void assignScenesToLocations(TheMap map, GameScenes[] scenes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

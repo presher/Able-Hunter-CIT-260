@@ -16,7 +16,7 @@ public class TheLocation implements Serializable {
     private int row;
     private int colum;
     private boolean visited;
-    private GameScene scene;
+    private GameScenes scene;
     private ArrayList<Avatar> avatar;
     private TheLocation[][] Location;
 
@@ -51,11 +51,11 @@ public class TheLocation implements Serializable {
         this.visited = visited;
     }
 
-    public GameScene getScene() {
+    public GameScenes getScene() {
         return scene;
     }
 
-    public void setScene(GameScene scene) {
+    public void setScene(GameScenes scene) {
         this.scene = scene;
     }
 
@@ -67,7 +67,7 @@ public class TheLocation implements Serializable {
         this.avatar = avatar;
     }
 
-    void setTheScene(GameScene scene) {
+   public void setTheScene(GameScenes scene) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

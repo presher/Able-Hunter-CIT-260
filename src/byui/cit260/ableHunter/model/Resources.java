@@ -6,20 +6,19 @@
 package byui.cit260.ableHunter.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author Jason
  */
-public enum Resources implements Serializable{// added 11 / 15 / 14
+public class Resources implements Serializable{// added 11 / 15 / 14
    
-    Wood("Ore used to make wood weapons"),
+   /* Wood("Ore used to make wood weapons"),
     Iron("Ore used to make ironweapons and armor"),
     Gold("Ore used to make gold weapons"),
     Diamond("Ore used to make diamond ww]eapons and armor"),
     Skins("Animal Skins uesed to make leather armor");
-   // String resources;
+   // String resources;*/
     
      public static String[][] resources = {
         {"a"},

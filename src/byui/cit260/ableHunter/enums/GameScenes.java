@@ -14,18 +14,32 @@ import byui.cit260.ableHunter.model.TheMap;
  */
 public enum GameScenes {
     
-        start,
-        finish,
-        Desert,
-        Island,
-        Mountain,
-        Lodge,
-        Forest;
+        start ("Start New Game"),
+        finish ("Finish Game"),
+        Desert ("Desert Scene"),
+        Island ("Island Scene"),
+        Mountain ("Mountain Scene"),
+        Lodge ("Lodge Scene"),
+        Forest ("Forest Scene");
 
-     
+     String message;
+
+   private GameScenes(String message){
+   this.message = message;}
+   
+   public String getMessage(){
+    return message;}
+
+    public void display(){
+        System.out.println(this.message);
+}
+
+}
+   
+   
     
     
-    void setDescription(String string) {
+   /* void setDescription(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -39,6 +53,6 @@ public enum GameScenes {
 
     void setTravelTime(Double i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
     
-}
+

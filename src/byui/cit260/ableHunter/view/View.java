@@ -5,6 +5,7 @@
  */
 package byui.cit260.ableHunter.view;
 
+import byui.cit260.ableHunter.control.AbleHunterControl;
 import byui.cit260.ableHunter.control.SceneControl;
 import byui.cit260.ableHunter.exceptions.JasonExceptions;
 import byui.cit260.ableHunter.exceptions.MapControlException;
@@ -13,7 +14,9 @@ import byui.cit260.ableHunter.model.Forest;
 import byui.cit260.ableHunter.model.Island;
 import byui.cit260.ableHunter.model.Lodge;
 import byui.cit260.ableHunter.model.Mountain;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,8 +27,11 @@ import java.util.logging.Logger;
  * @author Jason
  */
 public abstract class View implements ViewInterface{//Team Felix and Jason
+    
    
     private final String promptMessage;
+    protected final BufferedReader keyBoard = AbleHunterControl.getInFile();
+    protected final PrintWriter console = AbleHunterControl.getOutFile();
     //HelpMenuView helpMenu = new HelpMenuView();
      public View(String promptMessage){
         this.promptMessage = promptMessage;}
@@ -61,13 +67,17 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
     
     @Override
     public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
+       // Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String selection = null;
         String input = null;
         while (!valid){
             System.out.println("\t\npEnter Your Selection Below");
-            selection = keyboard.nextLine();
+            try {
+                selection = this.keyBoard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             selection = selection.trim();
             
             if(selection.length() < 1){
@@ -94,9 +104,9 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
      private void doAction(String value)throws IOException, MapControlException, JasonExceptions {
          boolean quit = false;
          do{
-       Scanner keyboard = new Scanner(System.in);
+       //Scanner keyboard = new Scanner(System.in);
        String input;
-       input = keyboard.nextLine();
+       input = this.keyBoard.readLine();
        input = input.trim();//.toUpperCase;
      
 

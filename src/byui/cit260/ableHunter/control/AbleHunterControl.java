@@ -11,15 +11,23 @@ import byui.cit260.ableHunter.view.AbleHunterError;
 import byui.cit260.ableHunter.view.AbleHunterMainMenu;
 import byui.cit260.ableHunter.view.HelpMenuView;
 import byui.cit260.ableHunter.view.SceneView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Jason
  */
 public class AbleHunterControl {
-    private static final Scanner inFile = new Scanner(System.in);
+    private static final Scanner inFfile = new Scanner(System.in);
     private static final HelpMenuView helpMenu = new HelpMenuView() {
+        
+        
         private Game currentGame;
 
         public Game getCurrentGame() {
@@ -34,6 +42,12 @@ public class AbleHunterControl {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     };
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+    
     private static final SceneView sceneView = new SceneView(){
         private Game currentGame;
 
@@ -83,7 +97,7 @@ public class AbleHunterControl {
 
     public static Scanner getInputFile() {
          //To change body of generated methods, choose Tools | Templates.
-         return AbleHunterControl.inFile;
+         return AbleHunterControl.inFfile;
     }
     
     private Player[] players = new Player[10];
@@ -150,9 +164,32 @@ public class AbleHunterControl {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         };
+        try {
+            AbleHunterControl.inFile = new BufferedReader(new InputStreamReader(System.in));
+            AbleHunterControl.outFile = new PrintWriter(System.out, true);
+            String filePath = "log.txt";
+            AbleHunterControl.logFile = new PrintWriter(filePath);
+        }catch(Exception e){            
+        }
+        finally{
+            try {
+                if(AbleHunterControl.inFile != null)
+                AbleHunterControl.inFile.close();
+           
+            if(AbleHunterControl.outFile != null)
+            AbleHunterControl.outFile.close();
+            
+            if(AbleHunterControl.logFile != null)
+            AbleHunterControl.outFile.close();
+            
+             } catch (IOException ex) {
+                System.out.println("Error Closing Files");
+                return;
+            }
+        }
 
         mainMenu.display();
-        AbleHunterControl.inFile.close();
+        AbleHunterControl.inFfile.close();
     }
     
     public void display() {
@@ -230,4 +267,31 @@ public class AbleHunterControl {
         System.out.println("\tWe Hope You Enjoy Your Stay ");
         System.out.println("###################################################");
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        AbleHunterControl.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        AbleHunterControl.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        AbleHunterControl.logFile = logFile;
+    }
+     
+    
+     
 }

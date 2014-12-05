@@ -9,6 +9,7 @@ import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.view.AbleHunterError;
 import byui.cit260.ableHunter.view.AbleHunterMainMenu;
+import byui.cit260.ableHunter.view.ErrorView;
 import byui.cit260.ableHunter.view.HelpMenuView;
 import byui.cit260.ableHunter.view.SceneView;
 import java.io.BufferedReader;
@@ -25,6 +26,7 @@ import java.util.logging.Logger;
  */
 public class AbleHunterControl {
     private static final Scanner inFfile = new Scanner(System.in);
+    protected final PrintWriter console = AbleHunterControl.getOutFile();
     private static final HelpMenuView helpMenu = new HelpMenuView() {
         
         
@@ -183,7 +185,8 @@ public class AbleHunterControl {
             AbleHunterControl.outFile.close();
             
              } catch (IOException ex) {
-                System.out.println("Error Closing Files");
+                //System.out.println("Error Closing Files");
+                 ErrorView.display(this.getClass().getName(), "Error Closing Files");
                 return;
             }
         }
@@ -193,7 +196,7 @@ public class AbleHunterControl {
     }
     
     public void display() {
-        System.out.println(AbleHunterControl.welcome);
+        this.console.println(AbleHunterControl.welcome);
     }
 
     
@@ -202,14 +205,14 @@ public class AbleHunterControl {
         String[] playerNames = new String[10];
         Scanner inFile = AbleHunterControl.getInputFile();
         
-        System.out.println("\n\t---------------------------------------------------------------");
-        System.out.println("\t Enter a list of names of those who will be playing Able Hunter. ");
-        System.out.println("\t---------------------------------------------------------------");
+        this.console.println("\n\t---------------------------------------------------------------");
+        this.console.println("\t Enter a list of names of those who will be playing Able Hunter. ");
+        this.console.println("\t---------------------------------------------------------------");
         
         int playerIndex = 0;
         boolean done = false;
         while (playerIndex < 10  && !done) { 
-            System.out.println("\tPlease enter the name of a player or enter \"Q\" to quit.");
+            this.console.println("\tPlease enter the name of a player or enter \"Q\" to quit.");
             String name;
             name = inFile.nextLine();
             name = name.trim();
@@ -260,12 +263,12 @@ public class AbleHunterControl {
     }
      private void welcomeMessage(Player player) {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("\n\n###############################################");
+        this.console.println("\n\n###############################################");
 
         
-        System.out.println("\tWelcome To Able Hunter " + player.getName());
-        System.out.println("\tWe Hope You Enjoy Your Stay ");
-        System.out.println("###################################################");
+        this.console.println("\tWelcome To Able Hunter " + player.getName());
+        this.console.println("\tWe Hope You Enjoy Your Stay ");
+        this.console.println("###################################################");
     }
 
     public static PrintWriter getOutFile() {

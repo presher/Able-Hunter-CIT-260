@@ -9,6 +9,7 @@ import byui.cit260.ableHunter.model.DiamondArmor;
 import byui.cit260.ableHunter.model.GoldArmor;
 import byui.cit260.ableHunter.model.IronArmor;
 import byui.cit260.ableHunter.model.LeatherArmor;
+import java.io.PrintWriter;
 
 /**
  *
@@ -17,6 +18,7 @@ import byui.cit260.ableHunter.model.LeatherArmor;
 
  
 public class ArmorControl { //Algorithm for checking accuracy
+    protected final PrintWriter console = AbleHunterControl.getOutFile();
     IronArmor ironArmor = new IronArmor();
     LeatherArmor leatherArmor = new LeatherArmor();
     GoldArmor goldArmor = new GoldArmor();
@@ -26,26 +28,26 @@ public class ArmorControl { //Algorithm for checking accuracy
 	return -1;
                 }
         else{
-            System.out.println("Depth Step 1");
+            this.console.println("Depth Step 1");
         }
 if (length <= 0 | length > 5){
     //Then
     return -1;
 } else 
-    System.out.println("Length Step 2");
+    this.console.println("Length Step 2");
 {                }       
         
         if (depth <= 0){ //Then
 	return -1;
         }
         else{
-            System.out.println("Depth Step 3");
+            this.console.println("Depth Step 3");
         }
 if (length <= 0 | length > 5){ //Then
 	return -1;
     }
 else{
-    System.out.println("Length Step 4");
+    this.console.println("Length Step 4");
 }
 
 width = 6;
@@ -59,26 +61,26 @@ public double calcCubicFeetIronArmor(double depth, double length, double width){
 	return -1;
                 }
         else{
-            System.out.println("Depth Step 1");
+            this.console.println("Depth Step 1");
         }
 if (length <= 0 | length > 5){
     //Then
     return -1;
 } else 
-    System.out.println("Length Step 2");
+    this.console.println("Length Step 2");
 {                }       
         
         if (depth <= 0){ //Then
 	return -1;
         }
         else{
-            System.out.println("Depth Step 3");
+            this.console.println("Depth Step 3");
         }
 if (length <= 0 | length > 5){ //Then
 	return -1;
     }
 else{
-    System.out.println("Length Step 4");
+    this.console.println("Length Step 4");
 }
 
 width = 6;

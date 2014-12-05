@@ -17,7 +17,6 @@ import byui.cit260.ableHunter.model.Mountain;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 //import static sun.audio.AudioPlayer.player;
@@ -42,7 +41,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         String value;
         
         do{
-            System.out.println(this.promptMessage);//Displays the selection menu
+            this.console.println(this.promptMessage);//Displays the selection menu
             value = this.getInput();
            
             

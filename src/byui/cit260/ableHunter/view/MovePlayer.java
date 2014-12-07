@@ -10,6 +10,7 @@ import byui.cit260.ableHunter.control.AbleHunterControl;
 import byui.cit260.ableHunter.model.Board;
 import byui.cit260.ableHunter.model.Game;
 import java.awt.Point;
+import java.io.BufferedReader;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -20,6 +21,7 @@ import java.util.regex.Pattern;
  */
 public final class MovePlayer implements errorInfo{//Created and Coded by Jason
    private Game game;
+    protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
    //private Board board;
   
    @Override
@@ -108,19 +110,28 @@ public final class MovePlayer implements errorInfo{//Created and Coded by Jason
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
-     public static void main(String args[]) throws NumberFormatException{
+     public void main(String args[]) throws NumberFormatException{
    //public GetInt(){
          boolean quit  = false;
+         boolean valid = false;
        System.out.println("Please Enter A Number");
       
         do{   
        try{
            
-       Scanner keyboard = new Scanner(System.in);
+       //Scanner keyboard = new Scanner(System.in);
        
-       String input;
-      
-       input = keyboard.nextLine();
+       String input = null;
+      try{          
+      while(!valid){
+       input = this.keyBoard.readLine();
+        if(input.length() < 1){
+            System.out.println("Enter a valid input");
+        }
+      }
+       }catch(Exception e){
+               System.out.println("Error reading input: " + e.getMessage());
+               }
        
            
          String a = input;

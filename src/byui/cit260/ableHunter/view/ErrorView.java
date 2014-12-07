@@ -21,5 +21,6 @@ public class ErrorView {
                    +"\n- ERROR -" + errorMessage
                    +"----------------------------------------------------------"
                             );
+        logFile.println(className + " - " + errorMessage);
     } 
 }

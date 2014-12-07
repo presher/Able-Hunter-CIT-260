@@ -6,6 +6,7 @@
 package byui.cit260.ableHunter.control;
 
 import byui.cit260.ableHunter.model.Mountain;
+import java.io.BufferedReader;
 import java.util.Scanner;
 
 /**
@@ -13,6 +14,7 @@ import java.util.Scanner;
  * @author Jason
  */
 public class SceneControl {
+     protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
     /*public static String[][] scenes = {
           {"Mountain"}, 
           {"Lodge"},
@@ -101,7 +103,7 @@ public class SceneControl {
             System.out.println(scenes[i]);
    } 
 
-    public void getScene() {
+    /*public void getScene() {
          //To change body of generated methods, choose Tools | Templates.
         
           String[][] scenes = {
@@ -123,11 +125,23 @@ public class SceneControl {
                 + "\nQ-Exit To Main Menu"
                 + "\n_____________________________________________");
           boolean quit = true;
+          boolean valid = false;
+          String input;
+           Scanner keyboard = new Scanner(System.in);
           do{
-         Scanner keyboard = new Scanner(System.in);
-       String input;
+        
+       
+      
+           while(!valid){
+       
        input = keyboard.nextLine();
        input = input.trim().toUpperCase();
+        if(input.length() < 1){
+            System.out.println("Please enter a valid value.");
+        }
+        
+           }
+       
        
         switch (input){
                            case "X":
@@ -154,7 +168,7 @@ public class SceneControl {
            
         }
     } while(!quit);  
-        }         
+        }      */   
 
     private void MountainScene() {
          //To change body of generated methods, choose Tools | Templates.
@@ -174,6 +188,10 @@ public class SceneControl {
     }
 
     private void ForestScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void getScene() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     }

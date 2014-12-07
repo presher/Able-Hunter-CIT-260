@@ -11,7 +11,7 @@ import ablehunter.java.displayInfo;
  *
  * @author Jason
  */
-public abstract class HelpMenuView extends View implements displayInfo{
+public abstract class HelpMenuView extends HelpSelectionView implements displayInfo{
 public String helpMenuView;
     public HelpMenuView() {//Coded and Created by Jason
         super("\n"

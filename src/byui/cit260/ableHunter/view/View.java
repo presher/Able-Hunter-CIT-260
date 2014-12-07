@@ -14,9 +14,11 @@ import byui.cit260.ableHunter.model.Forest;
 import byui.cit260.ableHunter.model.Island;
 import byui.cit260.ableHunter.model.Lodge;
 import byui.cit260.ableHunter.model.Mountain;
+import byui.cit260.ableHunter.model.Player;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 //import static sun.audio.AudioPlayer.player;
@@ -29,7 +31,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
     
    
     private final String promptMessage;
-    protected final BufferedReader keyBoard = AbleHunterControl.getInFile();
+    protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
     protected final PrintWriter console = AbleHunterControl.getOutFile();
     //HelpMenuView helpMenu = new HelpMenuView();
      public View(String promptMessage){
@@ -41,7 +43,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         String value;
         
         do{
-            this.console.println(this.promptMessage);//Displays the selection menu
+            System.out.println(this.promptMessage);//Displays the selection menu
             value = this.getInput();
            
             
@@ -66,23 +68,23 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
     
     @Override
     public String getInput(){
-       // Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
+        Player player = new Player();
         boolean valid = false;
         String selection = null;
-        String input = null;
+        
+       // String input = null;
         while (!valid){
-            System.out.println("\t\npEnter Your Selection Below");
-            try {
-                selection = this.keyBoard.readLine();
-            } catch (IOException ex) {
-                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            System.out.println(player.getName() + "\t\nEnter Your Selection Below");
+            
+                selection = keyboard.nextLine();
+           
             selection = selection.trim();
             
             if(selection.length() < 1){
                 //System.out.println("***Invalid Selection***");
                 try{
-                    this.doAction(input);
+                    this.doAction(selection);
                 }catch(JasonExceptions me){
                     System.out.println(me.getMessage());
                 } catch (IOException ex) {
@@ -95,6 +97,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
        
             break;
         }
+        
         return selection;
         
 }
@@ -103,9 +106,9 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
      private void doAction(String value)throws IOException, MapControlException, JasonExceptions {
          boolean quit = false;
          do{
-       //Scanner keyboard = new Scanner(System.in);
+       Scanner keyboard = new Scanner(System.in);
        String input;
-       input = this.keyBoard.readLine();
+       input = keyboard.nextLine();
        input = input.trim();//.toUpperCase;
      
 
@@ -127,7 +130,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                 case "Q":
                     quit = true;
                     return;
-                     case "P":
+                     /*case "P":
                                this.HelpToPLAY();
                                break;
                                 case "W"://Get Existing Game
@@ -144,7 +147,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                                                 break;
                                                     case "E":
                                                         quit = true;
-                                                        return;
+                                                        return;*/
                                 case"U":
                                                             this.MountainScene();
                                                             break;
@@ -175,68 +178,24 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
     private void getAbleHunterStart() throws MapControlException, IOException {
          //To change body of generated methods, choose Tools | Templates.
         //AbleHunterStartView ableHunterStart = new AbleHunterStartView();
-       SceneControl scene = new SceneControl(){;
+        SceneView scene = new SceneView() {};
+       scene.display(); //scene = new SceneView() {};
            
-       };
-        scene.getScene();
+       
+        //scene.getScene();
     }
 
     private void helpMenu(){ 
         HelpMenuView helpView = new HelpMenuView() {
 
-            @Override
             public void displayHelp() {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
+
+           
         };
        helpView.display();
-    /*System.out.println("\n"
-                + "\n-------------------------------------------"
-                + "\n| Help Menu"
-                + "\n-------------------------------------------"
-                + "\nP-How To Play"
-                + "\nA-How To Create Armor"
-                + "\nW-How To Create Weapons"
-                + "\nM-How To View The Map"
-                + "\nD-How To Defend"
-                + "\nE-Exit To Main Menu"
-                + "\n_____________________________________________");
-        System.out.println("This is for game help");
-        boolean quit = false;
-        do{
-         Scanner keyboard = new Scanner(System.in);
-       String input;
-       input = keyboard.nextLine();
-       input = input.trim();//.toUpperCase;
-       
-        switch (input){
-                           case "P":
-                               this.HelpToPLAY();
-                               break;
-                                case "W"://Get Existing Game
-                                   this.MakeWeapons();
-                                    break;
-                                    case "A":
-                                        this.MakeArmor();
-                                        break;
-                                            case "M":                                                        
-                                               this.UseMap();
-                                                break;
-                                            case "D":
-                                                this.Defend();
-                                                break;
-                                                    case "E":
-                                                        quit = true;
-                                                        return;
-                                                    default:
-                                                        System.out.println("Invalid Selection Please Try Again");
-                                               
-           
-        }
-    } while(!quit);  
-        System.out.println("We Hope That Was Helpfull. Come Back If You Need More Help.");*/
-        }         
-                
+    }
 
     
 

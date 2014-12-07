@@ -6,6 +6,7 @@
 package byui.cit260.ableHunter.view;
 
 
+import byui.cit260.ableHunter.control.AbleHunterControl;
 import byui.cit260.ableHunter.control.HelpMenu;
 import byui.cit260.ableHunter.control.MapControl;
 import byui.cit260.ableHunter.control.ProgramControl;
@@ -13,6 +14,7 @@ import byui.cit260.ableHunter.exceptions.MapControlException;
 import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.Player;
 import java.awt.Point;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -21,7 +23,7 @@ import java.util.Scanner;
  * @author Jason
  */
 public class AbleHunterStartView {//Coded by jason
-    
+     protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
     
     //private Object ProgramControl;
 //Coded By Jason
@@ -120,11 +122,12 @@ END
     template for getting user input
     */
     
-    static String getPlayersName() {//Coded By Jason
+    private String getPlayersName() throws IOException {//Coded By Jason
          //To change body of generated methods, choose Tools | Templates.
         boolean valid = false;
-        String playersName = null;
+        String playersName = " ";
         Scanner keyboard = new Scanner(System.in);//get input from keyoard
+        //try{
             while (!valid){
                 System.out.print("\nPlease Enter Your Name At Least 1 Letter"
                         + "\n");
@@ -138,6 +141,9 @@ END
                 break;//Programs ends when a valid name is input
                 
             }
+       // }catch(Exception e){
+          //  System.out.println("Error reading input" + e.getMessage());
+       // }
             //System.out.println("Welcome " + playersName);
         return playersName;
             

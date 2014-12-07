@@ -26,7 +26,10 @@ import java.util.logging.Logger;
  */
 public class AbleHunterControl {
     private static final Scanner inFfile = new Scanner(System.in);
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFiles = null;
     protected final PrintWriter console = AbleHunterControl.getOutFile();
+    
     private static final HelpMenuView helpMenu = new HelpMenuView() {
         
         
@@ -43,10 +46,14 @@ public class AbleHunterControl {
         public void displayHelp() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
+
+        @Override
+        public String getInput() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     };
     
-    private static PrintWriter outFile = null;
-    private static BufferedReader inFile = null;
+    
     
     private static PrintWriter logFile = null;
     
@@ -167,7 +174,7 @@ public class AbleHunterControl {
             }
         };
         try {
-            AbleHunterControl.inFile = new BufferedReader(new InputStreamReader(System.in));
+            AbleHunterControl.inFiles = new BufferedReader(new InputStreamReader(System.in));
             AbleHunterControl.outFile = new PrintWriter(System.out, true);
             String filePath = "log.txt";
             AbleHunterControl.logFile = new PrintWriter(filePath);
@@ -175,8 +182,8 @@ public class AbleHunterControl {
         }
         finally{
             try {
-                if(AbleHunterControl.inFile != null)
-                AbleHunterControl.inFile.close();
+                if(AbleHunterControl.inFiles != null)
+                AbleHunterControl.inFiles.close();
            
             if(AbleHunterControl.outFile != null)
             AbleHunterControl.outFile.close();
@@ -185,8 +192,8 @@ public class AbleHunterControl {
             AbleHunterControl.outFile.close();
             
              } catch (IOException ex) {
-                //System.out.println("Error Closing Files");
-                 ErrorView.display(this.getClass().getName(), "Error Closing Files");
+                System.out.println("Error Closing Files");
+                 //ErrorView.display(this.getClass().getName(), "Error Closing Files" + ex.getMessage());
                 return;
             }
         }
@@ -280,11 +287,11 @@ public class AbleHunterControl {
     }
 
     public static BufferedReader getInFile() {
-        return inFile;
+        return inFiles;
     }
 
     public static void setInFile(BufferedReader inFile) {
-        AbleHunterControl.inFile = inFile;
+        AbleHunterControl.inFiles = inFile;
     }
 
     public static PrintWriter getLogFile() {
@@ -293,6 +300,14 @@ public class AbleHunterControl {
 
     public static void setLogFile(PrintWriter logFile) {
         AbleHunterControl.logFile = logFile;
+    }
+
+    public static BufferedReader getInFiles() {
+        return inFiles;
+    }
+
+    public static void setInFiles(BufferedReader inFiles) {
+        AbleHunterControl.inFiles = inFiles;
     }
      
     

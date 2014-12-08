@@ -13,6 +13,14 @@ import java.io.IOException;
  * @author adm-achina
  */
 public abstract class CharacterControl  extends View{
+
+    static void main(String[] args) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static void Main(String[] args) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         public String characterControl;
 
     public CharacterControl(String promptMessage) {
@@ -21,7 +29,6 @@ public abstract class CharacterControl  extends View{
     
     /**
      *
-     * @param args
      * @throws IOException
      */
     //public static void main(String[] args) //Coded by Jason

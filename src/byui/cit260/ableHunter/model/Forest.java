@@ -8,24 +8,25 @@ package byui.cit260.ableHunter.model;
 import byui.cit260.ableHunter.view.View;
 import java.io.Serializable;
 import java.util.Objects;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
  * @author Jason
  */
-public class Forest extends View implements Serializable{
+public class Forest extends AbstractTableModel{
     private String forestName; //Name of the forest
     private String weather; //hot, cold, rain, snow
     private String timeOfDay; //day or night
     private String difficulty; //easy, medium, hard
 
-    public Forest(String promptMessage) {
-        super(promptMessage);
+    public Forest() {
+        
     }
 
     
 public void displayForestScene(){
-    this.console.println("You have entered the Forest Scene");
+    System.out.println("You have entered the Forest Scene");
 }
    
     
@@ -100,23 +101,34 @@ public void displayForestScene(){
         return true;
     }
 
-    @Override
     public void displayHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public String getInputHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public void doAction() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getRowCount() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getColumnCount() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

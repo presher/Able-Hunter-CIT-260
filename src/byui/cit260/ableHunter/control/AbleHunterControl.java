@@ -7,9 +7,9 @@ package byui.cit260.ableHunter.control;
 
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
+import byui.cit260.ableHunter.model.PrintReport;
 import byui.cit260.ableHunter.view.AbleHunterError;
 import byui.cit260.ableHunter.view.AbleHunterMainMenu;
-import byui.cit260.ableHunter.view.ErrorView;
 import byui.cit260.ableHunter.view.HelpMenuView;
 import byui.cit260.ableHunter.view.SceneView;
 import byui.cit260.ableHunter.view.View;
@@ -18,8 +18,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -31,6 +29,10 @@ public class AbleHunterControl extends View {
     private static BufferedReader inFiles = null;
 
     static void setCurrentGame(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static void setCurrentReport(PrintReport report) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     protected final PrintWriter console = AbleHunterControl.getOutFile();

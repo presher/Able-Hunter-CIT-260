@@ -5,40 +5,29 @@
  */
 package byui.cit260.ableHunter.view;
 
+import byui.cit260.ableHunter.control.GameControl;
+
 /**
  *
- * @author adm-achina
+ * @author Jason
  */
-public class AbleHunterError extends View{ 
+public class PrintReportView extends View {
 
-    public AbleHunterError(String promptMessage) {
+    public PrintReportView(String promptMessage) {
         super(promptMessage);
     }
-//coded by Felix
-
-    //public AbleHunterError() {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
-
-   
-
-    
-
-    
-
-      
-        public  Object displayError(Object object) {
-            String message = (String) object;
-            this.console.println("\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            this.console.println("\tERROR: " + message);
-            this.console.println("\t++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        return null;
-    }
-
-
-    public void display(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void displayReport(){
+    this.console.println("This will diplay a report");
+    this.console.println("\n\nEnter the file path for the file where the is saved");
+        String filepath = this.getInput();
+        try{
+            GameControl.getReport(filepath);
+        }catch(Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        AbleHunterMainMenu gameMenu = new AbleHunterMainMenu() {};
+        gameMenu.display();
+}
 
     @Override
     public void displayHelp() {
@@ -59,5 +48,4 @@ public class AbleHunterError extends View{
     public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

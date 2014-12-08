@@ -135,42 +135,12 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                     break;
                 case "S":
                     this.saveGame();
+                case "P":
+                    this.printReport();
                 case "Q":
                     quit = true;
                     return;
-                     /*case "P":
-                               this.HelpToPLAY();
-                               break;
-                                case "W"://Get Existing Game
-                                   this.MakeWeapons();
-                                    break;
-                                    case "A":
-                                        this.MakeArmor();
-                                        break;
-                                            case "M":                                                        
-                                               this.UseMap();
-                                                break;
-                                            case "D":
-                                                this.Defend();
-                                                break;
-                                                    case "E":
-                                                        quit = true;
-                                                        return;*/
-                                case"U":
-                                                            this.MountainScene();
-                                                            break;
-                                case "L":
-                                                            this.LodgeScene();
-                                                            break;
-                                case "I":
-                                                            this.IslandScene();
-                                                            break;
-                                case "F":
-                                                                this.ForestScene();
-                                                                break;
-                                case "R":
-                                                            this.DesertScene();
-                                                            break;
+                     
                                                    
                 default:
                     this.console.println("Invalid Choice Please Try Again");
@@ -225,34 +195,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
 
-    private void HelpToPLAY() {
-         //To change body of generated methods, choose Tools | Templates.
-        this.console.println("\nHow To Play AbleHunter.The game board for Able Hunter. It consist of a grid of " 
-                + "\nlocations. Players place there marker on the different locations" 
-                + "\non the board in an effort to win the game. The default board is"
-                + "\n10 rows by 20 columns. Q to return to Help Menu");
-     
-    }
-
-    private void MakeWeapons() {
-         //To change body of generated methods, choose Tools | Templates.
-        this.console.println("How To Make Weapons. Q to return to Help Menu");
-    }
-
-    private void MakeArmor() {
-         //To change body of generated methods, choose Tools | Templates.
-        this.console.println("How To Make Armor. Q to return to Help Menu");
-    }
-
-    private void UseMap() {
-         //To change body of generated methods, choose Tools | Templates.
-        this.console.println("How To Use The Map. Q to return to Help Menu");
-    }
-
-    private void Defend() {
-   //To change body of generated methods, choose Tools | Templates.
-        this.console.println("How To Defend. Q to return to Help Menu");
-    }
+    
 
     private void getSavedGame() {
          //To change body of generated methods, choose Tools | Templates.
@@ -279,34 +222,12 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         sceneView.display();
     }
 
-    private void MountainScene() {
-         //To change body of generated methods, choose Tools | Templates.
-        Mountain mountain = new Mountain();
-        mountain.displayMountainScene();
-    }
+   
 
-    private void LodgeScene() {
+    private void printReport() {
          //To change body of generated methods, choose Tools | Templates.
-        Lodge lodge = null;
-        lodge.displayLodgeScene();
-    }
-
-    private void IslandScene() {
-         //To change body of generated methods, choose Tools | Templates.
-        Island island = null;
-        island.displayIslandScene();
-    }
-
-    private void ForestScene() {
-         //To change body of generated methods, choose Tools | Templates.
-        Forest forest = null;
-        forest.displayForestScene();
-    }
-
-    private void DesertScene() {
-         //To change body of generated methods, choose Tools | Templates.
-        Desert desert = null;
-        desert.displayDesertScene();
+        PrintReportView print = null;
+        print.displayReport();
     }
 
 }

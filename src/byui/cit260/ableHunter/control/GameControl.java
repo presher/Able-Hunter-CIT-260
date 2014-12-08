@@ -16,6 +16,7 @@ import byui.cit260.ableHunter.model.GameScenes;
 import byui.cit260.ableHunter.model.Inventory;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Monster;
+import byui.cit260.ableHunter.model.PrintReport;
 import byui.cit260.ableHunter.model.TheMap;
 import static com.sun.org.apache.bcel.internal.Constants.CONSTANT_String;
 import java.io.FileInputStream;
@@ -33,7 +34,7 @@ import java.io.ObjectOutputStream;
  */
 public class GameControl {
     private static Object output;
-
+public static void main(String args[]){}
     /*public static void starNewGame(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
@@ -62,17 +63,7 @@ public class GameControl {
     }
 
     
-     /*public static void assignScenesToLocations(TheMap map, GameScene[] scenes) {
-         //To change body of generated methods, choose Tools | Templates.
-         GameScene[][] locations = map.getLocations();
-         locations[0][0].setTheScene(scenes[GameSceneType.Desert.ordinal()]);
-         locations[0][6].setTheScene(scenes[GameSceneType.start.ordinal()]);
-         locations[0][2].setTheScene(scenes[GameSceneType.Lodge.ordinal()]);
-         locations[0][1].setTheScene(scenes[GameSceneType.Mountain.ordinal()]);
-         locations[0][3].setTheScene(scenes[GameSceneType.Island.ordinal()]);
-         locations[0][4].setTheScene(scenes[GameSceneType.Forest.ordinal()]);
-         locations[0][5].setTheScene(scenes[GameSceneType.finish.ordinal()]);
-    }*/
+     
 
     public static Inventory[] getsortedInventoryList() {
          //To change body of generated methods, choose Tools | Templates.
@@ -102,7 +93,7 @@ public class GameControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static void saveGame(Object currentGame, String filePath) throws GameControlException {
+    public static void saveGame(Object currentGame, String filePath) throws GameControlException{
          //To change body of generated methods, choose Tools | Templates.
         try(FileOutputStream fops = new FileOutputStream(filePath)){
             ObjectOutputStream output = new ObjectOutputStream(fops);
@@ -125,6 +116,31 @@ public class GameControl {
             throw new GameControlException(e.getMessage());
         }
         AbleHunterControl.setCurrentGame(game);
+    }
+    
+    public static void saveReport(Object currentReport, String filePath) throws GameControlException {
+         //To change body of generated methods, choose Tools | Templates.
+        try(FileOutputStream fops = new FileOutputStream(filePath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(currentReport);
+        }catch(IOException e){
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void getReport(String filepath) throws GameControlException {
+        //To change body of generated methods, choose Tools | Templates.
+        PrintReport report = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)){
+            ObjectInputStream output = new ObjectInputStream(fips);
+            report = (PrintReport) output.readObject();
+        }catch(FileNotFoundException fnfe){
+            throw new GameControlException(fnfe.getMessage());
+        }catch(Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+        AbleHunterControl.setCurrentReport(report);
     }
 
     

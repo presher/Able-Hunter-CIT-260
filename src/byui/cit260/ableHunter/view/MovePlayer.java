@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  *
  * @author Jason
  */
-public final class MovePlayer implements errorInfo{//Created and Coded by Jason
+public final class MovePlayer extends View implements errorInfo{//Created and Coded by Jason
    private Game game;
     protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
    //private Board board;
@@ -30,7 +30,7 @@ public final class MovePlayer implements errorInfo{//Created and Coded by Jason
         Scanner inFile = AbleHunterControl.getInputFile(); // get input file 
 
         // prompt for the row and column numbers
-        System.out.println(//"\n\n\t" + game.getCurrentPlayer().getName() + " it is your turn."
+        this.console.println(//"\n\n\t" + game.getCurrentPlayer().getName() + " it is your turn."
                  " Enter a row and column number (For example: 1 3)");
 
         // read the row and column coordinates
@@ -101,7 +101,8 @@ public final class MovePlayer implements errorInfo{//Created and Coded by Jason
      /*public static void main(String[] args) {
          MovePlayer movePlayer = new MovePlayer();
      }*/
-     public MovePlayer(){
+     public MovePlayer(String promptMessage){
+         super(promptMessage);
        Object Player = getInput(game);
         
        
@@ -114,7 +115,7 @@ public final class MovePlayer implements errorInfo{//Created and Coded by Jason
    //public GetInt(){
          boolean quit  = false;
          boolean valid = false;
-       System.out.println("Please Enter A Number");
+       this.console.println("Please Enter A Number");
       
         do{   
        try{
@@ -126,27 +127,47 @@ public final class MovePlayer implements errorInfo{//Created and Coded by Jason
       while(!valid){
        input = this.keyBoard.readLine();
         if(input.length() < 1){
-            System.out.println("Enter a valid input");
+            this.console.println("Enter a valid input");
         }
       }
        }catch(Exception e){
-               System.out.println("Error reading input: " + e.getMessage());
+               this.console.println("Error reading input: " + e.getMessage());
                }
        
            
          String a = input;
            int i = Integer.parseInt(a);
-           System.out.println("int value = " + i);
+           this.console.println("int value = " + i);
            quit = true;
        }catch(NumberFormatException nfe)
     {
-       System.out.println("That will not do try again");
+       this.console.println("That will not do try again");
        
     }
        
     } while(!quit);
     
        }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    }
 
 

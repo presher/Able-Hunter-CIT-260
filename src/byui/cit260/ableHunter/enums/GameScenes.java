@@ -12,7 +12,7 @@ import byui.cit260.ableHunter.model.TheMap;
  *
  * @author Jason
  */
-public enum GameScenes {
+public enum GameScenes  {
     
         start ("Start New Game"),
         finish ("Finish Game"),

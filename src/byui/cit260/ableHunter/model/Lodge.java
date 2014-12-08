@@ -5,6 +5,7 @@
  */
 package byui.cit260.ableHunter.model;
 
+import byui.cit260.ableHunter.view.View;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,16 +13,21 @@ import java.util.Objects;
  *
  * @author Jason
  */
-public class Lodge implements Serializable{
+public class Lodge extends View implements Serializable{
     private String lodgeName; //name of the lodge
     private String weather; //hot, cold, rain, snow
     private String timeOfDay; //day, night
     private String difficulty; // easy, medium, hard
-public void displayLodgeScene(){
-    System.out.println("You have entered the Lodge Scene");
-}
-    public Lodge() {
+
+    public Lodge(String promptMessage) {
+        super(promptMessage);
     }
+
+   
+public void displayLodgeScene(){
+    this.console.println("You have entered the Lodge Scene");
+}
+    
 
     public String getLodgeName() {
         return lodgeName;
@@ -92,6 +98,26 @@ public void displayLodgeScene(){
             return false;
         }
         return true;
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

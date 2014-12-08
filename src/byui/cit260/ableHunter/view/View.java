@@ -6,6 +6,7 @@
 package byui.cit260.ableHunter.view;
 
 import byui.cit260.ableHunter.control.AbleHunterControl;
+import byui.cit260.ableHunter.control.GameControl;
 import byui.cit260.ableHunter.control.SceneControl;
 import byui.cit260.ableHunter.exceptions.JasonExceptions;
 import byui.cit260.ableHunter.exceptions.MapControlException;
@@ -30,9 +31,11 @@ import java.util.logging.Logger;
 public abstract class View implements ViewInterface{//Team Felix and Jason
     
    
-    private final String promptMessage;
+    final String promptMessage;
+    
     protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
     protected final PrintWriter console = AbleHunterControl.getOutFile();
+    
     //HelpMenuView helpMenu = new HelpMenuView();
      public View(String promptMessage){
         this.promptMessage = promptMessage;}
@@ -43,7 +46,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
         String value;
         
         do{
-            System.out.println(this.promptMessage);//Displays the selection menu
+            this.console.println(this.promptMessage);//Displays the selection menu
             value = this.getInput();
            
             
@@ -68,16 +71,17 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
     
     @Override
     public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
+        //Scanner keyboard = new Scanner(System.in);
         Player player = new Player();
         boolean valid = false;
         String selection = null;
         
        // String input = null;
+        try{
         while (!valid){
-            System.out.println(player.getName() + "\t\nEnter Your Selection Below");
+            this.console.println(player.getName() + "\t\nEnter Your Selection Below");
             
-                selection = keyboard.nextLine();
+                selection = this.keyBoard.readLine();
            
             selection = selection.trim();
             
@@ -86,7 +90,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                 try{
                     this.doAction(selection);
                 }catch(JasonExceptions me){
-                    System.out.println(me.getMessage());
+                    this.console.println(me.getMessage());
                 } catch (IOException ex) {
                     Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (MapControlException ex) {
@@ -98,6 +102,10 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
             break;
         }
         
+        }catch(Exception e){
+                this.console.println("Error reading input" + e.getMessage());
+                }
+        
         return selection;
         
 }
@@ -106,9 +114,9 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
      private void doAction(String value)throws IOException, MapControlException, JasonExceptions {
          boolean quit = false;
          do{
-       Scanner keyboard = new Scanner(System.in);
+       //Scanner keyboard = new Scanner(System.in);
        String input;
-       input = keyboard.nextLine();
+       input = this.keyBoard.readLine();
        input = input.trim();//.toUpperCase;
      
 
@@ -165,11 +173,11 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
                                                             break;
                                                    
                 default:
-                    System.out.println("Invalid Choice Please Try Again");
+                    this.console.println("Invalid Choice Please Try Again");
                     try{
                         this.doAction(input);
                     }catch(JasonExceptions me){
-                        System.out.println(me.getMessage());
+                        this.console.println(me.getMessage());
                     }
     }
          
@@ -202,7 +210,15 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
 
     private void saveGame() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("This Will save Your Game");
+        this.console.println("\n\nEnter the file path for the file where to save the game");
+            String filePath = this.getInput();
+            
+                try{
+                    GameControl.saveGame(AbleHunterControl.getCurrentGame(), filePath);
+                }catch(Exception ex){
+                    ErrorView.display("MainMenuView", ex.getMessage());
+                }
+        
     }
 
    /* private void doAction(String value) {
@@ -211,7 +227,7 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
 
     private void HelpToPLAY() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("\nHow To Play AbleHunter.The game board for Able Hunter. It consist of a grid of " 
+        this.console.println("\nHow To Play AbleHunter.The game board for Able Hunter. It consist of a grid of " 
                 + "\nlocations. Players place there marker on the different locations" 
                 + "\non the board in an effort to win the game. The default board is"
                 + "\n10 rows by 20 columns. Q to return to Help Menu");
@@ -220,27 +236,35 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
 
     private void MakeWeapons() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Make Weapons. Q to return to Help Menu");
+        this.console.println("How To Make Weapons. Q to return to Help Menu");
     }
 
     private void MakeArmor() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Make Armor. Q to return to Help Menu");
+        this.console.println("How To Make Armor. Q to return to Help Menu");
     }
 
     private void UseMap() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Use The Map. Q to return to Help Menu");
+        this.console.println("How To Use The Map. Q to return to Help Menu");
     }
 
     private void Defend() {
    //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Defend. Q to return to Help Menu");
+        this.console.println("How To Defend. Q to return to Help Menu");
     }
 
     private void getSavedGame() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("This Will Resume A Saved Game");
+        this.console.println("\n\nEnter the file path for the file where the is saved");
+        String filepath = this.getInput();
+        try{
+            GameControl.getSavedGme(filepath);
+        }catch(Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        AbleHunterMainMenu gameMenu = new AbleHunterMainMenu() {};
+        gameMenu.display();
     }
 
     private void seneView() {
@@ -263,25 +287,25 @@ public abstract class View implements ViewInterface{//Team Felix and Jason
 
     private void LodgeScene() {
          //To change body of generated methods, choose Tools | Templates.
-        Lodge lodge = new Lodge();
+        Lodge lodge = null;
         lodge.displayLodgeScene();
     }
 
     private void IslandScene() {
          //To change body of generated methods, choose Tools | Templates.
-        Island island = new Island();
+        Island island = null;
         island.displayIslandScene();
     }
 
     private void ForestScene() {
          //To change body of generated methods, choose Tools | Templates.
-        Forest forest = new Forest();
+        Forest forest = null;
         forest.displayForestScene();
     }
 
     private void DesertScene() {
          //To change body of generated methods, choose Tools | Templates.
-        Desert desert = new Desert();
+        Desert desert = null;
         desert.displayDesertScene();
     }
 

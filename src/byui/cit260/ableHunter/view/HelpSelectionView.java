@@ -25,19 +25,20 @@ import java.util.logging.Logger;
  *
  * @author Jason
  */
-public abstract class HelpSelectionView implements ViewInterface{
-     private final String promptMessage;
-    protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
+public abstract class HelpSelectionView extends View implements ViewInterface{
+     
     protected final PrintWriter console = AbleHunterControl.getOutFile();
-    //HelpMenuView helpMenu = new HelpMenuView();
-     public HelpSelectionView(String promptMessage){
-        this.promptMessage = promptMessage;}
+
+    public HelpSelectionView(String promptMessage) {
+        super(promptMessage);
+    }
+   
      @Override
     public void display(){
         String value;
         
         do{
-            System.out.println(this.promptMessage);//Displays the selection menu
+            this.console.println(this.promptMessage);//Displays the selection menu
             value = this.getInput();
            
             
@@ -61,9 +62,9 @@ public abstract class HelpSelectionView implements ViewInterface{
      private void doAction(String value)throws IOException, MapControlException, JasonExceptions {
          boolean quit = false;
          do{
-       Scanner keyboard = new Scanner(System.in);
+       //Scanner keyboard = new Scanner(System.in);
        String input;
-       input = keyboard.nextLine();
+       input = this.keyBoard.readLine();
        input = input.trim().toUpperCase();
      
 
@@ -89,11 +90,11 @@ public abstract class HelpSelectionView implements ViewInterface{
                     return;
                                
                 default:
-                    System.out.println("Invalid Choice Please Try Again");
+                    this.console.println("Invalid Choice Please Try Again");
                     try{
                         this.doAction(input);
                     }catch(JasonExceptions me){
-                        System.out.println(me.getMessage());
+                        this.console.println(me.getMessage());
                     }
     }
          
@@ -103,7 +104,7 @@ public abstract class HelpSelectionView implements ViewInterface{
 
        private void HelpToPLAY() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("\nHow To Play AbleHunter.The game board for Able Hunter. It consist of a grid of " 
+        this.console.println("\nHow To Play AbleHunter.The game board for Able Hunter. It consist of a grid of " 
                 + "\nlocations. Players place there marker on the different locations" 
                 + "\non the board in an effort to win the game. The default board is"
                 + "\n10 rows by 20 columns. Q to return to Help Menu");
@@ -112,22 +113,22 @@ public abstract class HelpSelectionView implements ViewInterface{
 
     private void MakeWeapons() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Make Weapons. Q to return to Help Menu");
+        this.console.println("How To Make Weapons. Q to return to Help Menu");
     }
 
     private void MakeArmor() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Make Armor. Q to return to Help Menu");
+        this.console.println("How To Make Armor. Q to return to Help Menu");
     }
 
     private void UseMap() {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Use The Map. Q to return to Help Menu");
+        this.console.println("How To Use The Map. Q to return to Help Menu");
     }
 
     private void Defend() {
    //To change body of generated methods, choose Tools | Templates.
-        System.out.println("How To Defend. Q to return to Help Menu");
+        this.console.println("How To Defend. Q to return to Help Menu");
     }
 
     @Override
@@ -143,24 +144,27 @@ public abstract class HelpSelectionView implements ViewInterface{
         boolean quit = false;
         String selection = ",";
         do{
-        Scanner keyboard = new Scanner(System.in);
+       // Scanner keyboard = new Scanner(System.in);
         
         
         
        // String input = null;
+            try{
         while (!valid){
-            System.out.println(player.getName() + "\t\nEnter Your Selection Below");
+            this.console.println(player.getName() + "\t\nEnter Your Selection Below");
             
-                selection = keyboard.nextLine();
+            
+                selection = this.keyBoard.readLine();
+           
            
             selection = selection.trim();
             
             if(selection.length() < 1){
-                //System.out.println("***Invalid Selection***");
+                //this.console.println("***Invalid Selection***");
                 try{
                     this.doAction(selection);
                 }catch(JasonExceptions me){
-                    System.out.println(me.getMessage());
+                    this.console.println(me.getMessage());
                 } catch (IOException ex) {
                     Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (MapControlException ex) {
@@ -171,6 +175,9 @@ public abstract class HelpSelectionView implements ViewInterface{
        
             break;
         }
+         } catch (IOException ex) {
+                Logger.getLogger(HelpSelectionView.class.getName()).log(Level.SEVERE, null, ex);
+            }
        // return selection;
         }while(!quit);
         

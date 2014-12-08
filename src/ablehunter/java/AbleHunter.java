@@ -7,33 +7,7 @@ package ablehunter.java;
 
 
 
-//import byui.cit260.ableHunter.control.ArmorControl;
-/*import byui.cit260.ableHunter.control.CharacterControl;
-import byui.cit260.ableHunter.control.HelpMenu;
-import byui.cit260.ableHunter.model.Armor;
-import byui.cit260.ableHunter.model.Avatar;
-import byui.cit260.ableHunter.model.BowWeapon;
-import byui.cit260.ableHunter.model.ClothesArmor;
-import byui.cit260.ableHunter.model.Desert;
-import byui.cit260.ableHunter.model.DiamondArmor;
-import byui.cit260.ableHunter.model.DiamondWeapon;
-import byui.cit260.ableHunter.model.Forest;
-import byui.cit260.ableHunter.model.Game;
-import byui.cit260.ableHunter.model.GoldArmor;
-import byui.cit260.ableHunter.model.HandWeapon;
-import byui.cit260.ableHunter.model.Inventory;
-import byui.cit260.ableHunter.model.IronArmor;
-import byui.cit260.ableHunter.model.IronWeapon;
-import byui.cit260.ableHunter.model.Island;
-import byui.cit260.ableHunter.model.LeatherArmor;
-import byui.cit260.ableHunter.model.Lodge;
-import byui.cit260.ableHunter.model.Mountain;
-import byui.cit260.ableHunter.model.Player;
-import byui.cit260.ableHunter.model.Resources;
-import byui.cit260.ableHunter.model.Scene;
-import byui.cit260.ableHunter.model.SpearWeapon;
-import byui.cit260.ableHunter.model.Weapons;
-import byui.cit260.ableHunter.model.WoodenWeapon;*/
+
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.view.AbleHunterStartView;
@@ -46,8 +20,9 @@ import java.util.Scanner;
  * @author Jason @ Felix
  */
 public class AbleHunter implements displayInfo{
+
 //<<<<<<< HEAD
-    
+        String promptMessage;
          private static Game Game = null;//coded by Jason
           private static Player currentPlayer = null;
 //<<<<<<< HEAD
@@ -67,7 +42,8 @@ public class AbleHunter implements displayInfo{
     public static void main(String[] args) 
         throws java.io.IOException{
         
-            AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
+            AbleHunterStartView ableHunterStartView = null ;
+            //super(promptMessage);
            try{
             ableHunterStartView.ableHunterStart();
            }catch(Throwable te){
@@ -75,48 +51,7 @@ public class AbleHunter implements displayInfo{
                te.printStackTrace();
                ableHunterStartView.ableHunterStart();
            }
-           // private static Game Game = null;//coded by Jason (This line of code need to be off. By Felix)
-              //  private static Player currentPlayer = null;
-
-    /*public void Game getCurrentGame() {//this grayed out selection causing errors
-        return Game;
-    }
-//>>>>>>> origin/master
-    
-    
-  public void setCurrentGame(Game currentGame) { //fix by Felix
-        AbleHunter.Game = currentGame;
-    }*/
-
-    /*public static Player getPlayer() {
-        return currentPlayer;
-    }
-
-    public static void setPlayer(Player player) {
-        AbleHunter.currentPlayer = player;
-    }*/
-          
-          
-
-    /*public static void main(String[] args) throws IOException 
-        //throws java.io.IOException
-    {
-        
-            AbleHunterStartView ableHunterStartView = new AbleHunterStartView();
-            ableHunterStartView.ableHunterStart();*/
-            
-            
            
-               
-
-    
-            
-            
-            
-            
-            
-            
-  
 }
 
     public static void setPlayer(Player player) {

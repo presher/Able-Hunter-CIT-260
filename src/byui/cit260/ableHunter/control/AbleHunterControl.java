@@ -12,6 +12,7 @@ import byui.cit260.ableHunter.view.AbleHunterMainMenu;
 import byui.cit260.ableHunter.view.ErrorView;
 import byui.cit260.ableHunter.view.HelpMenuView;
 import byui.cit260.ableHunter.view.SceneView;
+import byui.cit260.ableHunter.view.View;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,10 +25,14 @@ import java.util.logging.Logger;
  *
  * @author Jason
  */
-public class AbleHunterControl {
+public class AbleHunterControl extends View {
     private static final Scanner inFfile = new Scanner(System.in);
     private static PrintWriter outFile = null;
     private static BufferedReader inFiles = null;
+
+    static void setCurrentGame(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     protected final PrintWriter console = AbleHunterControl.getOutFile();
     
     private static final HelpMenuView helpMenu = new HelpMenuView() {
@@ -73,10 +78,14 @@ public class AbleHunterControl {
         }
     };
 
-    static Object getCurrentGame() {
+    public static Object getCurrentGame() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     private String name;
+
+    public AbleHunterControl(String promptMessage) {
+        super(promptMessage);
+    }
 
     public String getName() {
         return name;
@@ -111,9 +120,7 @@ public class AbleHunterControl {
     
     private Player[] players = new Player[10];
 
-    public AbleHunterControl() {
-        
-    }
+   
         
         
    // public static HelpMenuView getHelpMenu() {
@@ -143,8 +150,9 @@ public class AbleHunterControl {
     }
 
         
-    public static void main(String args[]) {
-        AbleHunterControl AbleHunterControl = new AbleHunterControl();
+    //public static void main(String args[]) {
+    public void Controls(){
+        AbleHunterControl AbleHunterControl = null;
         AbleHunterControl.display();
         AbleHunterControl.nameList = AbleHunterControl.getPlayerNames();
         AbleHunterMainMenu mainMenu = new AbleHunterMainMenu() {
@@ -192,7 +200,7 @@ public class AbleHunterControl {
             AbleHunterControl.outFile.close();
             
              } catch (IOException ex) {
-                System.out.println("Error Closing Files");
+                this.console.println("Error Closing Files");
                  //ErrorView.display(this.getClass().getName(), "Error Closing Files" + ex.getMessage());
                 return;
             }
@@ -200,8 +208,8 @@ public class AbleHunterControl {
 
         mainMenu.display();
         AbleHunterControl.inFfile.close();
-    }
     
+    }
     public void display() {
         this.console.println(AbleHunterControl.welcome);
     }
@@ -308,6 +316,26 @@ public class AbleHunterControl {
 
     public static void setInFiles(BufferedReader inFiles) {
         AbleHunterControl.inFiles = inFiles;
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      
     

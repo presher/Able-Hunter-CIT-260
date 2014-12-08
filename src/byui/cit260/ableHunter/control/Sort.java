@@ -5,6 +5,7 @@
  */
 package byui.cit260.ableHunter.control;
 
+import byui.cit260.ableHunter.view.View;
 import java.util.Arrays;
 import java.util.Collections;
 import static java.util.Collections.list;
@@ -14,7 +15,7 @@ import java.util.List;
  *
  * @author Jason
  */
-public class Sort {
+public class Sort extends View {
    /*int i = 0;
     //public void SortItems() {
         
@@ -57,13 +58,14 @@ public class Sort {
    }*/
    
    
-   public static void main(String args[]){
+   //public static void main(String args[]){
+    public void TheMainScenes(){
        String[] scenes = {"Mountain", "Island", "Desert" , "Lodge", "Forest"};
        sortStringExchange(scenes);
         for ( int k = 0;  k < scenes.length;  k++ )
-                System.out.println( scenes [ k ] );
+                this.console.println( scenes [ k ] );
    }
-       public static void sortStringExchange( String  x [ ] )
+       public void sortStringExchange( String  x [ ] )
       {
             int i, j;
             String temp;
@@ -80,13 +82,37 @@ public class Sort {
                                       
         
                            }
-                          System.out.println("Sorted Array: ");
+                          this.console.println("Sorted Array: ");
         for(j = 0; j < x.length; j++)
-            System.out.println("\n\t" + x[j] );
+            this.console.println("\n\t" + x[j] );
         
                    }
              }
       } 
+
+    public Sort(String promptMessage) {
+        super(promptMessage);
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    }
        
        

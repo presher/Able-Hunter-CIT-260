@@ -10,6 +10,7 @@ package byui.cit260.ableHunter.control;
 
 //=======
 import ablehunter.java.AbleHunter;
+import byui.cit260.ableHunter.exceptions.GameControlException;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.GameScenes;
 import byui.cit260.ableHunter.model.Inventory;
@@ -17,6 +18,12 @@ import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.Monster;
 import byui.cit260.ableHunter.model.TheMap;
 import static com.sun.org.apache.bcel.internal.Constants.CONSTANT_String;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 //import static com.sun.org.apache.bcel.internal.Constants.CONSTANT_String;
 //import com.sun.org.apache.bcel.internal.Constants;
 
@@ -25,6 +32,7 @@ import static com.sun.org.apache.bcel.internal.Constants.CONSTANT_String;
  * @author adm-achina
  */
 public class GameControl {
+    private static Object output;
 
     /*public static void starNewGame(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -92,6 +100,31 @@ public class GameControl {
 
     public static void assignScenesToLocations(TheMap map, GameScenes[] scenes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void saveGame(Object currentGame, String filePath) throws GameControlException {
+         //To change body of generated methods, choose Tools | Templates.
+        try(FileOutputStream fops = new FileOutputStream(filePath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(currentGame);
+        }catch(IOException e){
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void getSavedGme(String filepath) throws GameControlException {
+         //To change body of generated methods, choose Tools | Templates.
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)){
+            ObjectInputStream output = new ObjectInputStream(fips);
+            game = (Game) output.readObject();
+        }catch(FileNotFoundException fnfe){
+            throw new GameControlException(fnfe.getMessage());
+        }catch(Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+        AbleHunterControl.setCurrentGame(game);
     }
 
     

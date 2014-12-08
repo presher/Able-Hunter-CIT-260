@@ -5,29 +5,34 @@
  */
 package byui.cit260.ableHunter.control;
 
+import byui.cit260.ableHunter.view.View;
 import java.io.IOException;
 
 /**
  *
  * @author adm-achina
  */
-public class CharacterControl {
+public abstract class CharacterControl  extends View{
         public String characterControl;
+
+    public CharacterControl(String promptMessage) {
+        super(promptMessage);
+    }
     
     /**
      *
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) //Coded by Jason
-         throws java.io.IOException{
-       
+    //public static void main(String[] args) //Coded by Jason
+         //throws java.io.IOException{
+       public void CharControls() throws IOException{
             char avatar, ignore;
-                CharacterControl characterControlInput = new CharacterControl();
+                CharacterControl characterControlInput = null;
         for(;;){
             do{
-                System.out.println("\n Please enter w to move one space");
-                System.out.println("Enter q to continue");
+                this.console.println("\n Please enter w to move one space");
+                this.console.println("Enter q to continue");
                    
                avatar = (char) System.in.read();
              do {
@@ -35,10 +40,10 @@ public class CharacterControl {
             }// Do Loop 2
             while(ignore != '\n');
              if (avatar == 'w'){
-                System.out.print("\n Avatar has moved 1 space");
+                this.console.print("\n Avatar has moved 1 space");
             }
              else if (avatar != 'q'){
-                 System.out.println("Please enter the correct letter to continue.");
+                 this.console.println("Please enter the correct letter to continue.");
              }
      }// Do loop One
            while( avatar < '1' | avatar > '4' & avatar != 'q');

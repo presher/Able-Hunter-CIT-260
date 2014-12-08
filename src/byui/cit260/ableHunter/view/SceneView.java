@@ -17,7 +17,7 @@ import java.io.IOException;
  *
  * @author Jason
  */
-public abstract class SceneView extends View implements displayInfo{
+public abstract class SceneView extends SceneSelectionView implements displayInfo{
     public String sceneView;
     public SceneView(){
     super("\n"

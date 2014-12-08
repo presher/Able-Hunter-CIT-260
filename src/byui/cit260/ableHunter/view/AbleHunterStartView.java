@@ -6,24 +6,29 @@
 package byui.cit260.ableHunter.view;
 
 
-import byui.cit260.ableHunter.control.AbleHunterControl;
-import byui.cit260.ableHunter.control.HelpMenu;
+import ablehunter.java.displayInfo;
 import byui.cit260.ableHunter.control.MapControl;
 import byui.cit260.ableHunter.control.ProgramControl;
 import byui.cit260.ableHunter.exceptions.MapControlException;
 import byui.cit260.ableHunter.model.Avatar;
 import byui.cit260.ableHunter.model.Player;
 import java.awt.Point;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  *
  * @author Jason
  */
-public class AbleHunterStartView {//Coded by jason
-     protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
+public class AbleHunterStartView extends View implements displayInfo {//Coded by jason
+     //protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
+
+    public AbleHunterStartView(String promptMessage) {
+        super(promptMessage);
+    }
+
+    
+
+   
     
     //private Object ProgramControl;
 //Coded By Jason
@@ -49,7 +54,7 @@ public class AbleHunterStartView {//Coded by jason
                      try{
                     MapControl.moveAvatarToStatingLocation(avatar, coordinates);
                      }catch(MapControlException me){
-                         System.out.println(me.getMessage());
+                         this.console.println(me.getMessage());
                      }
                         //if(returnValue < 0){
                             //System.out.println("\nERROR" + avatar + " could not be moved to location" +
@@ -91,9 +96,9 @@ public class AbleHunterStartView {//Coded by jason
 
     private void displayStart() {//Coded By Jason
          //To change body of generated methods, choose Tools | Templates.
-    System.out.println("\n\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    this.console.println("\n\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
         
-        System.out.println(
+        this.console.println(
                       "\n++  This is a Game of skill and cunning                        ++"
                     + "\n++  You will have have 5 scenes to navigate through            ++"
                     + "\n++  Each scene will have 6 levels of increasing difficulty     ++"
@@ -101,9 +106,9 @@ public class AbleHunterStartView {//Coded by jason
                     + "\n++  There will be caluculations that will need to be done      ++"
                     + "\n++  In order to create the armor and weapons.                  ++");
             
-            System.out.println("\n Good Luck And Have on this wacky adventure");
+            this.console.println("\n Good Luck And Have on this wacky adventure");
                         
-    System.out.println("\n\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    this.console.println("\n\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }
 /*getInput(): valueEntered
 BEGIN
@@ -125,25 +130,26 @@ END
     private String getPlayersName() throws IOException {//Coded By Jason
          //To change body of generated methods, choose Tools | Templates.
         boolean valid = false;
-        String playersName = " ";
-        Scanner keyboard = new Scanner(System.in);//get input from keyoard
-        //try{
-            while (!valid){
-                System.out.print("\nPlease Enter Your Name At Least 1 Letter"
+        String playersName = null;
+       // Scanner keyboard = new Scanner(System.in);//get input from keyoard
+       
+                this.console.print("\nPlease Enter Your Name At Least 1 Letter"
                         + "\n");
-                    playersName = keyboard.nextLine();
+                 try{
+                     while (!valid){
+                    playersName = this.keyBoard.readLine();
                     playersName = playersName.trim();
                     
                         if(playersName.length() < 1){
-                            System.out.println("Please Enter A Valid Name At Least One Letter \n");
+                            this.console.println("Please Enter A Valid Name At Least One Letter \n");
                             continue;//will repeat until a valid name is input
                         }
                 break;//Programs ends when a valid name is input
                 
             }
-       // }catch(Exception e){
-          //  System.out.println("Error reading input" + e.getMessage());
-       // }
+        }catch(Exception e){
+            this.console.println("Error reading input" + e.getMessage());
+        }
             //System.out.println("Welcome " + playersName);
         return playersName;
             
@@ -151,12 +157,37 @@ END
 
     private void welcomeMessage(Player player) {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("\n\n###################################################");
+        this.console.println("\n\n###################################################");
 
         
-        System.out.println("\tWelcome To Able Hunter " + player.getName());
-        System.out.println("\tWe Hope You Enjoy Your Stay ");
-        System.out.println("###################################################");
+        this.console.println("\tWelcome To Able Hunter " + player.getName());
+        this.console.println("\tWe Hope You Enjoy Your Stay ");
+        this.console.println("###################################################");
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object display(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
 }

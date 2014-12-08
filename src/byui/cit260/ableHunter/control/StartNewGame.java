@@ -7,6 +7,7 @@ package byui.cit260.ableHunter.control;
 
 import byui.cit260.ableHunter.exceptions.MapControlException;
 import byui.cit260.ableHunter.model.Avatar;
+import byui.cit260.ableHunter.view.View;
 import java.awt.Point;
 import java.io.IOException;
 
@@ -14,11 +15,16 @@ import java.io.IOException;
  *
  * @author Jason
  */
-public class StartNewGame {//Coded By Jason
+public class StartNewGame extends View{
+
+    public StartNewGame(String promptMessage) {
+        super(promptMessage);
+    }
+//Coded By Jason
     public void NewGame() throws IOException{
-        SceneControl scene = new SceneControl();
+        SceneControl scene = null;
         scene.getScene();
-    System.out.println("You have begun a new game");
+    this.console.println("You have begun a new game");
 }
 
     
@@ -29,7 +35,7 @@ public class StartNewGame {//Coded By Jason
                      try{
                     MapControl.moveAvatarToStatingLocation(avatar, coordinates);
                      }catch(MapControlException me){
-                         System.out.println(me.getMessage());
+                         this.console.println(me.getMessage());
                      }
                         //if(returnValue < 0){
                             //System.out.println("\nERROR" + avatar + " could not be moved to location" +
@@ -40,7 +46,27 @@ public class StartNewGame {//Coded By Jason
 
     public void getScene() {
          //To change body of generated methods, choose Tools | Templates.
-        SceneControl scene = new SceneControl();
+        SceneControl scene = null;
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

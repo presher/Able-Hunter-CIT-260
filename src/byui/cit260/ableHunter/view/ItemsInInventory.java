@@ -13,11 +13,15 @@ import byui.cit260.ableHunter.model.Inventory;
  *
  * @author Jason
  */
-public class ItemsInInventory {
+public class ItemsInInventory extends View {
+
+    public ItemsInInventory(String promptMessage) {
+        super(promptMessage);
+    }
     
     
          //To change body of generated methods, choose Tools | Templates.
-       // System.out.println("Will display items in inventory");
+       // this.console.println("Will display items in inventory");
         //return null;
         private void ItemsInInventory(){
             
@@ -29,13 +33,30 @@ public class ItemsInInventory {
     private String description;
    
 
-     ItemsInInventory(String description) {
-         this.description = description;
-         
-    }
+     
 
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }  
 

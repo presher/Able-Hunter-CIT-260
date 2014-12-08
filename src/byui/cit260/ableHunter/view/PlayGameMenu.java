@@ -15,7 +15,11 @@ import byui.cit260.ableHunter.model.TheMap;
  *
  * @author Jason
  */
-public class PlayGameMenu implements displayInfo{
+public class PlayGameMenu extends View implements displayInfo{
+
+    public PlayGameMenu(String promptMessage) {
+        super(promptMessage);
+    }
     public void doAction(char selection){
         switch(selection){
             case 'V':
@@ -43,11 +47,11 @@ public class PlayGameMenu implements displayInfo{
         //To change body of generated methods, choose Tools | Templates.
         Inventory[] inventory = GameControl.getsortedInventoryList();
         
-            System.out.println("\nList of Inventory Items");
-            System.out.println("Dsecription" + "\t" + "Required" + "\t" + "Available");
+            this.console.println("\nList of Inventory Items");
+            this.console.println("Dsecription" + "\t" + "Required" + "\t" + "Available");
             
                 for(Inventory inventoryItem : inventory){
-                    System.out.println(inventoryItem.getDescription() + "\t     " + inventoryItem.getAmountNeeded() + "\t     "
+                    this.console.println(inventoryItem.getDescription() + "\t     " + inventoryItem.getAmountNeeded() + "\t     "
                     + inventoryItem.getItemsCollected());
                 }
     }
@@ -62,6 +66,26 @@ public class PlayGameMenu implements displayInfo{
 
     @Override
     public Object display(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

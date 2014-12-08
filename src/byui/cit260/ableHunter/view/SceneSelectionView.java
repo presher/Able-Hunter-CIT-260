@@ -5,38 +5,78 @@
  */
 package byui.cit260.ableHunter.view;
 
+import ablehunter.java.displayInfo;
+import byui.cit260.ableHunter.exceptions.JasonExceptions;
+import byui.cit260.ableHunter.exceptions.MapControlException;
 import byui.cit260.ableHunter.model.Desert;
 import byui.cit260.ableHunter.model.Forest;
 import byui.cit260.ableHunter.model.Island;
 import byui.cit260.ableHunter.model.Lodge;
 import byui.cit260.ableHunter.model.Mountain;
+import byui.cit260.ableHunter.model.Player;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Jason
  */
-public class SceneSelectionView {
+public abstract class SceneSelectionView extends View implements displayInfo{
+
+    public SceneSelectionView(String promptMessage) {
+        super(promptMessage);
+    }
+    
+      @Override
+    public void display(){
+        String value;
+        
+        do{
+            this.console.println(this.promptMessage);//Displays the selection menu
+            value = this.getInput();
+           
+            
+           
+                this.doAction(value);
+           
+                
+            
+        }while(!value.equals("Q"));
+
+   
+
+    
+    }
+    
     private void doAction(String input){
      boolean quit = false;
           boolean valid = false;
           do{
           //String input;
-           Scanner keyboard = new Scanner(System.in);
+           //Scanner keyboard = new Scanner(System.in);
           
         
        
-      
+      try{
            while(!valid){
        
-       input = keyboard.nextLine();
+               
+                   input = this.keyBoard.readLine();
+              
        input = input.trim().toUpperCase();
         if(input.length() < 1){
-            System.out.println("Please enter a valid value.");
+            this.console.println("Please enter a valid value.");
+            continue;
         }
+        break;
         
            }
-       
+           } catch (Exception e) {
+                   this.console.println("Error Reading Input" + e.getMessage());
+               }
+                  
        
         switch (input){
                            case "X":
@@ -58,7 +98,7 @@ public class SceneSelectionView {
                                                         quit = true;
                                                         break;
                                                     default:
-                                                        System.out.println("Invalid Selection Please Try Again");
+                                                        this.console.println("Invalid Selection Please Try Again");
                                                
            
         }
@@ -89,4 +129,66 @@ public class SceneSelectionView {
          //To change body of generated methods, choose Tools | Templates.
         Forest forest = new Forest();
     }
+     @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
+    // @Override
+    public String getInput(){
+        Player player = new Player();
+        boolean valid = false;
+        boolean quit = false;
+        String selection = ",";
+        do{
+       // Scanner keyboard = new Scanner(System.in);
+        
+        
+        
+       // String input = null;
+            try{
+        while (!valid){
+            this.console.println(player.getName() + "\t\nEnter Your Selection Below");
+            
+            
+                selection = this.keyBoard.readLine();
+           
+           
+            selection = selection.trim();
+            
+            if(selection.length() < 1){
+                //System.out.println("***Invalid Selection***");
+               
+                    this.doAction(selection);
+               
+              continue;
+            }
+       
+            break;
+        }
+         } catch (IOException ex) {
+                Logger.getLogger(HelpSelectionView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       // return selection;
+        }while(!quit);
+        
+        return null;
+}
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

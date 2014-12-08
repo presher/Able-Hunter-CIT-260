@@ -6,6 +6,7 @@
 package byui.cit260.ableHunter.control;
 
 import byui.cit260.ableHunter.exceptions.JasonExceptions;
+import byui.cit260.ableHunter.view.View;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -13,29 +14,38 @@ import java.util.Scanner;
  *
  * @author adm-achina
  */
-public class PlayerControl implements Serializable{
+public class PlayerControl extends View implements Serializable{
+
+    public PlayerControl(String promptMessage) {
+        super(promptMessage);
+    }
+
+   
     //private String fullName;
-    public static void main(String[] args) throws JasonExceptions{
+    //public static void main(String[] args) 
+          public void Players()  throws JasonExceptions{
         
         /* Instructor: 
          * Please watch your indentation. When you do not indent consisitently 
          * it makes it very hard to read your code.
          */
         
-        PlayerControl player = new PlayerControl();
+        PlayerControl player = null;
     
-            System.out.println("Please enter your name");
+            this.console.println("Please enter your name");
     
          Scanner enterName = new Scanner(System.in);
                         String fullName;   
-                System.out.print("Please Enter Your Name ");
+                this.console.print("Please Enter Your Name ");
                     
                    fullName = enterName.next();  
                     
                         
                     
-        System.out.println("Hello " + fullName);
+        this.console.println("Hello " + fullName);
             }
+
+   
 
     public void createPlayerList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -46,6 +56,26 @@ public class PlayerControl implements Serializable{
     }
 
     public void displayHelpMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

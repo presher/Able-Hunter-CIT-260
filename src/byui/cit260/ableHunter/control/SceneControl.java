@@ -6,6 +6,7 @@
 package byui.cit260.ableHunter.control;
 
 import byui.cit260.ableHunter.model.Mountain;
+import byui.cit260.ableHunter.view.View;
 import java.io.BufferedReader;
 import java.util.Scanner;
 
@@ -13,8 +14,8 @@ import java.util.Scanner;
  *
  * @author Jason
  */
-public class SceneControl {
-     protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
+public class SceneControl extends View{
+     //protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
     /*public static String[][] scenes = {
           {"Mountain"}, 
           {"Lodge"},
@@ -86,21 +87,26 @@ public class SceneControl {
             }
    }
 
+    public SceneControl(String promptMessage) {
+        super(promptMessage);
+    }
+
    
 
-                public static void main(String args[]){
+               // public static void main(String args[]){
+   public void MainSenes(){
                     String scenes[] = {"Mountain", "Lodge", "Island", "Desert", "Forest"};
                     int i;
-        System.out.println("Original array: ");
+        this.console.println("Original array: ");
         for(i = 0; i < scenes.length; i++)
-            System.out.println(scenes[i]);
+            this.console.println(scenes[i]);
        // System.out.println();
         
         SceneControl.sortArray(scenes);
         
-        System.out.println("Sorted Array: ");
+        this.console.println("Sorted Array: ");
         for(i = 0; i < scenes.length; i++)
-            System.out.println(scenes[i]);
+            this.console.println(scenes[i]);
    } 
 
     /*public void getScene() {
@@ -192,6 +198,26 @@ public class SceneControl {
     }
 
     public void getScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     }

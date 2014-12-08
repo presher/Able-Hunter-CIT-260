@@ -13,13 +13,17 @@ import java.io.IOException;
  *
  * @author Jason
  */
-public class GameStartMenu {
+public class GameStartMenu extends View{
+
+    public GameStartMenu(String promptMessage) {
+        super(promptMessage);
+    }
 
     void displayMenu() throws IOException {
        /*  //To change body of generated methods, choose Tools | Templates.
         private void doAction(char selection) throws IOException {
         //To change body of generated methods, choose Tools | Templates.*/
-        GameStartMenu gameStart = new GameStartMenu();
+        GameStartMenu gameStart = null;
         char input;
             for(;;){
                 do{
@@ -46,7 +50,7 @@ public class GameStartMenu {
                                                     case 'E':
                                                         return;
                                                     default:
-                                                        System.out.println("Oops not a valid input try again");
+                                                        this.console.println("Oops not a valid input try again");
                                                             break;
         }                                                    
                 }while(input != 'E');
@@ -72,15 +76,35 @@ public class GameStartMenu {
     private void viewInventory() {
          //To change body of generated methods, choose Tools | Templates.
         Inventory[] inventory = GameControl.getsortedInventoryList();
-                System.out.println("\n  List of Inventory Iems");
-                System.out.println("Description" + "\t" + "Required" + "\t" + "In Stock");
+                this.console.println("\n  List of Inventory Iems");
+                this.console.println("Description" + "\t" + "Required" + "\t" + "In Stock");
                 
                 for(Inventory inventoryItem: inventory){
-                    System.out.println(inventoryItem.getDescription + "\t" + inventoryItem.getAmountNeeded + "\t" + inventoryItem.getItemsCollected);
+                    this.console.println(inventoryItem.getDescription + "\t" + inventoryItem.getAmountNeeded + "\t" + inventoryItem.getItemsCollected);
                 }
     }
 
     private void showScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     }

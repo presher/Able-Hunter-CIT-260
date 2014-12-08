@@ -5,13 +5,14 @@
  */
 package byui.cit260.ableHunter.model;
 
+import byui.cit260.ableHunter.view.View;
 import java.io.Serializable;
 
 /**
  *
  * @author Jason
  */
-public class Resources implements Serializable{// added 11 / 15 / 14
+public class Resources extends View implements Serializable{// added 11 / 15 / 14
    
    /* Wood("Ore used to make wood weapons"),
     Iron("Ore used to make ironweapons and armor"),
@@ -52,20 +53,21 @@ public class Resources implements Serializable{// added 11 / 15 / 14
    }
    
    
-   public static void main(String args[]){
+   //public static void main(String args[]){
+   public void ResourcesArray(){
        char resources[] = {'z', 'g', 'p', 'x', 'a', 't', 'w', 'b'};
        int i;
        
-        System.out.println("Original array: ");
+        this.console.println("Original array: ");
         for(i = 0; i < resources.length; i++)
-            System.out.println("\n\t" + resources[i]);
-        System.out.println();
+            this.console.println("\n\t" + resources[i]);
+        this.console.println();
         
         Resources.qsort(resources);
         
-        System.out.println("Sorted Array: ");
+        this.console.println("Sorted Array: ");
         for(i = 0; i < resources.length; i++)
-            System.out.println("\n\t" + resources[i]);
+            this.console.println("\n\t" + resources[i]);
    }
    
     private String description;
@@ -76,112 +78,40 @@ public class Resources implements Serializable{// added 11 / 15 / 14
     private String oil;
     private String animalSkins;*/
 
-     Resources(String description) {
-         this.description = description;
+    public Resources(String promptMessage) {
+        super(promptMessage);
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
          
-    }/* public Resources() {
-    }
-    
-    
 
-    public String getWood() {
-        return wood;
-    }
 
-    public void setWood(String wood) {
-        this.wood = wood;
-    }
-
-    public String getOreIron() {
-        return oreIron;
-    }
-
-    public void setOreIron(String oreIron) {
-        this.oreIron = oreIron;
-    }
-
-    public String getOreGold() {
-        return oreGold;
-    }
-
-    public void setOreGold(String oreGold) {
-        this.oreGold = oreGold;
-    }
-
-    public String getOreDiamond() {
-        return oreDiamond;
-    }
-
-    public void setOreDiamond(String oreDiamond) {
-        this.oreDiamond = oreDiamond;
-    }
-
-    public String getOil() {
-        return oil;
-    }
-
-    public void setOil(String oil) {
-        this.oil = oil;
-    }
-
-    public String getAnimalSkins() {
-        return animalSkins;
-    }
-
-    public void setAnimalSkins(String animalSkins) {
-        this.animalSkins = animalSkins;
-    }
-
-    @Override
-    public String toString() {
-        return "Resources{" + "wood=" + wood + ", oreIron=" + oreIron + ", oreGold=" + oreGold + ", oreDiamond=" + oreDiamond + ", oil=" + oil + ", animalSkins=" + animalSkins + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.wood);
-        hash = 71 * hash + Objects.hashCode(this.oreIron);
-        hash = 71 * hash + Objects.hashCode(this.oreGold);
-        hash = 71 * hash + Objects.hashCode(this.oreDiamond);
-        hash = 71 * hash + Objects.hashCode(this.oil);
-        hash = 71 * hash + Objects.hashCode(this.animalSkins);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Resources other = (Resources) obj;
-        if (!Objects.equals(this.wood, other.wood)) {
-            return false;
-        }
-        if (!Objects.equals(this.oreIron, other.oreIron)) {
-            return false;
-        }
-        if (!Objects.equals(this.oreGold, other.oreGold)) {
-            return false;
-        }
-        if (!Objects.equals(this.oreDiamond, other.oreDiamond)) {
-            return false;
-        }
-        if (!Objects.equals(this.oil, other.oil)) {
-            return false;
-        }
-        if (!Objects.equals(this.animalSkins, other.animalSkins)) {
-            return false;
-        }
-        return true;
-    }*/
 
     public String getDescription() {
         return description;
     }
+
+   
     
     
     

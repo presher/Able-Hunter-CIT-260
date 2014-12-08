@@ -5,6 +5,7 @@
  */
 package byui.cit260.ableHunter.control;
 
+import byui.cit260.ableHunter.view.View;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,10 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author Jason
  */
-public class ArmorControlTest {
+public class ArmorControlTest extends View{
     
-    public ArmorControlTest() {
-    }
+    
     
     @BeforeClass
     public static void setUpClass() {
@@ -27,13 +27,17 @@ public class ArmorControlTest {
     public static void tearDownClass() {
     }
 
+    public ArmorControlTest(String promptMessage) {
+        super(promptMessage);
+    }
+
     /**
      * Test of calcCubicFeetOfArmor method, of class ArmorControl.
      */
     @Test
     public void testCalcCubicFeetOfArmor() {//Authored by Felix and Jason
-        System.out.println("calcCubicFeetOfArmor Test");
-        System.out.println("\tTest Case 1");
+        this.console.println("calcCubicFeetOfArmor Test");
+        this.console.println("\tTest Case 1");
         ArmorControl instance = new ArmorControl();
         double depth = 6.0;
         double length = 3.0;       
@@ -46,8 +50,8 @@ public class ArmorControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
-        System.out.println("calcCubicFeetOfArmor Test");
-        System.out.println("\tTest Case 2");
+        this.console.println("calcCubicFeetOfArmor Test");
+        this.console.println("\tTest Case 2");
         
          depth = 6.0;
          length = -1.0;
@@ -61,8 +65,8 @@ public class ArmorControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
-        System.out.println("calcCubicFeetOfArmor Test");
-        System.out.println("\tTest Case 3");
+        this.console.println("calcCubicFeetOfArmor Test");
+        this.console.println("\tTest Case 3");
         
          depth = 6.0;
          length = -1.0;
@@ -75,7 +79,7 @@ public class ArmorControlTest {
         assertEquals(expResult, result, 0.0);
         
         System.out.println("calcCubicFeetOfArmor Test");
-        System.out.println("\tTest Case 4");
+        this.console.println("\tTest Case 4");
         
          depth = 0.0;
          length = 3.0;
@@ -87,8 +91,8 @@ public class ArmorControlTest {
          result = instance.calcCubicFeetOfArmor(depth, length, width);
         assertEquals(expResult, result, 0.0);
         
-        System.out.println("calcCubicFeetOfArmor Test");
-        System.out.println("\tTest Case 5");
+        this.console.println("calcCubicFeetOfArmor Test");
+        this.console.println("\tTest Case 5");
         
          depth = -5.0;
          length = 3.0;       
@@ -99,8 +103,8 @@ public class ArmorControlTest {
          result = instance.calcCubicFeetOfArmor(depth, length, width);
         assertEquals(expResult, result, 0.0);
         
-        System.out.println("calcCubicFeetOfArmor Test");
-        System.out.println("\tTest Case 6");
+        this.console.println("calcCubicFeetOfArmor Test");
+        this.console.println("\tTest Case 6");
         
          depth = -4.5;
          length = 3.0;
@@ -112,8 +116,8 @@ public class ArmorControlTest {
          result = instance.calcCubicFeetOfArmor(depth, length, width);
         assertEquals(expResult, result, 0.0);
         
-        System.out.println("calcCubicFeetOfArmor Test");
-        System.out.println("\tTest Case 2");
+        this.console.println("calcCubicFeetOfArmor Test");
+        this.console.println("\tTest Case 2");
         
          depth = -6.3;
          length = 3.4;      
@@ -124,5 +128,25 @@ public class ArmorControlTest {
          result = instance.calcCubicFeetOfArmor(depth, length, width);
         assertEquals(expResult, result, 0.0);
    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
      

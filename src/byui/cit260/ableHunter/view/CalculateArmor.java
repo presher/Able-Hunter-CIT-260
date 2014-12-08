@@ -20,14 +20,18 @@ import java.util.logging.Logger;
  *
  * @author Jason
  */
-public class CalculateArmor {
+public class CalculateArmor extends View {
+
+    public CalculateArmor(String promptMessage) {
+        super(promptMessage);
+    }
    
     private void welcomeMessage(Player player) {
          //To change body of generated methods, choose Tools | Templates.
-        System.out.println("\n\n###############################################");
-        System.out.println("\tWelcome To Able Hunter Armor Creation " + player.getName());
-        System.out.println("\tPlease calculate the armor ");
-        System.out.println("###################################################");
+        this.console.println("\n\n###############################################");
+        this.console.println("\tWelcome To Able Hunter Armor Creation " + player.getName());
+        this.console.println("\tPlease calculate the armor ");
+        this.console.println("###################################################");
     }
     IronArmor ironArmor = new IronArmor();
     LeatherArmor leatherArmor = new LeatherArmor();
@@ -48,7 +52,7 @@ public class CalculateArmor {
             for(;;){
                 do{
                     try {
-                        System.out.println("\n Please Choose Your Scene: " +
+                        this.console.println("\n Please Choose Your Scene: " +
                                 "\n\t L For Leather Armor "+
                                 "\n\t I For Iron Armor "  +
                                 "\n\t G For Gold Armor "  +
@@ -66,22 +70,22 @@ public class CalculateArmor {
                         switch (put){
                             case 'L':
                                 //(input == '1');
-                                System.out.print("\n" + Arrays.toString(Armor[0]));
+                                this.console.print("\n" + Arrays.toString(Armor[0]));
                                 this.ArmorControl();
                                 break;
                             case 'I':
                                 //(input == '2');
-                                System.out.print("\n" + Arrays.toString(Armor[1]));
+                                this.console.print("\n" + Arrays.toString(Armor[1]));
                                 this.ArmorControl();
                                 break;
                             case 'G':
                                 //(input == '3');
-                                System.out.print("\n" + Arrays.toString(Armor[2]));
+                                this.console.print("\n" + Arrays.toString(Armor[2]));
                                 this.ArmorControl();
                                 break;
                             case 'D':
                                 //(input == '4');
-                                System.out.println("\n" + Arrays.toString(Armor[3]));
+                                this.console.println("\n" + Arrays.toString(Armor[3]));
                                 this.ArmorControl();
                                 break;
                             case 'q':
@@ -95,7 +99,7 @@ public class CalculateArmor {
                         
                 } while( put != 'q');  
                 if (put != 'L' || put != 'I' || put != 'D' || put != 'G'); 
-                    System.out.println("Please enter a valid choice");
+                    this.console.println("Please enter a valid choice");
                     return;
 }
    }
@@ -125,5 +129,25 @@ public class CalculateArmor {
         
         ArmorControl armorControl = new ArmorControl();
         armorControl.calcCubicFeetOfAnyArmor(length, width, depth);
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

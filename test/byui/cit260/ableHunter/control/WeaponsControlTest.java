@@ -5,6 +5,7 @@
  */
 package byui.cit260.ableHunter.control;
 
+import byui.cit260.ableHunter.view.View;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,9 +15,10 @@ import static org.junit.Assert.*;
  *
  * @author Jason
  */
-public class WeaponsControlTest {
+public class WeaponsControlTest extends View{
     
-    public WeaponsControlTest() {
+    public WeaponsControlTest(String promptMessage) {
+        super(promptMessage);
     }
     
     @BeforeClass
@@ -38,9 +40,9 @@ public class WeaponsControlTest {
          * depth remains constant @2
          * +++++++++++++++
          */
-        System.out.println("calcCubicInchesOfWeapon");
-        System.out.println("\t Test #1");
-         WeaponsControl instance = new WeaponsControl();
+        this.console.println("calcCubicInchesOfWeapon");
+        this.console.println("\t Test #1");
+         WeaponsControl instance = null;
         double length = 60.0;
         double width = 4.0;
         double depth = 2.0;
@@ -57,8 +59,8 @@ public class WeaponsControlTest {
          * +++++++++++++++
          */
         
-        System.out.println("calcCubicInchesOfWeapon");
-        System.out.println("\t Test #1 Invalid");
+        this.console.println("calcCubicInchesOfWeapon");
+        this.console.println("\t Test #1 Invalid");
          
          length = -1.0;
          width = 4.0;
@@ -74,8 +76,8 @@ public class WeaponsControlTest {
          * +++++++++++++++
          */       
         
-        System.out.println("calcCubicInchesOfWeapon");
-        System.out.println("\t Test #2 Invalid");
+        this.console.println("calcCubicInchesOfWeapon");
+        this.console.println("\t Test #2 Invalid");
          length = 60.0;
          width = -1.0;
          depth = 2.0;
@@ -90,8 +92,8 @@ public class WeaponsControlTest {
          * +++++++++++++++
          */
         
-         System.out.println("calcCubicInchesOfWeapon");
-        System.out.println("\t Test #3 Invalid");
+         this.console.println("calcCubicInchesOfWeapon");
+        this.console.println("\t Test #3 Invalid");
          length = 60.0;
          width = 6.0;
          depth = 2.0;
@@ -106,8 +108,8 @@ public class WeaponsControlTest {
          * +++++++++++++++
          */
         
-         System.out.println("calcCubicInchesOfWeapon");
-        System.out.println("\t Test #4 Invalid");
+         this.console.println("calcCubicInchesOfWeapon");
+        this.console.println("\t Test #4 Invalid");
          length = -60.0;
          width = 1.0;
          depth = 2.0;
@@ -122,8 +124,8 @@ public class WeaponsControlTest {
          * +++++++++++++++
          */
         
-         System.out.println("calcCubicInchesOfWeapon");
-        System.out.println("\t Test #5 Invalid");
+         this.console.println("calcCubicInchesOfWeapon");
+        this.console.println("\t Test #5 Invalid");
          length = 5.0;
          width = 10.0;
          depth = 2.0;
@@ -138,8 +140,8 @@ public class WeaponsControlTest {
          * +++++++++++++++
          */
         
-         System.out.println("calcCubicInchesOfWeapon");
-        System.out.println("\t Test #6 Invalid");
+         this.console.println("calcCubicInchesOfWeapon");
+        this.console.println("\t Test #6 Invalid");
          length = 5.0;
          width = -4.0;
          depth = 2.0;
@@ -147,6 +149,26 @@ public class WeaponsControlTest {
          expResult = -1.0;
          result = instance.calcCubicInchesOfWeapon(length, width, depth);
         assertEquals(expResult, result, 0.0);
+    }
+
+    @Override
+    public void displayHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getInputHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doActionHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

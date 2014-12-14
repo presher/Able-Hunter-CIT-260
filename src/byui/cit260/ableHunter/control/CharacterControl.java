@@ -19,13 +19,7 @@ public abstract class CharacterControl  extends View{
         super(promptMessage);
     }
     
-    /**
-     *
-     * @param args
-     * @throws IOException
-     */
-    //public static void main(String[] args) //Coded by Jason
-         //throws java.io.IOException{
+    
        public void CharControls() throws IOException{
             char avatar, ignore;
                 CharacterControl characterControlInput = null;

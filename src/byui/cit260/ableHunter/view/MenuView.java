@@ -61,7 +61,7 @@ public class MenuView {
             option = option.trim().toUpperCase();
             valid = validOption(option);
             if (!validOption(option)) {
-                new AbleHunterError().display("Invalid command. Please enter a valid command.");
+                new AbleHunterError("Invalid command. Please enter a valid command.").display();
             }
                 
         } while (!valid);

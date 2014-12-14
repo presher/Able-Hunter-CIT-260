@@ -6,17 +6,18 @@
 package byui.cit260.ableHunter.enums;
 
 import java.awt.Point;
+import java.io.Serializable;
 
 /**
  *
  * @author Jason
  */
-public enum Avatar {
-     HUNTER_1("The default AVATAR of the Game"),
-    BOB_THE_STRONG("Bob is a Survivalist and has made it a long time"),
-    PRINCESS_BECKY("She might seem weak but she kicks butt"),
-    HE_MAN("The strong man who defeats all"),
-    SHE_MAN("When no one else can do it all fall before her");
+public enum Avatar implements Serializable{
+     HUNTER_1("Hunter1"),
+    BOB_THE_STRONG("Bob"),
+    PRINCESS_BECKY("Princess"),
+    HE_MAN("HeMan"),
+    SHE_MAN("SheMan");
     
   //private String name;
     

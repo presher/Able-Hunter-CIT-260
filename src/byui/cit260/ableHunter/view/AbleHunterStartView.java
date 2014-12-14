@@ -26,6 +26,14 @@ public class AbleHunterStartView extends View implements displayInfo {//Coded by
         super(promptMessage);
     }
 
+    /*public AbleHunterStartView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
+
+    public AbleHunterStartView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
    

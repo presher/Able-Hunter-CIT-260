@@ -26,7 +26,7 @@ public class MainMenuView {
         {"X", "Exit "}
     }; 
   
-    PlayerControl mainMenuControl = new PlayerControl();
+    PlayerControl mainMenuControl = new PlayerControl("Enter Your Selection Now");
     
     public MainMenuView() {
 
@@ -61,7 +61,7 @@ public class MainMenuView {
                 case "X":
                     break;
                 default: 
-                    new AbleHunterError().displayError("Invalid command. Please enter a valid command.");
+                    new AbleHunterError("Invalid command. Please enter a valid command.").displayError(" ");
             }
         } while (!command.equals("X"));
 

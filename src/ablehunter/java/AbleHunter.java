@@ -11,6 +11,7 @@ package ablehunter.java;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.view.AbleHunterStartView;
+import java.io.IOException;
 import java.util.Scanner;
 
 //import java.util.Scanner;
@@ -41,8 +42,8 @@ public class AbleHunter implements displayInfo{
      */
     public static void main(String[] args) 
         throws java.io.IOException{
-        
-            AbleHunterStartView ableHunterStartView = null ;
+       // public void startView() throws IOException{
+            AbleHunterStartView ableHunterStartView = new AbleHunterStartView() ;
             //super(promptMessage);
            try{
             ableHunterStartView.ableHunterStart();
@@ -51,8 +52,8 @@ public class AbleHunter implements displayInfo{
                te.printStackTrace();
                ableHunterStartView.ableHunterStart();
            }
-           
-}
+        }
+
 
     public static void setPlayer(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

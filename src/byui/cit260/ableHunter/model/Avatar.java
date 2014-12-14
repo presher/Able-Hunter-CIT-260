@@ -15,11 +15,11 @@ import java.io.Serializable;
 public enum Avatar implements Serializable{// added 11 / 15 / 14
     
    
-    HUNTER_1("The default AVATAR of the Game"),
-    BOB_THE_STRONG("Bob is a Survivalist and has made it a long time"),
-    PRINCESS_BECKY("She might seem weak but she kicks butt"),
-    HE_MAN("The strong man who defeats all"),
-    SHE_MAN("When no one else can do it all fall before her");
+    HUNTER_1("Hunter 1"),
+    BOB_THE_STRONG("Bob The Strong"),
+    PRINCESS_BECKY("Princess"),
+    HE_MAN("He_Man"),
+    SHE_MAN("She_Man");
     
   //private String name;
     

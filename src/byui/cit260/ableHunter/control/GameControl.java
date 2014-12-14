@@ -10,6 +10,8 @@ package byui.cit260.ableHunter.control;
 
 //=======
 import ablehunter.java.AbleHunter;
+import byui.cit260.ableHunter.enums.Resources;
+import byui.cit260.ableHunter.enums.Weapons;
 import byui.cit260.ableHunter.exceptions.GameControlException;
 import byui.cit260.ableHunter.model.Game;
 import byui.cit260.ableHunter.model.GameScenes;
@@ -128,27 +130,16 @@ public static void main(String args[]){}
         }
     }
 
-    public static void getReport(String filepath) throws GameControlException {
-        //To change body of generated methods, choose Tools | Templates.
-        PrintReport report = null;
-        
-        try(FileInputStream fips = new FileInputStream(filepath)){
-            ObjectInputStream output = new ObjectInputStream(fips);
-            report = (PrintReport) output.readObject();
-        }catch(FileNotFoundException fnfe){
-            throw new GameControlException(fnfe.getMessage());
-        }catch(Exception e){
-            throw new GameControlException(e.getMessage());
-        }
-        AbleHunterControl.setCurrentReport(report);
-    }
+    
+
+    
 
     
 
    
 
     
-public enum Item{
+/*public enum Item{
     Gold,
     Iron,
     Diamond,
@@ -161,7 +152,7 @@ public enum Item{
     IronSword,
     GoldSword,
     DiamondSword;
-}
+}*/
     private static Inventory[] createInventoryList() {
         Inventory[] inventory;
         inventory = new Inventory[CONSTANT_String];
@@ -169,67 +160,78 @@ public enum Item{
             Gold.setDescription("GOLD");
             Gold.setItemsCollected(0);
             Gold.setAmountNeeded(13);
-            inventory[Item.Gold.ordinal()] = Gold;
+           // inventory[Item.Gold.ordinal()] = Gold;
+            Resources.Gold.display();
             
             Inventory Wood = new Inventory();
             Wood.setDescription("WOOD");
             Wood.setItemsCollected(0);
             Wood.setAmountNeeded(5);
-            inventory[Item.Wood.ordinal()] = Wood;
+           // inventory[Item.Wood.ordinal()] = Wood;
+            Resources.Wood.display();
             
             Inventory Diamond = new Inventory();
             Diamond.setDescription("Diamond");
             Diamond.setItemsCollected(0);
             Diamond.setAmountNeeded(15);
-            inventory[Item.Diamond.ordinal()] = Diamond;
+            //inventory[Item.Diamond.ordinal()] = Diamond;
+            Resources.Diamond.display();
             
             Inventory Iron = new Inventory();
             Iron.setDescription("Iron");
             Iron.setItemsCollected(0);
             Iron.setAmountNeeded(10);
-            inventory[Item.Iron.ordinal()] = Iron;
+           // inventory[Item.Iron.ordinal()] = Iron;
+            Resources.Iron.display();
             
             Inventory AnimalSkins = new Inventory();
             AnimalSkins.setDescription("Animal Skins");
             AnimalSkins.setItemsCollected(0);
             AnimalSkins.setAmountNeeded(3);
-            inventory[Item.AnimalSkins.ordinal()] = AnimalSkins;
+           // inventory[Item.AnimalSkins.ordinal()] = AnimalSkins;
+            Resources.Skins.display();
             
             Inventory BowArrow = new Inventory();
             BowArrow.setDescription("Bow and Arrow");
             BowArrow.setItemsCollected(0);
             BowArrow.setAmountNeeded(1);
-            inventory[Item.BowArrow.ordinal()] = BowArrow;
+           // inventory[Item.BowArrow.ordinal()] = BowArrow;
+            Weapons.Bow_Arrow.display();
             
             Inventory Spear = new Inventory();
             Spear.setDescription("Spear");
             Spear.setItemsCollected(0);
             Spear.setAmountNeeded(1);
-            inventory[Item.Spear.ordinal()] = Spear;
+            //inventory[Item.Spear.ordinal()] = Spear;
+            Weapons.Spear.display();
             
             Inventory WoodSword = new Inventory();
             WoodSword.setDescription("Wooden Sword");
             WoodSword.setItemsCollected(0);
             WoodSword.setAmountNeeded(0);
-            inventory[Item.WoodSword.ordinal()] = WoodSword;
+           // inventory[Item.WoodSword.ordinal()] = WoodSword;
+            Weapons.Wood_Sword.display();
             
             Inventory IronSword = new Inventory();
             IronSword.setDescription("Iron Sword");
             IronSword.setItemsCollected(0);
             IronSword.setAmountNeeded(0);
-            inventory[Item.IronSword.ordinal()] = IronSword;
+            //inventory[Item.IronSword.ordinal()] = IronSword;
+            Weapons.Iron_Sword.display();
             
             Inventory DiamondSword = new Inventory();
             DiamondSword.setDescription("GOLD");
             DiamondSword.setItemsCollected(0);
             DiamondSword.setAmountNeeded(0);
-            inventory[Item.DiamondSword.ordinal()] = DiamondSword;
+           // inventory[Item.DiamondSword.ordinal()] = DiamondSword;
+            Weapons.Diamond_Sword.display();
             
             Inventory Leather = new Inventory();
             Leather.setDescription("GOLD");
             Leather.setItemsCollected(0);
             Leather.setAmountNeeded(3);
-            inventory[Item.Leather.ordinal()] = Leather; 
+           //// inventory[Item.Leather.ordinal()] = Leather; 
+            Resources.Leather.display();
             
             
             

@@ -6,57 +6,13 @@
 package byui.cit260.ableHunter.control;
 
 import byui.cit260.ableHunter.view.View;
-import java.util.Arrays;
-import java.util.Collections;
-import static java.util.Collections.list;
-import java.util.List;
 
 /**
  *
  * @author Jason
  */
 public class Sort extends View {
-   /*int i = 0;
-    //public void SortItems() {
-        
-    public static String[][] scenes = {//"start" + "finish" + "Desert" + "Island" + "Moutain" + "Lodge" + "Forest"};
-   { "start"},
-    {"finish"},
-    {"Desert"},
-    {"Island"},
-    {" Mountain"},
-    {"Lodge"},
-    {"Forest"}
-    };
-
-    //public class Sort(){
-      
-       static void qsort(char items[]){
-           scenes(items, 0, items.length - 1);
-       }
-       
-       private static void scenes(char items[], int left, int right){
-       int i, j;
-       char x, y;
-       
-       i = left;j = right;
-       x = items[(left + right) / 2];
-       
-       do{
-           while((items[i] < x) && (i < right )) i++;
-           while((x < items[j] && (j > left))) j--;
-           
-            if(i <= j){
-                y = items[i];
-                items[i] = items[j];
-                items[j] = y;
-                i++; j--;
-            }
-       }while(i <= j);
-            if(left < j) scenes(items, left, j);
-            if(i < right) scenes(items, i, right);
-   }*/
-   
+  
    
    //public static void main(String args[]){
     public void TheMainScenes(){
@@ -119,21 +75,6 @@ public class Sort extends View {
       
        
        
-/* public Sort{      
-    for(index inrange(1,len(list))){
-        do {sort = List[index];
-        i = index -1;
-        }while (i <= 0);
-                if(list[i] >= sort){
-                    list[i + 1] = list[i];
-                    list[i] = sort;
-                    i = i -1;                  
-                }
-                else{}
-                    break;
-                
-    }
-    }*/
 
      
  

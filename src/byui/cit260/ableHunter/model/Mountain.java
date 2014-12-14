@@ -99,8 +99,8 @@ public class Mountain extends AbstractTableModel{
          Player playerAtLocation = this.boardLocations[row][column];
 
         if (playerAtLocation != null) { // location already occupied
-            new AbleHunterError().display("This location is already occupied. "
-                    + "Try a different location.");
+            new AbleHunterError("This location is already occupied. "
+                    + "Try a different location.").display();
         }
         this.boardLocations[row][column] = player;
     }

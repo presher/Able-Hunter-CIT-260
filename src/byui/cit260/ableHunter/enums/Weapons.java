@@ -5,40 +5,30 @@
  */
 package byui.cit260.ableHunter.enums;
 
-import byui.cit260.ableHunter.model.BowWeapon;
-import byui.cit260.ableHunter.model.DiamondWeapon;
-import byui.cit260.ableHunter.model.HandWeapon;
-import byui.cit260.ableHunter.model.IronWeapon;
-import byui.cit260.ableHunter.model.SpearWeapon;
-import byui.cit260.ableHunter.model.WoodenWeapon;
+import java.io.Serializable;
 
 /**
  *
  * @author Jason
  */
-public enum Weapons {
-    Hands("This the default weapon and the lowest hit damage"),
-    Bow_Arrow("This is aquired after finding it and adding it to invenotry and has low hit damage"),
-    Spear("This is available after finding it and adding it to the inventory and has low hit damage"),
-    Wood_Sword("This must be made before it can be used. The lowest hit damage of all the swords"),
-    Iron_Sword("Must be made of aquired added to the inventory before it can be used. Stronger hit damage than the Wood Sword."),
-    Diamond_Sword("Must be made of aquired diamonds added the inventory before it can be used and it has the most hit damage of all the weapons");
+public enum Weapons implements Serializable {
+    Hands("Hands"),
+    Bow_Arrow("Bow"),
+    Spear("Spear"),
+    Wood_Sword("WoodSword"),
+    Iron_Sword("IronSword"),
+    Diamond_Sword("DiamondSword");
     
     private final String description;
-    /*private HandWeapon hand;
-    private BowWeapon bow_Arrow;
-    private SpearWeapon spear;
-    private WoodenWeapon wood_Sword;
-    private IronWeapon iron_Sword;
-    private DiamondWeapon diamond_Sword;*/
-            
-   /* private String handsDefault;
-    private String bowArrow;
-    private String spear;
-    private String swordWood;
-    private String swordIron;
-    private String swordDiamond;*/
+    String message;
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
      Weapons(String description) {
         this.description = description;
     }
@@ -47,6 +37,10 @@ public enum Weapons {
 
     public String getDescription() {
         return description;
+    }
+    
+    public void display(){
+        System.out.println(this.getMessage());
     }
     
 }

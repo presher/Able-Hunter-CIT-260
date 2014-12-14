@@ -6,12 +6,6 @@
 package byui.cit260.ableHunter.view;
 
 import ablehunter.java.displayInfo;
-import byui.cit260.ableHunter.model.Desert;
-import byui.cit260.ableHunter.model.Forest;
-import byui.cit260.ableHunter.model.Island;
-import byui.cit260.ableHunter.model.Lodge;
-import byui.cit260.ableHunter.model.Mountain;
-import java.io.IOException;
 
 /**
  *
@@ -32,18 +26,7 @@ public abstract class SceneView extends SceneSelectionView implements displayInf
                 + "\nQ-Quit Game"
                 + "\n_____________________________________________");
     }
-    /*public SceneView(String promptMessage) {
-        super("\n Please Choose Your Scene: " +
-                    "\n\t M For Mountain Scene "+
-                    "\n\t L For Lodge Scene "  +
-                    "\n\t D For Desert Scene "  +
-                    "\n\t I For Island Scene "  +
-                    "\n\t F For Forest Scene " +
-                    "\n\t q to quit"        );
-    }*/
-
-   
-    // scenes[] = {'Mountain', 'Lodge', 'Desert', 'Island', 'Forest'};
+    
 
     
 

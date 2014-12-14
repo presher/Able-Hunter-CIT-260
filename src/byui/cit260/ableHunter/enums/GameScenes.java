@@ -14,13 +14,13 @@ import byui.cit260.ableHunter.model.TheMap;
  */
 public enum GameScenes  {
     
-        start ("Start New Game"),
-        finish ("Finish Game"),
-        Desert ("Desert Scene"),
-        Island ("Island Scene"),
-        Mountain ("Mountain Scene"),
-        Lodge ("Lodge Scene"),
-        Forest ("Forest Scene");
+        start ("Start"),
+        finish ("Finish"),
+        Desert ("Desert"),
+        Island ("Island"),
+        Mountain ("Mountain"),
+        Lodge ("Lodge"),
+        Forest ("Forest");
 
      String message;
 

@@ -5,17 +5,28 @@
  */
 package byui.cit260.ableHunter.enums;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jason
  */
-public enum Armor {
-    Clothes_Armor("The default apperal for the game"),
-    Iron_Armor("Armmor aquired after making it from iron ore"),
-    Gold_Armor("Armor aquired ater making it from gold ore"),
-    Diamond_Armor("Armor aquired after maikng it from diamonds and it tis the stongest of all of the Armor");
+public enum Armor implements Serializable{
+    Clothes_Armor("Clothes"),
+    Iron_Armor("Iron_Armor"),
+    Gold_Armor("Gold_Armor"),
+    Diamond_Armor("Diamond_Armor");
         
          private final String description;
+         String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     Armor(String description) {
         this.description = description;
@@ -26,5 +37,9 @@ public enum Armor {
     public String getDescription() {
         return description;
     }
+    
+     public void display(){
+        System.out.println(this.message);
+}
 
 }

@@ -10,12 +10,46 @@ package byui.cit260.ableHunter.enums;
  * @author Jason
  */
 public enum Resources {
-     Wood("Ore used to make wood weapons"),
-    Iron("Ore used to make ironweapons and armor"),
-    Gold("Ore used to make gold weapons"),
-    Diamond("Ore used to make diamond ww]eapons and armor"),
-    Skins("Animal Skins uesed to make leather armor");
-   // String resources;
+    Wood("Wood"),
+    Iron("Iron"),
+    Gold("Gold"),
+    Diamond("Diamond"),
+    Skins("Skins"),
+    Leather("Leather");
+String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public static Resources getWood() {
+        return Wood;
+    }
+
+    public static Resources getIron() {
+        return Iron;
+    }
+
+    public static Resources getGold() {
+        return Gold;
+    }
+
+    public static Resources getDiamond() {
+        return Diamond;
+    }
+
+    public static Resources getSkins() {
+        return Skins;
+    }
+
+    public String getResources() {
+        return resources;
+    }
+   String resources;
     
     
    
@@ -30,5 +64,8 @@ public enum Resources {
     public String getDescription() {
         return description;
     }
+    public void display(){
+    System.out.println(this.message);
+}
     
 }

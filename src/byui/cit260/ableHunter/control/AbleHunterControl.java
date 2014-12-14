@@ -10,6 +10,7 @@ import byui.cit260.ableHunter.model.Player;
 import byui.cit260.ableHunter.model.PrintReport;
 import byui.cit260.ableHunter.view.AbleHunterError;
 import byui.cit260.ableHunter.view.AbleHunterMainMenu;
+import byui.cit260.ableHunter.view.ErrorView;
 import byui.cit260.ableHunter.view.HelpMenuView;
 import byui.cit260.ableHunter.view.SceneView;
 import byui.cit260.ableHunter.view.View;
@@ -125,15 +126,7 @@ public class AbleHunterControl extends View {
    
         
         
-   // public static HelpMenuView getHelpMenu() {
-       // return AbleHunterControl.helpMenu;
-    //}
-
-
-    //public static GamePreferencesView getGamePreferencesView() {
-     //   return GamePreferences;
-    //}
-    
+  
     public static String[] getNameList() {
         return nameList;
     }
@@ -152,7 +145,7 @@ public class AbleHunterControl extends View {
     }
 
         
-    //public static void main(String args[]) {
+    
     public void Controls(){
         AbleHunterControl AbleHunterControl = null;
         AbleHunterControl.display();
@@ -203,7 +196,7 @@ public class AbleHunterControl extends View {
             
              } catch (IOException ex) {
                 this.console.println("Error Closing Files");
-                 //ErrorView.display(this.getClass().getName(), "Error Closing Files" + ex.getMessage());
+                 ErrorView.display(this.getClass().getName(), "Error Closing Files" + ex.getMessage());
                 return;
             }
         }
@@ -235,7 +228,7 @@ public class AbleHunterControl extends View {
             name = name.trim();
 
             if (name.length() < 1) {
-                new AbleHunterError().display("\tA name must be at least one character long. Try again.");
+                new AbleHunterError("\tA name must be at least one character long. Try again.").display();
                 continue;
             }
 

@@ -47,9 +47,8 @@ public final class MovePlayer extends View implements errorInfo{//Created and Co
             coordinates = strRowColumn.split("\\s"); // tokenize the string
 
             if (coordinates.length < 1) { // no coordinates specified
-                new AbleHunterError().display(
-                        "You must enter two numbers, a row and the column, "
-                        + "or a \"Q\" to quit. Try again.");
+                new AbleHunterError("You must enter two numbers, a row and the column, "
+                        + "or a \"Q\" to quit. Try again.").display();
                 continue;
             }    
 
@@ -57,9 +56,8 @@ public final class MovePlayer extends View implements errorInfo{//Created and Co
                 if (coordinates[0].toUpperCase().equals("Q")) { // Quit?
                     return null;
                 } else { // wrong number of values entered.
-                    new AbleHunterError().display(
-                        "You must enter two numbers, a row and the column, "
-                        + "or a \"Q\" to quit. Try again.");
+                    new AbleHunterError("You must enter two numbers, a row and the column, "
+                        + "or a \"Q\" to quit. Try again.").display();
                     continue;
                 }
             }
@@ -69,9 +67,8 @@ public final class MovePlayer extends View implements errorInfo{//Created and Co
             if (digitPattern.matcher(coordinates[0]).matches()  || 
                 digitPattern.matcher(coordinates[1]).matches()
                ) {
-                new AbleHunterError().display(
-                        "You must enter two numbers, a row and the column, "
-                        + "or a \"Q\" to quit. Try again.");
+                new AbleHunterError("You must enter two numbers, a row and the column, "
+                        + "or a \"Q\" to quit. Try again.").display();
                 continue;
             }
             
@@ -81,8 +78,7 @@ public final class MovePlayer extends View implements errorInfo{//Created and Co
             Board board = game.getBoard();
             if (row < 1   ||  row > board.getRowCount() ||
                 column < 1  ||  column > board.getColumnCount()) {
-                new AbleHunterError().display(
-                        "Enter a valid number of rows and columns from 3 to 10. Try again.");
+                new AbleHunterError("Enter a valid number of rows and columns from 3 to 10. Try again.").display();
                 continue;
             }
 

@@ -15,18 +15,7 @@ import java.util.Scanner;
  * @author Jason
  */
 public class SceneControl extends View{
-     //protected final BufferedReader keyBoard = AbleHunterControl.getInFiles();
-    /*public static String[][] scenes = {
-          {"Mountain"}, 
-          {"Lodge"},
-          {"Desert"}, 
-          {"Island"}, 
-          {"Forest"}
-          };*/
     
-//Created and coded by Jason
-  //private final SceneView scenes[];
-   
    public static void scenes(String items[], int left, int right){
        String[] scenesList ={"Mountain", "Lodge", "Island", "Desert", "Forest"};
        sortArray(scenesList);
@@ -35,15 +24,7 @@ public class SceneControl extends View{
    
        
         
-       // SceneControl[] sceneList = (SceneControl[]) originalSceneList.clone();
-        
-       // Scene tempScene;
-   
-            
-       
-            
-    
-   //
+      
    @SuppressWarnings("empty-statement")
    public static void sortArray(String items[]){
        int i, j;
@@ -109,72 +90,7 @@ public class SceneControl extends View{
             this.console.println(scenes[i]);
    } 
 
-    /*public void getScene() {
-         //To change body of generated methods, choose Tools | Templates.
-        
-          String[][] scenes = {
-          {"Mountain"}, 
-          {"Lodge"},
-          {"Desert"}, 
-          {"Island"}, 
-          {"Forest"}
-          };
-           System.out.println("\n"
-                + "\n-------------------------------------------"
-                + "\n| Scene Menu"
-                + "\n-------------------------------------------"
-                + "\nX-Mounain Scene"
-                + "\nI-Island Scene"
-                + "\nL-Lodge Scene"
-                + "\nD-Desert Scene"
-                + "\nF-Forest Scene"
-                + "\nQ-Exit To Main Menu"
-                + "\n_____________________________________________");
-          boolean quit = true;
-          boolean valid = false;
-          String input;
-           Scanner keyboard = new Scanner(System.in);
-          do{
-        
-       
-      
-           while(!valid){
-       
-       input = keyboard.nextLine();
-       input = input.trim().toUpperCase();
-        if(input.length() < 1){
-            System.out.println("Please enter a valid value.");
-        }
-        
-           }
-       
-       
-        switch (input){
-                           case "X":
-                               this.MountainScene();
-                               break;
-                                case "I"://Get Existing Game
-                                   this.IslandScene();
-                                    break;
-                                    case "L":
-                                        this.LodgeScene();
-                                        break;
-                                            case "D":                                                        
-                                               this.DesertScene();
-                                                break;
-                                            case "F":
-                                                this.ForestScene();
-                                                break;
-                                                    case "E":
-                                                        quit = true;
-                                                        return;
-                                                    default:
-                                                        System.out.println("Invalid Selection Please Try Again");
-                                               
-           
-        }
-    } while(!quit);  
-        }      */   
+   
 
     private void MountainScene() {
          //To change body of generated methods, choose Tools | Templates.

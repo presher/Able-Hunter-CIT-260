@@ -15,15 +15,13 @@ import byui.cit260.ableHunter.model.Player;
  */
 public class BoardView extends View implements displayInfo{
     Board board;
-     public static void main(String args[]) {
-     
-     }
-
-    public BoardView(String promptMessage) {
-        super(promptMessage);
+     //public void main(String args[]) {
+     public BoardView(String promptMessage) {
+       super(promptMessage);
     }
+   // @Override
     @Override
-    public Object display(Object object) {
+      public Object display(Object object) {
         this.board = (Board) object;
         this.printHeadRow();
         this.printDividerRow();
@@ -118,5 +116,10 @@ public class BoardView extends View implements displayInfo{
     public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+     
+
+    
+
+   
 }
 

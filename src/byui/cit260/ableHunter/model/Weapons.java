@@ -21,12 +21,13 @@ public class Weapons implements Serializable{// added 11 / 15 / 14
     Diamond_Sword("Must be made of aquired diamonds added the inventory before it can be used and it has the most hit damage of all the weapons");*/
     
     private final String description;
-    private HandWeapon hand;
+    
+   /* private HandWeapon hand;
     private BowWeapon bow_Arrow;
     private SpearWeapon spear;
     private WoodenWeapon wood_Sword;
     private IronWeapon iron_Sword;
-    private DiamondWeapon diamond_Sword;
+    private DiamondWeapon diamond_Sword;*/
             
    /* private String handsDefault;
     private String bowArrow;

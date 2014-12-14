@@ -6,6 +6,7 @@
 package byui.cit260.ableHunter.view;
 
 import ablehunter.java.displayInfo;
+import byui.cit260.ableHunter.enums.GameScenes;
 import byui.cit260.ableHunter.exceptions.JasonExceptions;
 import byui.cit260.ableHunter.exceptions.MapControlException;
 import byui.cit260.ableHunter.model.Desert;
@@ -81,6 +82,7 @@ public abstract class SceneSelectionView extends View implements displayInfo{
         switch (input){
                            case "X":
                                this.MountainScene();
+                              
                                break;
                                 case "I"://Get Existing Game
                                    this.IslandScene();
@@ -108,26 +110,31 @@ public abstract class SceneSelectionView extends View implements displayInfo{
     private void MountainScene() {
          //To change body of generated methods, choose Tools | Templates.
         Mountain mountain = new Mountain();
+         GameScenes.Mountain.display();
     }
 
     private void IslandScene() {
          //To change body of generated methods, choose Tools | Templates.
         Island island = new Island();
+        GameScenes.Island.display();
     }
 
     private void LodgeScene() {
          //To change body of generated methods, choose Tools | Templates.
         Lodge lodge = new Lodge();
+        GameScenes.Lodge.display();
     }
 
     private void DesertScene() {
          //To change body of generated methods, choose Tools | Templates.
         Desert desert = new Desert();
+        GameScenes.Desert.display();
     }
 
     private void ForestScene() {
          //To change body of generated methods, choose Tools | Templates.
         Forest forest = new Forest();
+        GameScenes.Forest.display();
     }
      @Override
     public void displayHelp() {

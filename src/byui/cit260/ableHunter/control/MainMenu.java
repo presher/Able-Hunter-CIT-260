@@ -32,13 +32,13 @@ public class MainMenu {
         Point locationMarkerPlaced = null;
 
          if (player ==  null) {
-            new AbleHunterError().display("You must start a new game first.");
+            new AbleHunterError("You must start a new game first.").display();
             return null;
         }
 
         if (!player.getPlayerType().equals(Player.REGULAR_PLAYER) && 
             !player.getPlayerType().equals(Player.COMPUTER_PLAYER)) {
-            new AbleHunterError().display("GameCommands - takeTurn: invalidPlayerTYpe");
+            new AbleHunterError("GameCommands - takeTurn: invalidPlayerTYpe").display();
             return null;
         }
 
@@ -46,8 +46,8 @@ public class MainMenu {
             this.game.setStatus(Game.PLAYING);
         }        
         else if (!this.game.getStatus().equals(Game.PLAYING )) {
-            new AbleHunterError().display("There is no active game. "
-                    + "You must start a new game before you can take a turn");
+            new AbleHunterError("There is no active game. "
+                    + "You must start a new game before you can take a turn").display();
         }
         
        
@@ -113,14 +113,14 @@ public class MainMenu {
     
     public boolean regularTurn(Player player, Point location){
         if (location == null) {
-            new AbleHunterError().display("GameCommands - regularTurn: location is null");
+            new AbleHunterError("GameCommands - regularTurn: location is null").display();
             return false;
         }
         
         if (game.getStatus().equals(Game.PLAYING) && 
             game.getStatus().equals(Game.NEW_GAME)) {
-            new AbleHunterError().display("There is no active game. "
-                    + "You must start a new game before you can take a turn");
+            new AbleHunterError("There is no active game. "
+                    + "You must start a new game before you can take a turn").display();
             return false;
         }
 
@@ -176,7 +176,7 @@ public class MainMenu {
             coordinate = this.chooseRandomLocation();
 
             if (coordinate == null) {
-                new AbleHunterError().display("No empty locations found on the board");
+                new AbleHunterError("No empty locations found on the board").display();
                 return null;
             }
         }

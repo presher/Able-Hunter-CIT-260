@@ -5,11 +5,9 @@
  */
 package byui.cit260.ableHunter.control;
 
-import byui.cit260.ableHunter.model.DiamondArmor;
-import byui.cit260.ableHunter.model.GoldArmor;
-import byui.cit260.ableHunter.model.IronArmor;
-import byui.cit260.ableHunter.model.LeatherArmor;
 import java.io.PrintWriter;
+
+
 
 /**
  *
@@ -19,10 +17,10 @@ import java.io.PrintWriter;
  
 public class ArmorControl { //Algorithm for checking accuracy
     protected final PrintWriter console = AbleHunterControl.getOutFile();
-    IronArmor ironArmor = new IronArmor();
+   /* IronArmor ironArmor = new IronArmor();
     LeatherArmor leatherArmor = new LeatherArmor();
     GoldArmor goldArmor = new GoldArmor();
-    DiamondArmor diamomdArmor = new DiamondArmor();
+    DiamondArmor diamomdArmor = new DiamondArmor();*/
     public double calcCubicFeetOfArmor( double depth, double length, double width) {
         if (depth <= 0){ //Then
 	return -1;

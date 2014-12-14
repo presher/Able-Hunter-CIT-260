@@ -13,10 +13,10 @@ import java.io.PrintWriter;
  * @author Jason
  */
 public class ErrorView {
-    private static final PrintWriter errorFile = AbleHunterControl.getOutFile();
+    private static final PrintWriter errorView = AbleHunterControl.getOutFile();
     private static final PrintWriter logFile = AbleHunterControl.getLogFile();
     public static void display(String className, String errorMessage){
-        errorFile.println(
+        errorView.println(
                     "----------------------------------------------------------"
                    +"\n- ERROR -" + errorMessage
                    +"----------------------------------------------------------"

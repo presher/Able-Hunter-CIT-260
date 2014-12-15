@@ -11,37 +11,39 @@ package byui.cit260.ableHunter.view;
  */
 public class AbleHunterError extends View{ 
 
+    /**
+     *
+     * @param promptMessage
+     */
     public AbleHunterError(String promptMessage) {
         super(promptMessage);
     }
 //coded by Felix
 
-    /**
-     *
-     */
     public AbleHunterError() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /** public AbleHunterError() {
+    /**
+    
+     
+    public AbleHunterError() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    //public AbleHunterError() {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
-
-   /** public AbleHunterError() {
+    /**
+     *
+    
+    public AbleHunterError() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   **/
+   /**
+    public AbleHunterError() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }**/
 
-    
-
-    
-
-      
+         
         public  Object displayError(Object object) {
             String message = (String) object;
             this.console.println("\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -50,26 +52,42 @@ public class AbleHunterError extends View{
         return null;
     }
 
-
+    /**
+     *
+     * @param string
+     */
     public void display(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     */
     @Override
     public void displayHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String getInputHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     */
     @Override
     public void doAction() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     */
     @Override
     public void doActionHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -49,7 +49,6 @@ public class AbleHunter implements displayInfo{
             ableHunterStartView.ableHunterStart();
            }catch(Throwable te){
                System.out.println(te.getMessage());
-               te.printStackTrace();
                ableHunterStartView.ableHunterStart();
            }
         }

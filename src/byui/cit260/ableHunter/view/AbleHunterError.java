@@ -20,7 +20,7 @@ public class AbleHunterError extends View{
     }
 //coded by Felix
 
-    public AbleHunterError() {
+    public void AbleHunterError() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

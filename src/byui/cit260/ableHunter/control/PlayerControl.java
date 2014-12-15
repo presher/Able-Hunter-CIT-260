@@ -20,7 +20,10 @@ public class PlayerControl extends View implements Serializable{
         super(promptMessage);
     }
 
-    public PlayerControl() {
+    /**
+     *
+     */
+    public void PlayerControl() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

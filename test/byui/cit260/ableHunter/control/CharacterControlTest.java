@@ -36,7 +36,7 @@ public class CharacterControlTest extends View {
     public void testMain() throws Exception {
         this.console.println("main");
         String[] args = null;
-        CharacterControl.main(args);
+        CharacterControl.Main(args);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

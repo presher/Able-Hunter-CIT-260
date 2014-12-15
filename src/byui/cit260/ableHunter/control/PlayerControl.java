@@ -20,6 +20,10 @@ public class PlayerControl extends View implements Serializable{
         super(promptMessage);
     }
 
+    public PlayerControl() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
     //private String fullName;
     //public static void main(String[] args) 
